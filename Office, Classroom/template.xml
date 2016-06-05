@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gameTemplate name ="Template">
+	<acts>
+		<act name = "Introduction">    
+			<scenes>
+				<scene>
+					<screens>
+						<screen>
+							<type>Introduction</type>
+						</screen>
+						<screen>
+							<type>Summary Screen</type>
+						</screen>
+						<screen>
+							<type>Text that states: "Let's Begin!" Screen</type>
+						</screen>
+					</screens>
+				</scene>
+			</scenes>
+		</act>
+		<act name = "Progress"> 
+			<scenes>
+				<scene>
+					<screens>
+						<screen>
+							<type>Question</type>
+						</screen>
+						<screen>
+							<type>Transition: Response To Answer</type>
+						</screen>
+					</screens>
+				</scene>
+			</scenes>
+		</act>
+		<act name = "Conclusion">  
+			<scenes>  
+				<scene>
+					<screens>
+						<screen>
+							<type>Introduction</type>
+						</screen>
+						<screen>
+							<type>Transition: Text that states: "See Your Score!"</type>
+						</screen>
+					</screens>
+				</scene>
+				<scene>
+					<screens>
+						<screen>
+							<type>Summary</type>
+						</screen>
+						<screen>
+							<type>Transition: Progress Options</type>
+						</screen>
+					</screens>
+				</scene>
+			</scenes>
+		</act>
+	</acts>
+</gameTemplate>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Characters>
+   <Interlocutor>
+      <Directory>character_1</Directory>
+      <Name>Chareeeesa</Name>
+      <Prefix>char1</Prefix>
+   </Interlocutor>
+   <Protagonist>
+      <Directory>character_16</Directory>
+      <Name>Lady Helpsalot</Name>
+      <Prefix>char16</Prefix>
+   </Protagonist>
+   <Antagonist>
+      <Directory>character_17</Directory>
+      <Name>Askalot</Name>
+      <Prefix>char17</Prefix>
+   </Antagonist>
+   <Player>
+      <Directory>character_18</Directory>
+      <Name>Siva</Name>
+      <Prefix>char18</Prefix>
+   </Player>
+</Characters>

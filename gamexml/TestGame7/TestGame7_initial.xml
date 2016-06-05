@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Top Level Game -->
+<!-- Test Game 1 contains 1 act, 1 scene and 2 screens -->
+<Game>
+  <Act>
+    <Transition>straightCut</Transition>
+    <Sequence>
+      <SequenceNumber>1</SequenceNumber>
+    </Sequence>
+    <LearningObjective>
+      <LearningObjective>Learning Objective for Act</LearningObjective>
+    </LearningObjective>
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>1</SequenceNumber>
+        <NextSequence>0</NextSequence>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <LastQuestion>8</LastQuestion>
+
+        <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+          <Introduction>
+            <IntroductionName>Sample Content</IntroductionName>
+          </Introduction>
+          <Image>char9_StandClosed.png</Image>
+          <Item>
+            <Stem>
+              <StemText>
+                <Text>
+                  <Text>The designers need to use a complex AI algorithm that is available as a 3rd party component with an API. The designers know there are a number of possible components available on marketplace, which are undergoing extensive performance evaluations.</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemText>
+              <StemQuestion>
+                <Text>
+                  <Text>Which Design Pattern would be suitable to reduce the impact of this eventual recommendation?</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemQuestion>
+            </Stem>
+
+            <Option>
+              <Text>
+                <Text>Strategy Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>2</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Bridge Pattern</Feedback>
+              <Hint>
+                <Hint>The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable; algorithms are selected at runtime. It is a behavioral pattern.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Bridge Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>500</Points>
+                <NextQuestion>3</NextQuestion>
+                <PromotionDemotion>Junior Programmer</PromotionDemotion>
+              </Reward>
+              <Assessment>correct</Assessment>
+              <Feedback>The Bridge Pattern is Correct!</Feedback>
+              <Hint>
+                <Hint>The Bridge Pattern decouples an interface and its implementation. The implementation can be modified without changing the interface. It is a structural pattern.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Factory Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>2</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Bridge Pattern1</Feedback>
+              <Hint>
+                <Hint>The Factory Pattern defines an interface for creating an object, but lets the classes that implement the interface decide which class to instantiate.  It is a creational pattern.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Singleton Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>2</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Bridge Pattern</Feedback>
+              <Hint>
+                <Hint>The Singleton Pattern that restricts the instantiation of a class to only one object. It is a creational pattern.</Hint>
+              </Hint>
+            </Option>
+          </Item>
+          <Layout> </Layout>
+          <Summary>
+            <SummaryName>Sample End</SummaryName>
+          </Summary>
+
+        </Challenge>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>345</x>
+            <y>475</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Submit</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>AddQuizPoints</Action>
+          </Behavior>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.2</Action>
+          </Behavior>
+
+        </GameElement>
+      </Screen>
+
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <LastQuestion>0</LastQuestion>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>580</x>
+            <y>230</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>75</height>
+          </Size>
+          <Text>
+            <Text>Screen 2</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>581</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Continue ...</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.3</Action>
+          </Behavior>
+        </GameElement>
+
+      </Screen>
+
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>3</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <LastQuestion>1</LastQuestion>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>580</x>
+            <y>230</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>75</height>
+          </Size>
+          <Text>
+            <Text>Screen 3</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>581</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Continue ...</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.4</Action>
+          </Behavior>
+        </GameElement>
+
+      </Screen>
+
+
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>4</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <LastQuestion>0</LastQuestion>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>150</x>
+            <y>252</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+
+
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>581</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>End Game</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>endGameBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+
+      </Screen>
+      <Background>
+        <Background>blue_bg.png</Background>
+      </Background>
+
+    </Scene>
+  </Act>
+  <LearningObjective>
+    <LearningObjective>Learning Objective for Game</LearningObjective>
+  </LearningObjective>
+
+
+  <Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Player">
+    <Name> Default Player </Name>
+    <AutonomousBehavior>Behavior</AutonomousBehavior>
+    <Profile>
+      <ProfilePhoto>character_4\char4_RPointUp.png</ProfilePhoto>
+      <Title> Intern, Software Engineering </Title>
+      <Skills> Software Engineering, Project Management, Configuration Management </Skills>
+      <YearsOfExperience> 1 </YearsOfExperience>
+      <Degrees> NONE </Degrees>
+      <Level> Female </Level>
+    </Profile>
+    <Rewards>
+      <Points>1000</Points>
+    </Rewards>
+    <PlayerID>Player 1</PlayerID>
+  </Character>
+
+  <Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="NonPlayer">
+    <Name>Ima Coder</Name>
+    <AutonomousBehavior>Behavior</AutonomousBehavior>
+    <Profile>
+      <ProfilePhoto>character_9\char9_StandSmileOpen.png</ProfilePhoto>
+      <Title> Instructor </Title>
+      <Skills> Software Engineering, Project Management, Configuration Management </Skills>
+      <YearsOfExperience> 1 </YearsOfExperience>
+      <Degrees> NONE </Degrees>
+      <Level>L0</Level>
+    </Profile>
+    <Rewards>
+      <Points>3000</Points>
+      <Trophies>None</Trophies>
+      <Certificates>Microsoft Sql Certification,Java Sun Certification</Certificates>
+
+    </Rewards>
+    <PlayerID>Player 1</PlayerID>
+  </Character>
+
+</Game>

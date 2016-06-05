@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Top level game -->
+<game>
+<!-- Test Game 5 contains 2 acts, one default character and one non playing character -->
+<!-- -->
+<!-- -->
+<!-- Test game 5 has a default player who is intialized with 1000 points -->
+	<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:type="PLAYER">
+	<location>OSR</location>
+	<size>LARGE</size>
+		<profile>
+			<name> Default Player </name>
+			<type> Protagonist </type>
+			<title> Intern, Software Engineering </title>
+			<skills> Software Engineering, Project Management, Configuration Management </skills>
+			<experience> 0 </experience>
+			<communication> Good </communication>
+			<leadership> Good </leadership>
+			<teamwork> Good </teamwork>
+			<demographics> Male, Caucasian </demographics>
+			<degrees> NONE </degrees>			
+		</profile>		
+		<reward>
+			<certificates>0</certificates>
+			<hint>0</hint>
+			<points>1000</points>
+			<promotions>0</promotions>
+			<trophies>0</trophies>			
+		</reward>
+	</gameElement>
+
+<!-- Test game 5 also has a non player character i.e., the instructor Ima Coder -->
+	<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:type="NONPLAYER">
+	<location>OSR</location>
+	<size>LARGE</size>
+		<profile>
+			<name> Ima Coder </name>
+			<id> Character1 </id>
+			<type> NonPlayer </type>
+			<title> Instructor </title>
+			<skills> Software Engineering, Project Management, Capstone Project courses </skills>
+			<experience> 5 </experience>
+			<communication> Excellent </communication>
+			<leadership> Excellent </leadership>
+			<teamwork> Excellent </teamwork>
+			<demographics> Female, Caucasian </demographics>
+			<degrees> B.Sc., Computer Science, Stanford University, Ph.D.  Computer Science, Stanford University </degrees>			
+		</profile>	
+		</gameElement>
+<!-- -->
+<!-- -->
+<!-- The following section defines the constant values in the test game 5 -->
+<gameConstants>
+	<timer name="QUICK">
+		<value>1000</value>
+	</timer>
+	<timer name="SCREEN_MEDIUM">
+		<value>1500</value>
+	</timer>
+	<timer name="SCENE_LONG">
+		<value>3500</value>
+	</timer>
+</gameConstants>
+
+	<!-- 		-->
+	<!-- The Structural description of the game starts here-->
+	<!-- 		-->
+
+
+	<actStructure>
+		<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IDENTIFIER">
+		<id> act1 </id>
+		</gameElement>
+		<sceneStructure>			
+			<identifier> scene1 </identifier>									
+			<backdrop>blue_bg.png</backdrop> 
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>InformationBox</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+								<action> SHOW </action>
+							</event>
+							<event>
+								<eventName>ENDSCREEN</eventName>
+								<animation>FADEOUT</animation>
+								<time>QUICK</time>
+								<action> HIDE </action>
+							</event>	
+							<typeName>Button1</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+							<event>
+								<eventName>CLICK</eventName>
+								<animation>FADEOUT</animation>
+								<time>QUICK</time>
+							</event>						
+						</type>
+						<behavior> NONE </behavior>
+							<color>YELLOW</color>
+							<location>CC</location>
+							<size>LARGE</size>						
+							<text>Welcome! Test Game 5</text>	
+							
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen2 </id>
+						</gameElement>	
+						<type>
+							<typeName>InformationBox</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+								<action> SHOW </action>
+							</event>
+							<event>
+								<eventName>ENDSCREEN</eventName>
+								<animation>FADEOUT</animation>
+								<time>QUICK</time>
+								<action> HIDE </action>
+							</event>							
+						</type>
+							<behavior> NONE </behavior>
+							<color>YELLOW</color>
+							<location>C</location>
+							<size>MEDIUM</size>
+							<text> A SoftiCorp Game </text>
+					</gameElement>
+				</screenStructure>
+			</sceneStructure>
+			
+			<sceneStructure>
+				    <identifier> scene2 </identifier>									
+			        <backdrop>CollegeBuilding.png</backdrop> 
+			<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_StandClosed.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+													
+						</type>
+						<behavior> NONE </behavior>
+							<location>UUR</location>
+									
+					 						
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRClosed.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+												
+						</type>
+						<location>T</location>
+								
+					</gameElement>
+				</screenStructure>
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRBehind.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+												
+						</type>
+						
+							<location>H</location>
+									
+					 						
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRClosed.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+													
+						</type>
+						
+							<location>Y</location>
+									
+					 						
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRBehind.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+													
+						</type>
+						
+							<location>A</location>
+									
+					 						
+					</gameElement>
+				</screenStructure>
+						
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRClosed.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+													
+						</type>
+						
+							<location>G</location>
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRBehind.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+												
+						</type>
+						
+							<location>U</location>
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRClosed.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+													
+						</type>
+						
+							<location>RI</location>
+					</gameElement>
+				</screenStructure>
+						
+						<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRBehind.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+												
+						</type>
+						
+							<location>TH</location>
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRClosed.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+													
+						</type>
+						
+							<location>IKA</location>
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRBehind.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+													
+						</type>
+						
+							<location>BI</location>
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRClosed.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+									
+						</type>
+						
+							<location>JU</location>
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRBehind.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+											
+						</type>
+						
+							<location>LA</location>
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRClosed.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+												
+						</type>
+						
+							<location>I</location>
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRBehind.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+												
+						</type>
+						
+							<location>S</location>
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRClosed.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+											
+						</type>
+						
+							<location>AA</location>
+					</gameElement>
+				</screenStructure>
+				
+				<screenStructure>				
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>	
+						<type>
+							<typeName>Char2_WalkRBehind.png</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>
+							</event>
+												
+						</type>
+						
+							<location>CC</location>
+					</gameElement>
+				</screenStructure>
+				
+					
+				<screenStructure>
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen3 </id>
+						</gameElement>
+						<type>
+							<typeName>char2_StandClosed.png</typeName>				
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>QUICK</time>								
+								<size>LARGE</size>
+															
+							</event>
+							<event>
+								<eventName>Hover</eventName>
+								<animation>NONE</animation>
+								<element>MessageBox</element>
+								<location>UC</location>
+							<text>
+								<name> Ima Coder </name>
+								<id> Character1 </id>
+								<type> NonPlayer </type>
+								<title> Instructor </title>
+								<skills> Software Engineering, Project Management, Capstone Project courses </skills>
+								<experience> 5 </experience>
+								<communication> Excellent </communication>
+								<leadership> Excellent </leadership>
+								<teamwork> Excellent </teamwork>
+								<demographics> Female, Caucasian </demographics>
+								<degrees> B.Sc., Computer Science, Stanford University, Ph.D.  Computer Science, Stanford University </degrees>		 
+							</text>
+							</event>	
+						</type>
+						<location>CC</location>
+				</gameElement>			
+			</screenStructure>
+								
+		
+			</sceneStructure>
+												
+			</actStructure>
+			
+	
+	
+		<actStructure>
+			
+	 	<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IDENTIFIER">
+			<id> act2 </id>
+			</gameElement>
+			<sceneStructure>			
+				<identifier> scene1 </identifier>									
+					<backdrop>blue_bg.png</backdrop>
+					<screenStructure>
+					<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen1 </id>
+						</gameElement>
+						<type>
+						<typeName>InformationBox</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>SCREEN_MEDIUM</time>
+							</event>
+							<event>
+								<eventName>ENDGAME</eventName>
+								<animation>NONE</animation>
+								<time>SCREEN_MEDIUM</time>								
+							</event>
+							
+						</type>
+						<color>YELLOW</color>
+							<location>UC</location>
+							<size>MEDIUM</size>
+							<text> Thank you for playing Test Game 5! </text>					
+							<textSize>14</textSize>	
+							<font>Aerial</font>
+							<next>screen2</next>next>
+						<!-- The below text is presented on the button1 -->
+						
+				</gameElement> 
+			</screenStructure> 
+			
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen2 </id>
+						</gameElement>
+						<!-- -->
+						<!-- The Stop method to stop the all the acts, scenes and screens is 
+							called when the player clicks on button1 to stop the game -->
+						<!-- -->
+						<behavior>End</behavior>
+						<type>
+							<typeName>Button2</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>SCREEN_MEDIUM</time>
+							</event>
+							<event>
+								<eventName>CLICK</eventName>
+								<animation>NONE</animation>
+								<time>SCREEN_MEDIUM</time>								
+							</event>
+                             
+						</type>
+						<color>YELLOW</color>
+						<location>LC</location>
+						<size>SMALL</size>
+						<!-- -->
+						<!-- The below text is presented on the button1 -->
+						<!-- -->
+						<text>End.. </text>
+						<textSize>12</textSize>
+					    <font>Aerial</font>
+					    <next>End Game</next>						
+					</gameElement>
+			</screenStructure>
+			
+			</sceneStructure>
+		</actStructure>
+	</game>
+

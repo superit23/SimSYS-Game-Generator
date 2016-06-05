@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Top Level Game -->
+<!-- Test Game 1 contains 1 act, 1 scene and 2 screens -->
+<Game>
+
+  <!--  ACT 1 BEGINS HERE  -->
+
+  <Act>
+    <Transition>straightCut</Transition>
+    <Sequence>
+      <SequenceNumber>1</SequenceNumber>
+    </Sequence>
+    <LearningObjective>
+      <LearningObjective>Learning Objective for Act</LearningObjective>
+    </LearningObjective>
+
+    <!--  SCENE 1 BEGINS HERE  -->
+
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>1</SequenceNumber>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+
+      <!--  SCENE 1 SCREEN 1 BEGINS HERE  -->
+
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+          <NextSequence>2</NextSequence>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        
+        <NpcCorrect>2</NpcCorrect>
+        <NpcIncorrect>2</NpcIncorrect>
+
+        <!--  CHALLENGE BEGINS HERE  -->
+
+        <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+          <Introduction>
+            <IntroductionName>Sample Content</IntroductionName>
+          </Introduction>
+
+          <!--  Character Images that appear on screen  -->
+          <!-- <Image>char17_SitHappyChairD.png,char6_SitHappyChairD.png</Image> -->
+          <Characters>Nimesis,Default Player</Characters>
+
+          <Item>
+            <!--  Question  -->
+            <Stem>
+              <StemText>
+                <Text>
+                  <Text>1. The designers need to use a complex AI algorithm that is available as a 3rd party component with an API. The designers know there are a number of possible components available on marketplace, which are undergoing extensive performance evaluations.</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemText>
+              <StemQuestion>
+                <Text>
+                  <Text>Which Design Pattern would be suitable to reduce the impact of this eventual recommendation?</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemQuestion>
+            </Stem>
+
+            <!--  Option 1  -->
+            <Option>
+              <Text>
+                <Text>Strategy Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>2</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Bridge Pattern</Feedback>
+              <Hint>
+                <Hint>The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable; algorithms are selected at runtime. It is a behavioral pattern.</Hint>
+              </Hint>
+            </Option>
+
+            <!--  Option 2  -->
+            <Option>
+              <Text>
+                <Text>Bridge Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>500</Points>
+                <NextQuestion>2</NextQuestion>
+                <PromotionDemotion>Junior Programmer</PromotionDemotion>
+              </Reward>
+              <Assessment>correct</Assessment>
+              <Feedback>The Bridge Pattern is Correct!</Feedback>
+              <Hint>
+                <Hint>The Bridge Pattern decouples an interface and its implementation. The implementation can be modified without changing the interface. It is a structural pattern.</Hint>
+              </Hint>
+            </Option>
+
+            <!--  Option 3  -->
+            <Option>
+              <Text>
+                <Text>Factory Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>2</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Bridge Pattern1</Feedback>
+              <Hint>
+                <Hint>The Factory Pattern defines an interface for creating an object, but lets the classes that implement the interface decide which class to instantiate.  It is a creational pattern.</Hint>
+              </Hint>
+            </Option>
+
+            <!--  Option 4  -->
+            <Option>
+              <Text>
+                <Text>Singleton Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>2</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Bridge Pattern</Feedback>
+              <Hint>
+                <Hint>The Singleton Pattern that restricts the instantiation of a class to only one object. It is a creational pattern.</Hint>
+              </Hint>
+            </Option>
+          </Item>
+          <Layout> </Layout>
+          <Summary>
+            <SummaryName>Sample End</SummaryName>
+          </Summary>
+          
+        </Challenge>
+
+        <!--  END CHALLENGE  -->
+
+        <!--  Submit Button -->
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>345</x>
+            <y>475</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Submit</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>AddQuizPoints</Action>
+          </Behavior>
+          
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.2</Action>
+          </Behavior>
+
+        </GameElement>
+
+        <!--  End Submit Button  -->
+
+      </Screen>
+
+      <!--  END SCENE 1 SCREEN 1  -->
+
+      <Background>
+        <Background>Classroom_2.png</Background>
+      </Background>
+
+      <!--  SCENE 1 SCREEN 2 BEGINS HERE  -->
+
+      <Screen>
+        
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <!-- <Name>char17_SitHappyChairD.png,char6_SitHappyChairD.png</Name> -->
+          <Name>Nimesis,Default Player</Name>
+          <Location>
+            <x>-45</x>
+            <y>180</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>160</height>
+          </Size>
+          <Behavior>
+            <BehaviorType>visibilityBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your final points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>240</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's final points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>425</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>End Game</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>endGameBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      
+      </Screen>
+
+      <!--  END SCENE 1 SCREEN 2  -->
+
+    </Scene>
+
+    <!--  END SCENE 1  -->
+
+  </Act>
+  <LearningObjective>
+    <LearningObjective>Learning Objective for Game</LearningObjective>
+  </LearningObjective>
+
+  <!--  Nimesis  -->
+  <Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="NonPlayer">
+    <Name>Nimesis</Name>
+    <AutonomousBehavior>Behavior</AutonomousBehavior>
+    <Profile>
+      <ProfilePhoto>character_9\char9_StandSmileOpen.png</ProfilePhoto>
+      <Title> Rival </Title>
+      <Skills> Software Engineering, Project Management, Configuration Management </Skills>
+      <YearsOfExperience> 1 </YearsOfExperience>
+      <Degrees> NONE </Degrees>
+      <Level>L0</Level>
+    </Profile>
+    <Rewards>
+      <Points>3000</Points>
+      <Trophies>None</Trophies>
+      <Certificates>Microsoft Sql Certification,Java Sun Certification</Certificates>
+    </Rewards>
+    <NonPlayerID>Player 2</NonPlayerID>
+    <Attributes>
+      <Mood>
+      	<Value>50</Value>
+      	<VerySad>char17_SitCurseChairD.png</VerySad>
+      	<Sad>char17_SitGaspChairD.png</Sad>
+      	<Neutral>char17_SitNeutralChairD.png</Neutral>
+      	<Happy>char17_SitSmileChairD.png</Happy>
+      	<VeryHappy>char17_SitHappyChairD.png</VeryHappy>
+      </Mood>
+      <Charisma>50</Charisma>
+      <Skill>30</Skill>
+      <Resilience>10</Resilience>
+    </Attributes>
+  </Character>
+
+  <!--  User  -->
+  <Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Player">
+    <Name>Default Player</Name>
+    <AutonomousBehavior>Behavior</AutonomousBehavior>
+    <Profile>
+      <ProfilePhoto>character_4\char4_RPointUp.png</ProfilePhoto>
+      <Title> Intern, Software Engineering </Title>
+      <Skills> Software Engineering, Project Management, Configuration Management </Skills>
+      <YearsOfExperience> 1 </YearsOfExperience>
+      <Degrees> NONE </Degrees>
+      <Level>L0</Level>
+    </Profile>
+    <Rewards>
+      <Points>1000</Points>
+    </Rewards>
+    <PlayerID>Player 1</PlayerID>
+    <Attributes>
+      <Mood>
+		<Value>50</Value>
+      	<VerySad>char6_SitCurseChairD.png</VerySad>
+      	<Sad>char6_SitGaspChairD.png</Sad>
+      	<Neutral>char6_SitNeutralChairD.png</Neutral>
+      	<Happy>char6_SitSmileChairD.png</Happy>
+      	<VeryHappy>char6_SitHappyChairD.png</VeryHappy>
+	  </Mood>
+      <Charisma>75</Charisma>
+      <Skill>10</Skill>
+      <Resilience>30</Resilience>
+    </Attributes>
+  </Character>
+
+</Game>

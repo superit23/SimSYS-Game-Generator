@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Top Level Game -->
+<game>
+<!-- Test Game2 contains 3 acts and one default character -->
+<!--**FINALIZED	-->
+<!-- 		-->
+
+<!-- The game contains a default player who is rewarded with 5000 points after playing the game -->
+	<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:type="PLAYER">
+	<location>OSR</location>
+	<size>LARGE</size>
+	<!--		-->
+	<!-- The profile of the player starts here -->	
+	<!--		-->
+		<profile>
+			<name> Default Player </name>
+			<type> Protagonist </type>
+			<title> Intern, Software Engineering </title>
+			<skills> Software Engineering, Project Management, Configuration Management </skills>
+			<experience> 0 </experience>
+			<communication> Good </communication>
+			<leadership> Good </leadership>
+			<teamwork> Good </teamwork>
+			<demographics> Male, Caucasian </demographics>
+			<degrees> NONE </degrees>			
+		</profile>	
+		<reward>
+			<certificates>0</certificates>
+			<hint>0</hint>
+	<!--		-->
+	<!-- The player initally has 1000 points -->
+	<!--		-->
+			<points>1000</points>
+			<promotions>0</promotions>
+			<trophies>0</trophies>			
+		</reward>
+	</gameElement>
+<!-- 		-->
+<!-- 		-->
+<!-- The following section defines the constant values in the test game 2 -->
+<gameConstants>
+	<timer name="NONE">
+		<value>0</value>
+	</timer>
+	<timer name="QUICK">
+		<value>3000</value>
+	</timer>
+	<timer name="MODERATE">
+		<value>5000</value>
+	</timer>
+	<timer name="LONG">
+		<value>7000</value>
+	</timer>
+	
+</gameConstants>
+
+	<!-- The static structure of the game starts here -->
+	<!--        -->
+	<!--        -->
+	<actStructure>
+		
+			<id> act1 </id>
+		<!--     	-->
+		<!-- The scenes below are identified by 'act1' and display their respective backdrops -->
+		<!--     	-->
+		<!-- Act1 has three scenes and are identified as Scene1, Scene2 and Scene3 -->
+		<!--		-->
+		<sceneStructure>
+			
+				<identifier> scene1 </identifier>						
+				<backdrop>white-BG.jpg</backdrop>			
+			<!--		-->
+			<!-- The screens below present their respective information boxes that have a specific color and are displayed for a specific time depending on the act they belong to -->
+			<!--		-->
+			<screenStructure>
+			<!--		-->
+			<!-- The below game elements represent the Screen1, Screen2 and Screen3 of Scene1 in Act1 -->
+			<!--		-->
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen1 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox1</typeName>
+				<event>
+						<eventName>NONE</eventName>
+						<animation>FADEIN</animation>
+						<time>QUICK</time>
+				</event>
+				</type>	
+				<color>LIGHT_BLUE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>			 
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen2 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox2</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>QUICK</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>BLUE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen3 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox3</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>QUICK</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>DARK_BLUE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+		</screenStructure>
+		</sceneStructure>
+		
+		<sceneStructure>
+			
+				<identifier> scene2 </identifier>						
+				<backdrop>medGrey-BG.jpg</backdrop>			
+			<!--		-->
+			<!-- The screens below present their respective information boxes that have a specific color and are displayed for a specific time depending on the act they belong to -->
+			<!--		-->
+			<screenStructure>
+			<!--		-->
+			<!-- The below game elements represent the Screen1, Screen2 and Screen3 of Scene1 in Act1 -->
+			<!--		-->
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen1 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox1</typeName>
+				<event>
+						<eventName>NONE</eventName>
+						<animation>FADEIN</animation>
+						<time>QUICK</time>
+				</event>
+				</type>	
+				<color>LIGHT_TURQUOISE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>			 
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen2 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox2</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>QUICK</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>TURQUOISE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen3 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox3</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>QUICK</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>DARK_TURQUOISE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+		</screenStructure>
+		</sceneStructure>
+		<sceneStructure>
+			
+				<identifier> scene3 </identifier>						
+				<backdrop>bkgrnd.png</backdrop>			
+			<!--		-->
+			<!-- The screens below present their respective information boxes that have a specific color and are displayed for a specific time depending on the act they belong to -->
+			<!--		-->
+			<screenStructure>
+			<!--		-->
+			<!-- The below game elements represent the Screen1, Screen2 and Screen3 of Scene1 in Act1 -->
+			<!--		-->
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen1 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox1</typeName>
+				<event>
+						<eventName>NONE</eventName>
+						<animation>FADEIN</animation>
+						<time>QUICK</time>
+				</event>
+				</type>	
+				<color>LIGHT_PURPLE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>			 
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen2 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox2</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>QUICK</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>PURPLE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen3 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox3</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>QUICK</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>DARK_PURPLE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+		</screenStructure>
+		</sceneStructure>
+		</actStructure>
+		
+	<actStructure>
+		
+			<id> act2 </id>
+		<!--     	-->
+		<!-- The scenes below are identified by 'act1' and display their respective backdrops -->
+		<!--     	-->
+		<!-- Act1 has three scenes and are identified as Scene1, Scene2 and Scene3 -->
+		<!--		-->
+		<sceneStructure>
+			
+				<identifier> scene1 </identifier>						
+				<backdrop>black-BG.jpg</backdrop>			
+			<!--		-->
+			<!-- The screens below present their respective information boxes that have a specific color and are displayed for a specific time depending on the act they belong to -->
+			<!--		-->
+			<screenStructure>
+			<!--		-->
+			<!-- The below game elements represent the Screen1, Screen2 and Screen3 of Scene1 in Act1 -->
+			<!--		-->
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen1 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox1</typeName>
+				<event>
+						<eventName>NONE</eventName>
+						<animation>FADEIN</animation>
+						<time>MODERATE</time>
+				</event>
+				</type>	
+				<color>LIGHT_RED</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>			 
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen2 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox2</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>MODERATE</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>RED</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen3 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox3</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>MODERATE</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>DARK_RED</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+		</screenStructure>
+		</sceneStructure>
+		<sceneStructure>
+			
+				<identifier> scene2 </identifier>						
+				<backdrop>lightGrey.jpg</backdrop>			
+			<!--		-->
+			<!-- The screens below present their respective information boxes that have a specific color and are displayed for a specific time depending on the act they belong to -->
+			<!--		-->
+			<screenStructure>
+			<!--		-->
+			<!-- The below game elements represent the Screen1, Screen2 and Screen3 of Scene1 in Act1 -->
+			<!--		-->
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen1 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox1</typeName>
+				<event>
+						<eventName>NONE</eventName>
+						<animation>FADEIN</animation>
+						<time>MODERATE</time>
+				</event>
+				</type>	
+				<color>LIGHT_PINK</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>			 
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen2 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox2</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>MODERATE</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>PINK</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen3 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox3</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>MODERATE</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>DARK_PINK</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+		</screenStructure>
+		</sceneStructure>
+		<sceneStructure>
+			
+				<identifier> scene3 </identifier>						
+				<backdrop>black-BG.jpg</backdrop>			
+			<!--		-->
+			<!-- The screens below present their respective information boxes that have a specific color and are displayed for a specific time depending on the act they belong to -->
+			<!--		-->
+			<screenStructure>
+			<!--		-->
+			<!-- The below game elements represent the Screen1, Screen2 and Screen3 of Scene1 in Act1 -->
+			<!--		-->
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen1 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox1</typeName>
+				<event>
+						<eventName>NONE</eventName>
+						<animation>FADEIN</animation>
+						<time>MODERATE</time>
+				</event>
+				</type>	
+				<color>LIGHT_ORANGE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>			 
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen2 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox2</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>MODERATE</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>ORANGE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen3 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox3</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>MODERATE</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>DARK_ORANGE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+		</screenStructure>
+		</sceneStructure>
+		</actStructure>
+		<actStructure>
+		
+			<id> act3 </id>
+		<!--     	-->
+		<!-- The scenes below are identified by 'act1' and display their respective backdrops -->
+		<!--     	-->
+		<!-- Act1 has three scenes and are identified as Scene1, Scene2 and Scene3 -->
+		<!--		-->
+		<sceneStructure>
+			
+				<identifier> scene1 </identifier>						
+				<backdrop>white-BG.jpg</backdrop>			
+			<!--		-->
+			<!-- The screens below present their respective information boxes that have a specific color and are displayed for a specific time depending on the act they belong to -->
+			<!--		-->
+			<screenStructure>
+			<!--		-->
+			<!-- The below game elements represent the Screen1, Screen2 and Screen3 of Scene1 in Act1 -->
+			<!--		-->
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen1 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox1</typeName>
+				<event>
+						<eventName>NONE</eventName>
+						<animation>FADEIN</animation>
+						<time>LONG</time>
+				</event>
+				</type>	
+				<color>LIGHT_YELLOW</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>			 
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen2 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox2</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>LONG</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>YELLOW</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen3 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox3</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>LONG</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>DARK_YELLOW</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+		</screenStructure>
+		</sceneStructure>
+		<sceneStructure>
+			
+				<identifier> scene2 </identifier>						
+				<backdrop>darkGrey.jpg</backdrop>			
+			<!--		-->
+			<!-- The screens below present their respective information boxes that have a specific color and are displayed for a specific time depending on the act they belong to -->
+			<!--		-->
+			<screenStructure>
+			<!--		-->
+			<!-- The below game elements represent the Screen1, Screen2 and Screen3 of Scene1 in Act1 -->
+			<!--		-->
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen1 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox1</typeName>
+				<event>
+						<eventName>NONE</eventName>
+						<animation>FADEIN</animation>
+						<time>LONG</time>
+				</event>
+				</type>	
+				<color>LIGHT_PEACH</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>			 
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen2 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox2</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>LONG</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>MEDIUM_PEACH</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen3 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox3</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>LONG</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>DARK_PEACH</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+		</screenStructure>
+		</sceneStructure>
+		<sceneStructure>
+			
+				<identifier> scene3 </identifier>						
+				<backdrop>black-BG.jpg</backdrop>			
+			<!--		-->
+			<!-- The screens below present their respective information boxes that have a specific color and are displayed for a specific time depending on the act they belong to -->
+			<!--		-->
+			<screenStructure>
+			<!--		-->
+			<!-- The below game elements represent the Screen1, Screen2 and Screen3 of Scene1 in Act1 -->
+			<!--		-->
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen1 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox1</typeName>
+				<event>
+						<eventName>NONE</eventName>
+						<animation>FADEIN</animation>
+						<time>LONG</time>
+				</event>
+				</type>	
+				<color>LIGHT_ORANGE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>			 
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen2 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox2</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>LONG</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>ORANGE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+			</screenStructure>
+			<screenStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="prop">
+				<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen3 </id>
+						</gameElement>
+				<type>
+				<typeName>InformationBox3</typeName>
+				<event>
+					<eventName>NONE</eventName>
+					<animation>NONE</animation>
+					<time>LONG</time>
+					<action>NONE</action>
+				</event>
+				</type>
+				<color>DARK_ORANGE</color>
+				<location>C</location>
+				<size>MEDIUM</size>				
+				<textSize>12</textSize>
+				<font>Aerial</font>
+			</gameElement>
+		</screenStructure>
+		</sceneStructure>
+		</actStructure>
+</game>
+

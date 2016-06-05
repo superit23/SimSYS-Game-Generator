@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<suggQuestion>
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a word problem</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>If there are three people how many feet are there?</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Odd</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>4</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>6</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>42</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Deliberation</Classification>
+            </Challenge>
+
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a word problem</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>If Ryan has three brothers and each have three sons, how many nephews does he have?</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Even</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>9</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>6</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>27</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Deliberation</Classification>
+            </Challenge>
+
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a word problem</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>David has 50 apples, 40 plums, and 10 pears. How many fruit does he have?</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Odd</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>100</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>1000</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>256</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Deliberation</Classification>
+            </Challenge>
+
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a word question</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>Lucy had 100 dollars but spent 19 on movie tickets. How much money does she have left?</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Even</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>21</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>81</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>42</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Deliberation</Classification>
+            </Challenge>
+
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a word question</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>Jen has 5 nickels. How much change does she have?</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Even</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>4</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>6</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>25</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Deliberation</Classification>
+            </Challenge>
+
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a word question</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>There are 10 pieces of pie and 5 people. How many slices does each person get?</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Odd</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>2</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>6</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>42</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Deliberation</Classification>
+            </Challenge>
+</suggQuestion>

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Top Level Game -->
+<!-- Test Game 1 contains 1 act, 1 scene and 2 screens -->
+<Game>
+  <Act>
+    <Transition>straightCut</Transition>
+    <Sequence>
+      <SequenceNumber>1</SequenceNumber>
+    </Sequence>
+    <LearningObjective>
+      <LearningObjective>Learning Objective for Act</LearningObjective>
+    </LearningObjective>
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>1</SequenceNumber>
+        <NextSequence>0</NextSequence>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>
+          Learning Objective for Scene
+        </LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>500</x>
+            <y>150</y>
+          </Location>
+          <Size>
+            <width>250</width>
+            <height>75</height>
+          </Size>
+          <Text>
+            <Text>Play to Win with Audio</Text>
+            <Font>Aerial</Font>
+            <FontSize>24</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>AddPoints.1000</Action>
+          </Behavior>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.2</Action>
+          </Behavior>
+          <SoundEffect>clang.wav</SoundEffect>
+          <AnimationEffect>
+            <Effect>FADEINEFFECT</Effect>
+
+          </AnimationEffect>
+
+        </GameElement>
+
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>450</x>
+            <y>100</y>
+          </Location>
+          <Size>
+            <width>250</width>
+            <height>75</height>
+          </Size>
+          <Text>
+            <Text>You Won!!! Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Green</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>500</x>
+            <y>200</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>End Game</Text>
+            <Font>Aerial</Font>
+            <FontSize>24</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>endGameBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+
+      </Screen>
+      <Background>
+        <Background>blue_bg.png</Background>
+      </Background>
+      <Music>
+        <Music>PianoRoll1.mid</Music>
+      </Music>
+    </Scene>
+  </Act>
+  <LearningObjective>
+    <LearningObjective>
+      Learning Objective for Game
+    </LearningObjective>
+  </LearningObjective>
+
+
+  <Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Player">
+    <Name> Default Player </Name>
+    <AutonomousBehavior>Behavior</AutonomousBehavior>
+    <Profile>
+      <ProfilePhoto>character_4\char4_RPointUp.png</ProfilePhoto>
+      <Title> Intern, Software Engineering </Title>
+      <Skills> Software Engineering, Project Management, Configuration Management </Skills>
+      <YearsOfExperience> 1 </YearsOfExperience>
+      <Level> Female </Level>
+      <Degrees> NONE </Degrees>
+    </Profile>
+    <Rewards>
+      <Points>1500</Points>
+    </Rewards>
+    <PlayerID>Player 1</PlayerID>
+  </Character>
+
+</Game>

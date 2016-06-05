@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<charList>
+	<characters>
+		<character name = "Sneaky Jimmy">    
+			<fileName>character_15/char15_SitCurseChairD.png</fileName>
+			<CharacterName>Sneaky Jimmy</CharacterName>
+			<AutonomousBehavior>None</AutonomousBehavior>
+			<Rewards>Nothing</Rewards>
+			<Profile>
+				<ProfilePhoto>none</ProfilePhoto>
+				<Title>Mr</Title>
+				<YearsOfExperience>12</YearsOfExperience>
+				<Skills>
+					<Skill>Great Divider</Skill>
+					<Skill>Great Adder</Skill>
+				</Skills>
+				<Demographics>
+					<Demographic>American</Demographic>
+					<Demographic>Chicago</Demographic>
+				</Demographics>
+				<Degrees>
+					<Degree>Mathematics</Degree>
+					<Degree>Business Administration</Degree>
+				</Degrees>
+			</Profile>
+			<type>Trickster</type>
+		</character>
+		<character name = "Allen">    
+			<fileName>character_21/char21_SitCurseChairD.png</fileName>
+			<CharacterName>Allen</CharacterName>
+			<AutonomousBehavior>none</AutonomousBehavior>
+			<Rewards>none</Rewards>
+			<Profile>
+				<ProfilePhoto>none</ProfilePhoto>
+				<Title>Mr</Title>
+				<YearsOfExperience>15</YearsOfExperience>
+				<Skills>
+					<Skill>Great At Subtraction</Skill>
+					<Skill>Great Team Skills</Skill>
+				</Skills>
+				<Demographics>
+					<Demographic>Italian</Demographic>
+					<Demographic>Rome</Demographic>
+				</Demographics>
+				<Degrees>
+					<Degree>Communications</Degree>
+					<Degree>Public Relations</Degree>
+				</Degrees>
+			</Profile>
+			<type>Prop</type>
+		</character>
+		<character name = "Ms. Applewood">    
+			<fileName>character_13/char13_SitCurseChairD.png</fileName>
+			<CharacterName>Applewood</CharacterName>
+			<AutonomousBehavior>none</AutonomousBehavior>
+			<Rewards>none</Rewards>
+			<Profile>
+				<ProfilePhoto>none</ProfilePhoto>
+				<Title>Ms</Title>
+				<YearsOfExperience>18</YearsOfExperience>
+				<Skills>
+					<Skill>Team Leader</Skill>
+					<Skill>Responsible</Skill>
+				</Skills>
+				<Demographics>
+					<Demographic>British</Demographic>
+					<Demographic>London</Demographic>
+				</Demographics>
+				<Degrees>
+					<Degree>Biology</Degree>
+					<Degree>Pyschology</Degree>
+				</Degrees>
+			</Profile>
+			<type>Interlocutor</type>
+		</character>
+	</characters>
+</charList>

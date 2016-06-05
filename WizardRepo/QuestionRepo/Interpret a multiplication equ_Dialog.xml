@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<suggQuestion>
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a multiplication question</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>2*2=?</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Odd</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>4</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>6</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>42</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Dialog</Classification>
+            </Challenge>
+
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a multiplication question</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>3*3=?</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Even</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>9</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>6</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>27</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Dialog</Classification>
+            </Challenge>
+
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a multiplication question</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>10*10</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Odd</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>100</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>1000</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>256</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Dialog</Classification>
+            </Challenge>
+
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a multiplication question</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>9*9=?</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Even</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>21</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>81</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>42</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Dialog</Classification>
+            </Challenge>
+
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a multiplication question</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>5*5=?</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Even</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>4</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>6</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>25</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Dialog</Classification>
+            </Challenge>
+
+    <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 2 for Test XMLSchema 2 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 2 for Test XMLSchema 2 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>This is a multiplication question</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>0*9=?</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+							<Hint>Not Odd/Even</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+							<Hint>0</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+							<Hint>6</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+						<Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+						<Hint>
+                            <Hint>42</Hint>
+						</Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Correct or Incorrect Response</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder</LayoutName>
+                </Layout>
+                <Classification>Dialog</Classification>
+            </Challenge>
+</suggQuestion>

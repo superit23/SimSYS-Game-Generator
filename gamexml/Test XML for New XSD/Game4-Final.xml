@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--       -->
+<!-- Top Level Game -->
+<!-- Test Game 4 contains 1 act, 1 scene, 2 screens and a challenge-->
+<!-- **FINALIZED  -->
+<game>
+     <!--       -->
+     <!-- The game contains a default player with an initial point of 1000 -->
+     <!--       -->
+
+<Act>
+    <Transition>
+        <TransitionType>straightCut</TransitionType>
+        <Duration>medium</Duration>
+    </Transition>
+    <Sequence>
+        <SequenceNumber>1</SequenceNumber>
+        <NextSequence>0</NextSequence>
+    </Sequence>
+    <!-- Learning Objective needs to be handled -->
+    <LearningObjective>
+        <LearningObjective>string</LearningObjective>
+    </LearningObjective>
+    <LearningObjective>
+        <LearningObjective>string</LearningObjective>
+    </LearningObjective>
+    <LearningObjective>
+        <LearningObjective>string</LearningObjective>
+    </LearningObjective>
+    <LearningObjective>
+        <LearningObjective>string</LearningObjective>
+    </LearningObjective>
+    <Scene>
+        <Transition>
+            <TransitionType>straightCut</TransitionType>
+            <Duration>medium</Duration>
+        </Transition>
+        <Sequence>
+            <SequenceNumber>1</SequenceNumber>
+            <NextSequence>0</NextSequence>
+        </Sequence>
+        <!-- Learning Objective needs to be handled -->
+        <LearningObjective>
+            <LearningObjective>string</LearningObjective>
+        </LearningObjective>
+        <Screen>
+            <Transition>
+                <TransitionType>wipe</TransitionType>
+                <Duration>medium</Duration>
+            </Transition>
+            <Sequence>
+                <SequenceNumber>1</SequenceNumber>
+                <NextSequence>0</NextSequence>
+            </Sequence>
+            !-- Learning Objective needs to be handled -->
+            <LearningObjective>
+                <LearningObjective>string</LearningObjective>
+            </LearningObjective>
+            <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 1 for Test XMLSchema 4 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 1for Test XMLSchema 4 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>Hint (1) for Test XMLSchema 4</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>Hint (2) for Test XMLSchema 4</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+                            <Hint>Mercury</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+                            <Hint>Mars</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+                            <Hint>Venus</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+                        <Hint>
+                            <Hint>Hint (3) for Test XMLSchema 4</Hint>
+                        </Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Summary Name Act 2 for Test XMLSchema 4</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder name Act 2 for Test XMLSchema 4</LayoutName>
+                </Layout>
+                <Classification>Interactive for Test XMLSchema 4</Classification>
+            </Challenge>
+            
+            <!--Game Elements of Scene 0 -->
+            <!--Game Elements don't have animation and sound elements-->
+            <GameElement>
+                <Name>Props\GenericInteraction\TextBubbleSmall.png</Name>
+                <Location>
+                    <x>330</x>
+                    <y>130</y>
+                </Location>
+                <Size>
+                    <width>247</width>
+                    <height>78</height>
+                </Size>
+            </GameElement>
+            <GameElement>
+                <Name>character_10\char10_SitPump.png</Name>
+                <Location>
+                    <x>209</x>
+                    <y>130</y>
+                </Location>
+                <Size>
+                    <width>171</width>
+                    <height>292</height>
+                </Size>
+            </GameElement>
+            <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+                <Location>
+                    <x>346</x>
+                    <y>128</y>
+                </Location>
+                <Size>
+                    <width>210</width>
+                    <height>59</height>
+                </Size>
+                <Text>Text Message for for Test XMLSchema 4</Text>
+            </GameElement>
+            <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+                <Name>Button Type</Name>
+                <Location>
+                    <x>581</x>
+                    <y>332</y>
+                </Location>
+                <Size>
+                    <width>157</width>
+                    <height>50</height>
+                </Size>
+                <Text>Continue</Text>
+            </GameElement>
+        </Screen>
+        <Screen>
+            <Transition>
+                <TransitionType>wipe</TransitionType>
+                <Duration>medium</Duration>
+            </Transition>
+            <Sequence>
+                <SequenceNumber>1</SequenceNumber>
+                <NextSequence>0</NextSequence>
+            </Sequence>
+            !-- Learning Objective needs to be handled -->
+            <LearningObjective>
+                <LearningObjective>string</LearningObjective>
+            </LearningObjective>
+            <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+                <Introduction>
+                    <IntroductionName> Intro Name Act 1 for Test XMLSchema 4 </IntroductionName>
+                </Introduction>
+                <Pedagogy>
+                    <PedagogyName> Pedagogy Name Act 1for Test XMLSchema 4 </PedagogyName>
+                </Pedagogy>
+                <Item xsi:type="MultipleChoiceItem">
+                    <Stem>
+                        <StemText>
+                            <Hint>
+                                <Hint>Hint (1) for Test XMLSchema 4</Hint>
+                            </Hint>
+                        </StemText>
+                        <StemQuestion>
+                            <Hint>
+                                <Hint>Hint (2) for Test XMLSchema 4</Hint>
+                            </Hint>
+                        </StemQuestion>
+                    </Stem>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@2b1eb67d</Reward>
+                        <Hint>
+                            <Hint>Mercury</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6d5edea8</Reward>
+                        <Hint>
+                            <Hint>Mars</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@6f6c1fb0</Reward>
+                        <Hint>
+                            <Hint>Venus</Hint>
+                        </Hint>
+                    </Option>
+                    <Option>
+                        <Reward>edu.utdallas.gamegenerator.LearningAct.Challenge.Reward@239494f6</Reward>
+                        <Hint>
+                            <Hint>Hint (3) for Test XMLSchema 4</Hint>
+                        </Hint>
+                    </Option>
+                </Item>
+                <Summary>
+                    <SummaryName> Summary Name Act 1 for Test XMLSchema 4</SummaryName>
+                </Summary>
+                <Layout>
+                    <LayoutName>Placeholder name Act 1 for Test XMLSchema 4</LayoutName>
+                </Layout>
+                <Classification>Interactive for Test XMLSchema 4</Classification>
+            </Challenge>
+            
+            <!--Game Elements of Scene 0 -->
+            <!--Game Elements don't have animation and sound elements-->
+            <GameElement>
+                <Name>Props\GenericInteraction\TextBubbleSmall.png</Name>
+                <Location>
+                    <x>330</x>
+                    <y>130</y>
+                </Location>
+                <Size>
+                    <width>247</width>
+                    <height>78</height>
+                </Size>
+            </GameElement>
+            <GameElement>
+                <Name>character_10\char10_SitGasp.png</Name>
+                <Location>
+                    <x>209</x>
+                    <y>130</y>
+                </Location>
+                <Size>
+                    <width>171</width>
+                    <height>292</height>
+                </Size>
+            </GameElement>
+            <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+                <Location>
+                    <x>346</x>
+                    <y>128</y>
+                </Location>
+                <Size>
+                    <width>210</width>
+                    <height>59</height>
+                </Size>
+                <Text>Text Message for for Test XMLSchema 4</Text>
+            </GameElement>
+            <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+                <Name>Button Type</Name>
+                <Location>
+                    <x>581</x>
+                    <y>332</y>
+                </Location>
+                <Size>
+                    <width>157</width>
+                    <height>50</height>
+                </Size>
+                <Text>Continue</Text>
+            </GameElement>
+        </Screen>
+
+        <Background>Backdrops\Boss Office.png</Background>
+        <Music>
+            <Music>AudioAssetRepository\music\Opening Credits.mid</Music>
+        </Music>
+    </Scene>
+</Act>
+<Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Player">
+    <Name>Mr Test Player </Name>
+    <Location>
+        <x>20</x>
+        <y>450</y>
+    </Location>
+    <Size>
+        <width>50</width>
+        <height>200</height>
+    </Size>
+    <CharacterName>Test User</CharacterName>
+    <AutonomousBehaviour>Behavior</AutonomousBehaviour>
+    <Profile>
+        <ProfilePhoto>Office, Classroom\Characters\character_3\char3_SitPumpChair.png</ProfilePhoto>
+        <Title>Reasearch Assistant</Title>
+        <YearsOfExperience>4</YearsOfExperience>
+        <Skills>C#</Skills>
+        <Skills>Software Developer</Skills>
+        <Demographics>Male</Demographics>
+        <Demographics>25</Demographics>
+        <Demographics>Canadian</Demographics>
+        <Demographics>English</Demographics>
+        <Degrees>BS</Degrees>
+        <Degrees>MS</Degrees>
+    </Profile>
+    <rewards>1000</rewards>
+    <PlayerID> Player 1</PlayerID>
+</Character>
+</game>

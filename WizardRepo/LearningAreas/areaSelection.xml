@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<areaSelection name ="List">
+	<institutions>
+		<institution name = "West Allis Independent">
+			<domains>
+				<domain name = "K-6">
+					<grades>    
+						<grade name = "Kindergarten">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "First">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Second">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Third">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Fourth">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Fifth">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Sixth">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+				<domain name = "Middle School">
+					<grades>    
+						<grade name = "Seventh">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Eighth Grade">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Ninth Grade">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+				<domain name = "High School">
+					<grades>    
+						<grade name = "Tenth">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Eleventh">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Twelfth">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+			</domains>
+		</institution>
+		<institution name = "Milwaukee Public Schools">
+			<domains>
+				<domain name = "K-6">
+					<grades>    
+						<grade name = "Kindergarten">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "First">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Second">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Third">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Fourth">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Fifth">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Sixth">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+				<domain name = "Middle School">
+					<grades>    
+						<grade name = "Seventh">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Eighth Grade">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Ninth Grade">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+				<domain name = "High School">
+					<grades>    
+						<grade name = "Tenth">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Eleventh">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "Twelfth">
+							<subjects>
+								<subject name = "Math">
+								</subject>
+								<subject name = "Reading">
+								</subject>
+								<subject name = "Science">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+			</domains>
+		</institution>
+		<institution name = "Marquette University">
+			<domains>
+				<domain name = "Math Department">
+					<grades>    
+						<grade name = "1000">
+							<subjects>
+								<subject name = "Calculus 3">
+								</subject>
+								<subject name = "Statistics">
+								</subject>
+								<subject name = "Probability">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "2000">
+							<subjects>
+								<subject name = "Calculus 3">
+								</subject>
+								<subject name = "Statistics">
+								</subject>
+								<subject name = "Probability">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "3000">
+							<subjects>
+								<subject name = "Calculus 3">
+								</subject>
+								<subject name = "Statistics">
+								</subject>
+								<subject name = "Probability">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "4000">
+							<subjects>
+								<subject name = "Calculus 3">
+								</subject>
+								<subject name = "Statistics">
+								</subject>
+								<subject name = "Probability">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+				<domain name = "Biology Department">
+					<grades>    
+						<grade name = "1000">
+							<subjects>
+								<subject name = "Molecular Biology">
+								</subject>
+								<subject name = "General Biology">
+								</subject>
+								<subject name = "Cell Biology">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "2000">
+							<subjects>
+								<subject name = "Molecular Biology">
+								</subject>
+								<subject name = "General Biology">
+								</subject>
+								<subject name = "Cell Biology">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "3000">
+							<subjects>
+								<subject name = "Molecular Biology">
+								</subject>
+								<subject name = "General Biology">
+								</subject>
+								<subject name = "Cell Biology">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "4000">
+							<subjects>
+								<subject name = "Molecular Biology">
+								</subject>
+								<subject name = "General Biology">
+								</subject>
+								<subject name = "Cell Biology">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+				<domain name = "Communications Department">
+					<grades>    
+						<grade name = "1000">
+							<subjects>
+								<subject name = "Public Relations">
+								</subject>
+								<subject name = "Advertising">
+								</subject>
+								<subject name = "Corporate Communications">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "2000">
+							<subjects>
+								<subject name = "Public Relations">
+								</subject>
+								<subject name = "Advertising">
+								</subject>
+								<subject name = "Corporate Communications">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "3000">
+							<subjects>
+								<subject name = "Public Relations">
+								</subject>
+								<subject name = "Advertising">
+								</subject>
+								<subject name = "Corporate Communications">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "4000">
+							<subjects>
+								<subject name = "Public Relations">
+								</subject>
+								<subject name = "Advertising">
+								</subject>
+								<subject name = "Corporate Communications">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+			</domains>
+		</institution>
+		<institution name = "University of Texas-Dallas">
+						<domains>
+				<domain name = "Math Department">
+					<grades>    
+						<grade name = "1000">
+							<subjects>
+								<subject name = "Calculus 3">
+								</subject>
+								<subject name = "Statistics">
+								</subject>
+								<subject name = "Probability">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "2000">
+							<subjects>
+								<subject name = "Calculus 3">
+								</subject>
+								<subject name = "Statistics">
+								</subject>
+								<subject name = "Probability">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "3000">
+							<subjects>
+								<subject name = "Calculus 3">
+								</subject>
+								<subject name = "Statistics">
+								</subject>
+								<subject name = "Probability">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "4000">
+							<subjects>
+								<subject name = "Calculus 3">
+								</subject>
+								<subject name = "Statistics">
+								</subject>
+								<subject name = "Probability">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+				<domain name = "Biology Department">
+					<grades>    
+						<grade name = "1000">
+							<subjects>
+								<subject name = "Molecular Biology">
+								</subject>
+								<subject name = "General Biology">
+								</subject>
+								<subject name = "Cell Biology">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "2000">
+							<subjects>
+								<subject name = "Molecular Biology">
+								</subject>
+								<subject name = "General Biology">
+								</subject>
+								<subject name = "Cell Biology">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "3000">
+							<subjects>
+								<subject name = "Molecular Biology">
+								</subject>
+								<subject name = "General Biology">
+								</subject>
+								<subject name = "Cell Biology">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "4000">
+							<subjects>
+								<subject name = "Molecular Biology">
+								</subject>
+								<subject name = "General Biology">
+								</subject>
+								<subject name = "Cell Biology">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+				<domain name = "Communications Department">
+					<grades>    
+						<grade name = "1000">
+							<subjects>
+								<subject name = "Public Relations">
+								</subject>
+								<subject name = "Advertising">
+								</subject>
+								<subject name = "Corporate Communications">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "2000">
+							<subjects>
+								<subject name = "Public Relations">
+								</subject>
+								<subject name = "Advertising">
+								</subject>
+								<subject name = "Corporate Communications">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "3000">
+							<subjects>
+								<subject name = "Public Relations">
+								</subject>
+								<subject name = "Advertising">
+								</subject>
+								<subject name = "Corporate Communications">
+								</subject>
+							</subjects>
+						</grade>
+						<grade name = "4000">
+							<subjects>
+								<subject name = "Public Relations">
+								</subject>
+								<subject name = "Advertising">
+								</subject>
+								<subject name = "Corporate Communications">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+			</domains>
+		</institution>
+		<institution name = "Johnson-Controls">
+			<domains>
+				<domain name = "Compliance Training">
+					<grades>    
+						<grade name = "New Hires">
+							<subjects>
+								<subject name = "Ethics">
+								</subject>
+								<subject name = "Conflicts of Interest">
+								</subject>
+								<subject name = "Sexual Harassment">
+								</subject>
+							</subjects>
+						</grade>    
+						<grade name = "Continuing Employees">
+							<subjects>
+								<subject name = "Ethics">
+								</subject>
+								<subject name = "Conflicts of Interest">
+								</subject>
+								<subject name = "Sexual Harassment">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+				<domain name = "Recruitment">
+					<grades>    
+						<grade name = "Job Fair">
+							<subjects>
+								<subject name = "Equal Opportunity Hiring">
+								</subject>
+								<subject name = "Guidelines for Internships">
+								</subject>
+							</subjects>
+						</grade>   
+						<grade name = "Hiring Practices">
+							<subjects>
+								<subject name = "Equal Opportunity Hiring">
+								</subject>
+								<subject name = "Guidelines for Internships">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+			</domains>
+		</institution>
+		<institution name = "IBM">
+			<domains>
+				<domain name = "Compliance Training">
+					<grades>    
+						<grade name = "New Hires">
+							<subjects>
+								<subject name = "Ethics">
+								</subject>
+								<subject name = "Conflicts of Interest">
+								</subject>
+								<subject name = "Sexual Harassment">
+								</subject>
+							</subjects>
+						</grade>   
+						<grade name = "Continuing Employees">
+							<subjects>
+								<subject name = "Ethics">
+								</subject>
+								<subject name = "Conflicts of Interest">
+								</subject>
+								<subject name = "Sexual Harassment">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+				<domain name = "Recruitment">
+					<grades>    
+						<grade name = "Job Fair">
+							<subjects>
+								<subject name = "Equal Opportunity Hiring">
+								</subject>
+								<subject name = "Guidelines for Internships">
+								</subject>
+							</subjects>
+						</grade>  
+						<grade name = "Hiring Practices">
+							<subjects>
+								<subject name = "Equal Opportunity Hiring">
+								</subject>
+								<subject name = "Guidelines for Internships">
+								</subject>
+							</subjects>
+						</grade>
+					</grades>
+				</domain>
+			</domains>
+		</institution>
+	</institutions>
+</areaSelection>

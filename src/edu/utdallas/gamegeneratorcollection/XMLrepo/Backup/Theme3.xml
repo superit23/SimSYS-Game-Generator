@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Theme>
+  <IntroScreens>
+    <IntroScreen>
+      <Background>Backdrops\Bedroom master.png</Background>
+      <ThemeButtons>
+        <entry>
+          <key>NEXT</key>
+          <value>
+            <Height>50</Height>
+            <LocX>581</LocX>
+            <LocY>332</LocY>
+            <PathToAsset></PathToAsset>
+            <Text>Continue</Text>
+            <Width>157</Width>
+            <behavior>
+              <behaviorType>TRANSITION_BEHAVIOR</behaviorType>
+              <displayName>Transition Behavior</displayName>
+              <Transition>NEXT_SCREEN</Transition>
+              <trigger>Click</trigger>
+            </behavior>
+            <name>Next</name>
+          </value>
+        </entry>
+      </ThemeButtons>
+      <GameObjects>
+        <GameObject>
+          <Height>78</Height>
+          <LocX>327</LocX>
+          <LocY>123</LocY>
+          <PathToAsset>Props\GenericInteraction\TextBubble.png</PathToAsset>
+          <Width>247</Width>
+        </GameObject>
+      </GameObjects>
+      <InformationBoxes>
+        <InformationBox>
+          <Height>59</Height>
+          <LocX>346</LocX>
+          <LocY>128</LocY>
+          <Text>I hope I am ready for the test tomorrow. After a long day of studying, all I need is a good nights sleep.</Text>
+          <Width>210</Width>
+          <name>I hope I am ready for the test tomorrow. After a long day of studying, all I need is a good nights sleep.</name>
+        </InformationBox>
+      </InformationBoxes>
+      <ThemeCharacters>
+        <entry>
+          <key>PLAYER</key>
+          <value>
+            <Height>292</Height>
+            <LocX>209</LocX>
+            <LocY>130</LocY>
+            <Text></Text>
+            <Width>171</Width>
+            <CharacterAssetType>WALK_LEFT_BEHIND</CharacterAssetType>
+            <CharacterType>PLAYER</CharacterType>
+          </value>
+        </entry>
+      </ThemeCharacters>
+    </IntroScreen>
+    <IntroScreen>
+      <Background>Backdrops\blue.png</Background>
+      <ThemeButtons>
+		<entry>
+          <key>NEXT</key>
+          <value>
+            <Height>35</Height>
+            <LocX>422</LocX>
+            <LocY>266</LocY>
+            <Text>View</Text>
+            <Width>98</Width>
+            <behavior>
+              <behaviorType>TRANSITION_BEHAVIOR</behaviorType>
+              <displayName>Transition Behavior</displayName>
+              <Transition>NEXT_SCREEN</Transition>
+              <trigger>Click</trigger>
+            </behavior>
+            <name>View</name>
+          </value>
+        </entry>
+      </ThemeButtons>
+      <GameObjects>
+      </GameObjects>
+      <InformationBoxes>
+        <InformationBox>
+          <Height>67</Height>
+          <LocX>191</LocX>
+          <LocY>152</LocY>
+          <Text>Dreamable!</Text>
+          <Width>390</Width>
+          <name>Dreamable!</name>
+        </InformationBox>
+        <InformationBox>
+          <Height>36</Height>
+          <LocX>193</LocX>
+          <LocY>224</LocY>
+          <Text>Vocabulary</Text>
+          <Width>220</Width>
+          <name>Vocabulary</name>
+        </InformationBox>
+        <InformationBox>
+          <Height>64</Height>
+          <LocX>192</LocX>
+          <LocY>266</LocY>
+          <Text>The Infinite Forest</Text>
+          <Width>221</Width>
+          <name>The Infinite Forest</name>
+        </InformationBox>
+      </InformationBoxes>
+      <ThemeCharacters />
+    </IntroScreen>
+    
+  </IntroScreens>
+  <OutroScreens>
+    <OutroScreen>
+      <Background>Backdrops\Bedroom master.png</Background>
+      <ThemeButtons>
+        <entry>
+          <key>NEXT</key>
+          <value>
+            <Height>46</Height>
+            <LocX>570</LocX>
+            <LocY>325</LocY>
+            <PathToAsset>PathToAsset10</PathToAsset>
+            <Text>End Game</Text>
+            <Width>121</Width>
+            <behavior>
+              <behaviorType>END_GAME_BEHAVIOR</behaviorType>
+              <trigger>Click</trigger>
+            </behavior>
+            <name>End Game</name>
+          </value>
+        </entry>
+      </ThemeButtons>
+      <GameObjects>
+        <GameObject>
+          <Height>109</Height>
+          <LocX>362</LocX>
+          <LocY>98</LocY>
+          <PathToAsset>Props\GenericInteraction\TextBubble.png</PathToAsset>
+          <Width>277</Width>
+        </GameObject>
+      </GameObjects>
+      <InformationBoxes>
+        <InformationBox>
+          <Height>66</Height>
+          <LocX>375</LocX>
+          <LocY>113</LocY>
+          <Text>That was a ... productive dream. I hope I am ready for the test today.</Text>
+          <Width>249</Width>
+          <name>That was a ... productive dream. I hope I am ready for the test today.</name>
+        </InformationBox>
+      </InformationBoxes>
+      <ThemeCharacters>
+        <entry>
+          <key>PLAYER</key>
+          <value>
+            <Height>294</Height>
+            <LocX>218</LocX>
+            <LocY>126</LocY>
+            <PathToAsset>PathToAsset10</PathToAsset>
+            <Width>239</Width>
+            <CharacterAssetType>LEFT_POINT_UP</CharacterAssetType>
+            <CharacterType>PLAYER</CharacterType>
+            <Movements>
+            </Movements>
+          </value>
+        </entry>
+      </ThemeCharacters>
+    </OutroScreen>
+  </OutroScreens>
+  <ThemeStories>
+    <ThemeStory>
+      <StoryIntroScreens>
+        <StoryIntroScreen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="themeStoryScreenIntro">
+		  <Buttons>
+		    <Button>
+		      <ButtonLocationType>NEXT</ButtonLocationType>
+			  <Text>Continue</Text>
+			  <Timer></Timer>
+			  <TransitionType>NEXT_SCREEN</TransitionType>
+			</Button>
+		  </Buttons>
+		  <LOCharacters>
+		    <Character>
+			  <CharacterType>PLAYER</CharacterType>
+			  <MovementType></MovementType>
+			  <Timer></Timer>
+			</Character>
+		    <Character>
+			  <CharacterType>HERO</CharacterType>
+			  <MovementType></MovementType>
+			  <Timer></Timer>
+			</Character>
+		  </LOCharacters>
+		  <InformationBoxes>
+		    <InformationBox>
+			  <TextType>PLAYER</TextType>
+			  <Text>Where am I?</Text>
+			  <Timer></Timer>
+			</InformationBox>
+		    <InformationBox>
+			  <TextType>HERO</TextType>
+			  <Text>Welcome to The Forest of Many Questions. Here you will be tested though a series of questions. Your goal is to escape through the cabin in the portal. I will do my best to prepare you for Lord Askalot's questions. He will try and prevent you from leaving.</Text>
+			  <Timer></Timer>
+			</InformationBox>
+		    <InformationBox>
+			  <TextType>ALT1</TextType>
+			  <Text>You find yourself in what seems to be an infinite forest.</Text>
+			  <Timer></Timer>
+			</InformationBox>
+		  </InformationBoxes>			
+        </StoryIntroScreen>
+      </StoryIntroScreens>
+      <StoryOutroScreens>
+        <StoryOutroScreen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="themeStoryScreenOutro">
+		  <Buttons>
+		    <Button>
+		      <ButtonLocationType>NEXT</ButtonLocationType>
+			  <Text>Let's get out of here!</Text>
+			  <Timer></Timer>
+			  <TransitionType>NEXT_ACT</TransitionType>
+			</Button>
+		  </Buttons>
+		  <LOCharacters>
+		    <Character>
+			  <CharacterType>HERO</CharacterType>
+			  <MovementType></MovementType>
+			  <Timer></Timer>
+			</Character>
+		   <Character>
+			  <CharacterType>PLAYER</CharacterType>
+			  <MovementType></MovementType>
+			  <Timer></Timer>
+			</Character>
+		  </LOCharacters>
+		  <InformationBoxes>
+		    <InformationBox>
+			  <TextType>HERO</TextType>
+			  <Text>You did it! You can escape though that cabin. I hope you don't forget what you have learned.</Text>
+			  <Timer></Timer>
+			</InformationBox>
+		    <InformationBox>
+			  <TextType>ALT1</TextType>
+			  <Text>After answering all of Lord Askalot's questions, a cabin seems to have appeared out of nowhere.</Text>
+			  <Timer></Timer>
+			</InformationBox>
+		  </InformationBoxes>			
+        </StoryOutroScreen>
+      </StoryOutroScreens>
+    </ThemeStory>
+  </ThemeStories>
+
+</Theme>

@@ -1,0 +1,406 @@
+<Challenge>
+   <LessonChallenges>
+      <LessonChallenge>
+         <LOCharacters></LOCharacters>
+         <Buttons><Button>
+               <Name>CHALLENGE_1</Name>
+               <Text>
+                  <Text>Leave trash for the custodian.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>additionalTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button><Button>
+               <Name>CHALLENGE_2</Name>
+               <Text>
+                  <Text>Leave computer logged in to begin work fast the next day.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>beginningOfChallengeTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button><Button>
+               <Name>CHALLENGE_3</Name>
+               <Text>
+                  <Text>Log off the computer so nobody tampers with your work.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>endOfStoryTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button><Button>
+               <Name>CHALLENGE_4</Name>
+               <Text>
+                  <Text>When you are done for the day drop everything and leave.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>beginningOfLessonTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button></Buttons>
+         <InformationBoxes>
+            <InformationBox>
+               <Name>protagonist</Name>
+               <Text>
+                  <Text>You can do it!!</Text>
+               </Text>
+            </InformationBox>
+         </InformationBoxes>
+         <Quiz>
+            <Timer>60</Timer>
+            <Item>
+               <Stem>
+                  <StemText>
+                     <Text>
+                        <Text>Using the knowledge learned during the tour:</Text>
+                     </Text>
+                  </StemText>
+                  <StemQuestion>
+                     <Text>
+                        <Text>What is the standard procedure at the end of the day?</Text>
+                     </Text>
+                  </StemQuestion>
+               </Stem>
+               <Option>
+                  <Reward>
+                     <Points>-2147483646</Points>
+                  </Reward>
+                  <Text>
+                     <Text>Leave trash for the custodian.</Text>
+                  </Text>
+               </Option>
+               <Option>
+                  <Reward>
+                     <Points>-2147483646</Points>
+                  </Reward>
+                  <Text>
+                     <Text>Leave computer logged in to begin work fast the next day.</Text>
+                  </Text>
+               </Option>
+               <Option>
+                  <Reward>
+                     <Points>2</Points>
+                  </Reward>
+                  <Text>
+                     <Text>Log off the computer so nobody tampers with your work.</Text>
+                  </Text>
+               </Option>
+               <Option>
+                  <Reward>
+                     <Points>-2147483646</Points>
+                  </Reward>
+                  <Text>
+                     <Text>When you are done for the day drop everything and leave.</Text>
+                  </Text>
+               </Option>
+            </Item>
+         </Quiz>
+         <AdditionalScreens>
+            <AdditionalScreen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="failureScreen">
+               <Buttons><Button>
+                     <Name>NEXT</Name>
+                     <Text>
+                        <Text>Retry</Text>
+                     </Text>
+                     <Behavior>
+                        <BehaviorType>currentChallengeTransition</BehaviorType>
+                        <TriggerType>click</TriggerType>
+                        <Timer></Timer>
+                        <Action></Action>
+                     </Behavior></Button></Buttons>
+               <LOCharacters>
+                  <Character>
+                     <CharacterType>antagonist</CharacterType>
+                  </Character>
+                  <Character>
+                     <CharacterType>protagonist</CharacterType>
+                  </Character>
+               </LOCharacters>
+               <InformationBoxes>
+                  <InformationBox>
+                     <Name>interlocutor</Name>
+                     <Text>
+                        <Text>You answered incorrectly!</Text>
+                     </Text>
+                  </InformationBox>
+                  <InformationBox>
+                     <Name>protagonist</Name>
+                     <Text>
+                        <Text>Don't worry! You can try again.</Text>
+                     </Text>
+                  </InformationBox>
+               </InformationBoxes>
+            </AdditionalScreen>
+         </AdditionalScreens>
+      </LessonChallenge>
+      <LessonChallenge>
+         <LOCharacters></LOCharacters>
+         <Buttons><Button>
+               <Name>CHALLENGE_1</Name>
+               <Text>
+                  <Text>Yell across the room, they like projecting their voice.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>additionalTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button><Button>
+               <Name>CHALLENGE_2</Name>
+               <Text>
+                  <Text>Send them an email, it is fast and easy.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>beginningOfChallengeTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button><Button>
+               <Name>CHALLENGE_3</Name>
+               <Text>
+                  <Text>Walk over and ask them, they prefer to talk face to face.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>endOfStoryTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button><Button>
+               <Name>CHALLENGE_4</Name>
+               <Text>
+                  <Text>Hope they can read your mind, they have been practicing.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>beginningOfLessonTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button></Buttons>
+         <InformationBoxes>
+            <InformationBox>
+               <Name>protagonist</Name>
+               <Text>
+                  <Text>You can do it!!</Text>
+               </Text>
+            </InformationBox>
+         </InformationBoxes>
+         <Quiz>
+            <Timer>60</Timer>
+            <Item>
+               <Stem>
+                  <StemText>
+                     <Text>
+                        <Text>Using the knowledge learned during the tour:</Text>
+                     </Text>
+                  </StemText>
+                  <StemQuestion>
+                     <Text>
+                        <Text>What is the best way to reach the designers</Text>
+                     </Text>
+                  </StemQuestion>
+               </Stem>
+               <Option>
+                  <Reward>
+                     <Points>-2147483646</Points>
+                  </Reward>
+                  <Text>
+                     <Text>Yell across the room, they like projecting their voice.</Text>
+                  </Text>
+               </Option>
+               <Option>
+                  <Reward>
+                     <Points>-2147483646</Points>
+                  </Reward>
+                  <Text>
+                     <Text>Send them an email, it is fast and easy.</Text>
+                  </Text>
+               </Option>
+               <Option>
+                  <Reward>
+                     <Points>2</Points>
+                  </Reward>
+                  <Text>
+                     <Text>Walk over and ask them, they prefer to talk face to face.</Text>
+                  </Text>
+               </Option>
+               <Option>
+                  <Reward>
+                     <Points>-2147483646</Points>
+                  </Reward>
+                  <Text>
+                     <Text>Hope they can read your mind, they have been practicing.</Text>
+                  </Text>
+               </Option>
+            </Item>
+         </Quiz>
+         <AdditionalScreens>
+            <AdditionalScreen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="failureScreen">
+               <Buttons><Button>
+                     <Name>NEXT</Name>
+                     <Text>
+                        <Text>Retry</Text>
+                     </Text>
+                     <Behavior>
+                        <BehaviorType>currentChallengeTransition</BehaviorType>
+                        <TriggerType>click</TriggerType>
+                        <Timer></Timer>
+                        <Action></Action>
+                     </Behavior></Button></Buttons>
+               <LOCharacters>
+                  <Character>
+                     <CharacterType>antagonist</CharacterType>
+                  </Character>
+                  <Character>
+                     <CharacterType>protagonist</CharacterType>
+                  </Character>
+               </LOCharacters>
+               <InformationBoxes>
+                  <InformationBox>
+                     <Name>interlocutor</Name>
+                     <Text>
+                        <Text>You answered incorrectly!</Text>
+                     </Text>
+                  </InformationBox>
+                  <InformationBox>
+                     <Name>protagonist</Name>
+                     <Text>
+                        <Text>Don't worry! You can try again.</Text>
+                     </Text>
+                  </InformationBox>
+               </InformationBoxes>
+            </AdditionalScreen>
+         </AdditionalScreens>
+      </LessonChallenge>
+      <LessonChallenge>
+         <LOCharacters></LOCharacters>
+         <Buttons><Button>
+               <Name>CHALLENGE_1</Name>
+               <Text>
+                  <Text>Never leave an opened cup or bottle at your desk.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>endOfStoryTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button><Button>
+               <Name>CHALLENGE_2</Name>
+               <Text>
+                  <Text>Never eat at your desk.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>beginningOfChallengeTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button><Button>
+               <Name>CHALLENGE_3</Name>
+               <Text>
+                  <Text>Never sit on your desk.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>additionalTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button><Button>
+               <Name>CHALLENGE_4</Name>
+               <Text>
+                  <Text>Never use your cell phone at your desk.</Text>
+               </Text>
+               <Behavior>
+                  <Timer></Timer>
+                  <BehaviorType>beginningOfLessonTransition</BehaviorType>
+                  <TriggerType>click</TriggerType>
+               </Behavior></Button></Buttons>
+         <InformationBoxes>
+            <InformationBox>
+               <Name>protagonist</Name>
+               <Text>
+                  <Text>You can do it!!</Text>
+               </Text>
+            </InformationBox>
+         </InformationBoxes>
+         <Quiz>
+            <Timer>60</Timer>
+            <Item>
+               <Stem>
+                  <StemText>
+                     <Text>
+                        <Text>Using the knowledge learned during the tour:</Text>
+                     </Text>
+                  </StemText>
+                  <StemQuestion>
+                     <Text>
+                        <Text>What is prohibited while at your desk?</Text>
+                     </Text>
+                  </StemQuestion>
+               </Stem>
+               <Option>
+                  <Reward>
+                     <Points>2</Points>
+                  </Reward>
+                  <Text>
+                     <Text>Never leave an opened cup or bottle at your desk.</Text>
+                  </Text>
+               </Option>
+               <Option>
+                  <Reward>
+                     <Points>-2147483646</Points>
+                  </Reward>
+                  <Text>
+                     <Text>Never eat at your desk.</Text>
+                  </Text>
+               </Option>
+               <Option>
+                  <Reward>
+                     <Points>-2147483646</Points>
+                  </Reward>
+                  <Text>
+                     <Text>Never sit on your desk.</Text>
+                  </Text>
+               </Option>
+               <Option>
+                  <Reward>
+                     <Points>-2147483646</Points>
+                  </Reward>
+                  <Text>
+                     <Text>Never use your cell phone at your desk.</Text>
+                  </Text>
+               </Option>
+            </Item>
+         </Quiz>
+         <AdditionalScreens>
+            <AdditionalScreen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="failureScreen">
+               <Buttons><Button>
+                     <Name>NEXT</Name>
+                     <Text>
+                        <Text>Retry</Text>
+                     </Text>
+                     <Behavior>
+                        <BehaviorType>currentChallengeTransition</BehaviorType>
+                        <TriggerType>click</TriggerType>
+                        <Timer></Timer>
+                        <Action></Action>
+                     </Behavior></Button></Buttons>
+               <LOCharacters>
+                  <Character>
+                     <CharacterType>antagonist</CharacterType>
+                  </Character>
+                  <Character>
+                     <CharacterType>protagonist</CharacterType>
+                  </Character>
+               </LOCharacters>
+               <InformationBoxes>
+                  <InformationBox>
+                     <Name>interlocutor</Name>
+                     <Text>
+                        <Text>You answered incorrectly!</Text>
+                     </Text>
+                  </InformationBox>
+                  <InformationBox>
+                     <Name>protagonist</Name>
+                     <Text>
+                        <Text>Don't worry! You can try again.</Text>
+                     </Text>
+                  </InformationBox>
+               </InformationBoxes>
+            </AdditionalScreen>
+         </AdditionalScreens>
+      </LessonChallenge>
+   </LessonChallenges>
+</Challenge>

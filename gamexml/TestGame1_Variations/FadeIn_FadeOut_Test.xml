@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- -->
+<!-- Top Level Game -->
+<!-- Test Game 1 contains 1 act, 1 scene and 2 screens -->
+<!-- **FINALIZED-->
+<game>
+	<!-- -->
+	<!-- The game contains a default player who is rewarded with 5000 points 
+		after playing the game -->
+	<!-- -->
+	<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:type="PLAYER">
+		<location>OSR</location>
+		<size>LARGE</size>
+		<!-- -->
+		<!-- The profile of the player starts here -->
+		<!-- -->
+		<profile>
+			<name> Default Player </name>
+			<type> Protagonist </type>
+			<title> Intern, Software Engineering </title>
+			<skills> Software Engineering, Project Management, Configuration
+				Management </skills>
+			<experience> 0 </experience>
+			<communication> Good </communication>
+			<leadership> Good </leadership>
+			<teamwork> Good </teamwork>
+			<demographics> Male, Caucasian </demographics>
+			<degrees> NONE </degrees>
+		</profile>
+		<reward>
+			<certificates>0</certificates>
+			<hint>0</hint>
+			<!-- -->
+			<!-- The player initally has 1000 points -->
+			<!-- -->
+			<points>3000</points>
+			<promotions>0</promotions>
+			<trophies>0</trophies>
+		</reward>
+	</gameElement>
+	<!-- -->
+	<!-- -->
+	<!-- The following section defines the constant values in test game 1 -->
+	<gameConstants>
+		<!-- This game has game elements which FADEIN/FADEOUT in 'LONG' amount 
+			of time -->
+		<timer name="NONE">
+		<value>0</value>
+	</timer>
+	<timer name="LONG">
+		<value>10000</value>
+	</timer>
+	</gameConstants>
+	<!-- -->
+	<!-- -->
+	<!-- The static structure of the game starts here -->
+	<!-- -->
+	<!-- -->
+	<actStructure>
+			<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="IDENTIFIER">
+				<!-- -->
+				<!-- The act is identified as act1 -->
+				<!-- -->
+				<id> act1 </id>
+			</gameElement>
+			<!--   Adding timer to the act   -->
+			<timer>NONE</timer>
+			<sceneStructure>
+				<!-- -->
+				<!-- The scene has a BlueSky backdrop and is identified as scene1 -->
+				<!-- -->
+				<identifier>scene1</identifier>
+				<timer>NONE</timer>
+				<backdrop>blue_bg.png</backdrop>
+				<screenStructure>
+					<!-- -->
+					<!-- The below properties are identified as screen1 -->
+					<!-- -->
+					<timer>NONE</timer>
+					<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="Identifier">
+							<id> screen1 </id>
+						</gameElement>
+						<!-- -->
+						<!-- Following behavior is similar to MATLAB Scripting and is in format 
+							Model.Action.Parameter -->
+						<!-- -->
+						<behavior>Reward.AddPoints.4000</behavior>
+						<!-- -->
+						<!-- The button1 is displayed as a button and will HIDE on a 'click' -->
+						<!-- -->
+						<type>
+							<typeName>Button3</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>LONG</time>
+							</event>
+							<event>
+								<eventName>CLICK</eventName>
+								<animation>FADEOUT</animation>
+								<time>LONG</time>
+								
+							</event>
+							<!-- -->
+							<!-- This game element is present on screeen1 -->
+							<!-- -->
+							
+						</type>
+						<color>YELLOW</color>
+							<location>UC</location>
+							<size>SMALL</size>
+							<!-- -->
+							<!-- The below text is displayed on button1 -->
+							<!-- -->
+							<text>Play to Win!</text>
+							<textSize>12</textSize>
+							<font>Aerial</font>
+						
+						<!-- -->
+						<!-- The below value defines the next element to appearing on the view -->
+						<!-- -->
+						<next> screen2 </next>
+					</gameElement>
+				</screenStructure>
+					
+				<screenStructure>
+				    <timer>NONE</timer>
+					<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen2 </id>
+						</gameElement>
+						<!-- -->
+						<!-- The below properties are identified as screen2 -->
+						<!-- -->
+						<type>
+							<typeName>InformationBox1</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>LONG</time>
+							</event>
+							<event>
+								<eventName>ENDGAME</eventName>
+								<animation>FADEOUT</animation>
+								<time>LONG</time>								
+							</event>
+							
+						</type>
+						<color>YELLOW</color>
+							<location>UC</location>
+							<size>MEDIUM</size>
+							<!-- -->
+							<!-- The below text is appended with the points that the GetPoints 
+								method of the Reward class returns and is displayed on the view -->
+							<!-- The GetPoints method updates the points of the player adding the 
+								reward points to the player's initial player -->
+							<!-- -->
+							<text>You Won!!! Your current points are</text>
+							<textSize>14</textSize>
+							<font>Aerial</font>
+						<behavior> Reward.GetPoints </behavior>
+						<next>screen3</next>
+					</gameElement>
+				</screenStructure>
+					
+				<screenStructure> 
+				<timer>NONE</timer>	
+					<!-- -->
+					<!-- The below properties are identified as screen2 -->
+					<!-- -->
+					<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="prop">
+						<gameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="IDENTIFIER">
+							<id> screen3 </id>
+						</gameElement>
+						<!-- -->
+						<!-- The Stop method to stop the all the acts, scenes and screens is 
+							called when the player clicks on button1 to stop the game -->
+						<!-- -->
+						<behavior>GameControl.Stop</behavior>
+						<type>
+							<typeName>Button2</typeName>
+							<event>
+								<eventName>NONE</eventName>
+								<animation>FADEIN</animation>
+								<time>LONG</time>
+							</event>
+							<event>
+								<eventName>CLICK</eventName>
+								<animation>FADEOUT</animation>
+								<time>LONG</time>
+								
+							</event>
+                             
+						</type>
+						<color>YELLOW</color>
+						<location>DLC</location>
+						<size>SMALL</size>
+						<!-- -->
+						<!-- The below text is presented on the button1 -->
+						<!-- -->
+						<text>End Game</text>
+						<textSize>12</textSize>
+					    <font>Comic Sans MS-PLAIN-12</font>
+						<next>end game</next>
+					</gameElement>
+				</screenStructure>
+			</sceneStructure>
+		</actStructure>
+	</game>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<knowledgeRepo>
+	<knowledgeAreas>
+		<knowledgeArea name = "Operations and Algebraic Thinking">
+			<subKnowledgeAreas>
+				<subKnowledgeArea name = "--Use the Four Operations tith Whole Numbers to Solve Problems">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective>---Interpret a multiplication equation as a comparison, e.g., interpret 35 = 5 * 7 as a statement that 35 is 5 times as many as 7 and 7 times as many as 5. Represent verbal statements of multiplicative comparisons as multiplication equations.</LearningObjective>
+						</LearningObjective>
+						<LearningObjective>
+							<LearningObjective>---Multiply or divide to solve word problems involving multiplicative comparison, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem, distinguishing multiplicative comparison from additive comparison.</LearningObjective>
+						</LearningObjective>
+						<LearningObjective>
+							<LearningObjective>---Solve multistep word problems posed with whole numbers and having whole-number answers using the four operations, including problems in which remainders must be interpreted. Represent these problems using equations with a letter standing for the unknown quantity. Assess the reasonableness of answers using mental computation and estimation strategies including rounding</LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+				<subKnowledgeArea name = "--Gain Familiarity with Factors and Multiples">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective></LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+				<subKnowledgeArea name = "--Generate and Analyze Patterns">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective></LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+			</subKnowledgeAreas>		
+		</knowledgeArea>
+		<knowledgeArea name = "Number and Operations in Base Ten">
+			<subKnowledgeAreas>
+				<subKnowledgeArea name = "--Generalize place value understanding for multi-digit whole numbers">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective></LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+				<subKnowledgeArea name = "--Use place value understanding and properties of operations to perform multi-digit arithmetic">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective></LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+			</subKnowledgeAreas>		
+		</knowledgeArea>
+		<knowledgeArea name = "Number and Operations - Fractions">
+			<subKnowledgeAreas>
+				<subKnowledgeArea name = "--Extend understanding of fraction equivalence and ordering">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective></LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+				<subKnowledgeArea name = "--Build fractions from unit fractions">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective></LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+				<subKnowledgeArea name = "--Understand decimal notation for fractions, and compare decimal fractions">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective></LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+			</subKnowledgeAreas>		
+		</knowledgeArea>
+		<knowledgeArea name = "Measurement and Data">
+			<subKnowledgeAreas>
+				<subKnowledgeArea name = "--Solve problems involving measurement and conversion of measurements">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective></LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+				<subKnowledgeArea name = "--Represent and interpret data">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective></LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+				<subKnowledgeArea name = "--Geometric measurement: understand concepts of angle and measure angles">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective></LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+			</subKnowledgeAreas>		
+		</knowledgeArea>
+		<knowledgeArea name = "Geometry">
+			<subKnowledgeAreas>
+				<subKnowledgeArea name = "--Draw and Identify Lines and Angles, and Classify Shapes by Properties of Their Lines and Angles">
+					<learningObjectives>
+						<LearningObjective>
+							<LearningObjective></LearningObjective>
+						</LearningObjective>
+					</learningObjectives>
+				</subKnowledgeArea>
+			</subKnowledgeAreas>		
+		</knowledgeArea>
+	</knowledgeAreas>
+</knowledgeRepo>

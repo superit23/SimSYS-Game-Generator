@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Theme>
+  <IntroScreens>
+    <IntroScreen>
+      <Background>Backdrops\science room.png</Background>
+      <ThemeButtons>
+        <entry>
+          <key>NEXT</key>
+          <value>
+            <Height>50</Height>
+            <LocX>581</LocX>
+            <LocY>332</LocY>
+            <PathToAsset></PathToAsset>
+            <Text>Continue</Text>
+            <Width>157</Width>
+            <behavior>
+              <behaviorType>TRANSITION_BEHAVIOR</behaviorType>
+              <displayName>Transition Behavior</displayName>
+              <Transition>NEXT_SCREEN</Transition>
+              <trigger>Click</trigger>
+            </behavior>
+            <name>Next</name>
+          </value>
+        </entry>
+      </ThemeButtons>
+      <GameObjects>
+        <GameObject>
+          <Height>78</Height>
+          <LocX>327</LocX>
+          <LocY>123</LocY>
+          <PathToAsset>Props\GenericInteraction\TextBubble.png</PathToAsset>
+          <Width>247</Width>
+        </GameObject>
+      </GameObjects>
+      <InformationBoxes>
+        <InformationBox>
+          <Height>59</Height>
+          <LocX>346</LocX>
+          <LocY>128</LocY>
+          <Text>Today we will be entering the virtual world! Everyone please sit down and watch the screen.</Text>
+          <Width>210</Width>
+          <name>Today we will be entering the virtual world! Everyone please sit down and watch the screen.</name>
+        </InformationBox>
+      </InformationBoxes>
+      <ThemeCharacters>
+        <entry>
+          <key>ALT</key>
+          <value>
+            <Height>352</Height>
+            <LocX>209</LocX>
+            <LocY>130</LocY>
+            <Text></Text>
+            <Width>171</Width>
+            <CharacterAssetType>WALK_RIGHT_BEHIND</CharacterAssetType>
+            <CharacterType>PLAYER</CharacterType>
+          </value>
+        </entry>
+        <entry>
+          <key>HERO</key>
+          <value>
+            <Height>583</Height>
+            <LocX>200</LocX>
+            <LocY>292</LocY>
+            <Text></Text>
+            <Width>336</Width>
+            <CharacterAssetType>RIGHT_POINT_UP</CharacterAssetType>
+            <CharacterType>ALT</CharacterType>
+          </value>
+        </entry>
+      </ThemeCharacters>
+    </IntroScreen>
+    <IntroScreen>
+      <Background>Backdrops\FaceingPC.png</Background>
+      <ThemeButtons>
+		<entry>
+          <key>NEXT</key>
+          <value>
+            <Height>35</Height>
+            <LocX>422</LocX>
+            <LocY>266</LocY>
+            <Text>View</Text>
+            <Width>98</Width>
+            <behavior>
+              <behaviorType>TRANSITION_BEHAVIOR</behaviorType>
+              <displayName>Transition Behavior</displayName>
+              <Transition>NEXT_SCREEN</Transition>
+              <trigger>Click</trigger>
+            </behavior>
+            <name>View</name>
+          </value>
+        </entry>
+      </ThemeButtons>
+      <GameObjects>
+      </GameObjects>
+      <InformationBoxes>
+        <InformationBox>
+          <Height>67</Height>
+          <LocX>191</LocX>
+          <LocY>152</LocY>
+          <Text>Virtual Reality!</Text>
+          <Width>390</Width>
+          <name>Virtual Reality!</name>
+        </InformationBox>
+        <InformationBox>
+          <Height>36</Height>
+          <LocX>193</LocX>
+          <LocY>224</LocY>
+          <Text>Science</Text>
+          <Width>220</Width>
+          <name>Science</name>
+        </InformationBox>
+        <InformationBox>
+          <Height>64</Height>
+          <LocX>192</LocX>
+          <LocY>266</LocY>
+          <Text>Solar System Tour</Text>
+          <Width>221</Width>
+          <name>Solar System Tour</name>
+        </InformationBox>
+      </InformationBoxes>
+      <ThemeCharacters />
+    </IntroScreen>
+    <IntroScreen>
+      <Background>Backdrops\FaceingPC _Warping.png</Background>
+      <ThemeButtons>
+        <entry>
+          <key>NEXT</key>
+          <value>
+            <Height>52</Height>
+            <LocX>636</LocX>
+            <LocY>336</LocY>
+            <Text>Continue</Text>
+            <Width>129</Width>
+            <behavior>
+              <behaviorType>TRANSITION_BEHAVIOR</behaviorType>
+              <displayName>Transition Behavior</displayName>
+              <transition>NEXT_ACT</transition>
+              <trigger>Click</trigger>
+            </behavior>
+            <name>Continue</name>
+          </value>
+        </entry>
+      </ThemeButtons>
+      <GameObjects />
+      <InformationBoxes />
+      <ThemeCharacters />
+    </IntroScreen>
+  </IntroScreens>
+  <OutroScreens>
+ 
+    <OutroScreen><!-- Final screen -->
+      <Background>Backdrops\science room.png</Background>
+      <ThemeButtons>
+        <entry>
+          <key>NEXT</key>
+          <value>
+            <Height>46</Height>
+            <LocX>570</LocX>
+            <LocY>325</LocY>
+            <PathToAsset>PathToAsset10</PathToAsset>
+            <Text>End Game</Text>
+            <Width>121</Width>
+            <behavior>
+              <behaviorType>END_GAME_BEHAVIOR</behaviorType>
+              <trigger>Click</trigger>
+            </behavior>
+            <name>End Game</name>
+          </value>
+        </entry>
+      </ThemeButtons>
+      <GameObjects>
+        <GameObject>
+          <Height>109</Height>
+          <LocX>362</LocX>
+          <LocY>98</LocY>
+          <PathToAsset>Props\GenericInteraction\TextBubble.png</PathToAsset>
+          <Width>277</Width>
+        </GameObject>
+      </GameObjects>
+      <InformationBoxes>
+        <InformationBox>
+          <Height>66</Height>
+          <LocX>375</LocX>
+          <LocY>113</LocY>
+          <Text>I love virtual reality days! I learn so much.</Text>
+          <Width>249</Width>
+          <name>I love virtual reality days! I learn so much.</name>
+        </InformationBox>
+      </InformationBoxes>
+      <ThemeCharacters>
+        <entry>
+          <key>PLAYER</key>
+          <value>
+            <Height>294</Height>
+            <LocX>218</LocX>
+            <LocY>126</LocY>
+            <PathToAsset>PathToAsset10</PathToAsset>
+            <Width>239</Width>
+            <CharacterAssetType>RIGHT_POINT_UP</CharacterAssetType>
+            <CharacterType>PLAYER</CharacterType>
+            <Movements>
+            </Movements>
+          </value>
+        </entry>
+      </ThemeCharacters>
+    </OutroScreen>
+  </OutroScreens>
+  <ThemeStories>
+    <ThemeStory>
+      <StoryIntroScreens>
+        <StoryIntroScreen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="themeStoryScreenIntro">
+		  <Buttons>
+		    <Button>
+		      <ButtonLocationType>NEXT</ButtonLocationType>
+			  <Text>Continue</Text>
+			  <Timer></Timer>
+			  <TransitionType>NEXT_SCREEN</TransitionType>
+			</Button>
+		  </Buttons>
+		  <LOCharacters>
+		    <Character>
+			  <CharacterType>PLAYER</CharacterType>
+			  <MovementType></MovementType>
+			  <Timer></Timer>
+			</Character>
+		    <Character>
+			  <CharacterType>HERO</CharacterType>
+			  <MovementType></MovementType>
+			  <Timer></Timer>
+			</Character>
+		  </LOCharacters>
+		  <InformationBoxes>
+		    <InformationBox>
+			  <TextType>PLAYER</TextType>
+			  <Text>Who are you?</Text>
+			  <Timer></Timer>
+			</InformationBox>
+		    <InformationBox>
+			  <TextType>HERO</TextType>
+			  <Text>My name is Sam the Space Man and I will be your tour guide today!</Text>
+			  <Timer></Timer>
+			</InformationBox>
+		    <InformationBox>
+			  <TextType>ALT1</TextType>
+			  <Text>You find yourself on the Moon with this strange man. You soon realize that the Moon is actually a spaceship...</Text>
+			  <Timer></Timer>
+			</InformationBox>
+		  </InformationBoxes>			
+        </StoryIntroScreen>
+      </StoryIntroScreens>
+      <StoryOutroScreens> <!-- Needs to be after the Lessons and Challenges -->
+        <StoryOutroScreen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="themeStoryScreenOutro">
+		  <Buttons>
+		    <Button>
+		      <ButtonLocationType>NEXT</ButtonLocationType>
+			  <Text>End Virtual Tour</Text>
+			  <Timer></Timer>
+			  <TransitionType>NEXT_ACT</TransitionType>
+			</Button>
+		  </Buttons>
+		  <LOCharacters>
+		    <Character>
+			  <CharacterType>HERO</CharacterType>
+			  <MovementType></MovementType>
+			  <Timer></Timer>
+			</Character>
+			<Character>
+			  <CharacterType>PLAYER</CharacterType>
+			  <MovementType></MovementType>
+			  <Timer></Timer>
+			</Character>
+		  </LOCharacters>
+		  <InformationBoxes>
+		    <InformationBox>
+			  <TextType>HERO</TextType>
+			  <Text>Have a safe journey back to Earth!</Text>
+			  <Timer></Timer>
+			</InformationBox>
+		    <InformationBox>
+			  <TextType>ALT1</TextType>
+			  <Text>After the completion of the tour, Sam the Space Man takes you back to the warp zone that will take you back to Earth.</Text>
+			  <Timer></Timer>
+			</InformationBox>
+		  </InformationBoxes>			
+        </StoryOutroScreen>
+      </StoryOutroScreens>
+    </ThemeStory>
+  </ThemeStories>
+  
+</Theme>

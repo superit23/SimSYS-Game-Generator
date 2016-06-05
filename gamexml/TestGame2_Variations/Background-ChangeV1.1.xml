@@ -1,0 +1,1098 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Top Level Game -->
+<!-- Test Game 2 contains 3 acts, each act has three scenes; each scene has three screens -->
+<!-- Variation of Test Game 2 that just changes the backgrounds -->
+<Game>
+  <!-- Act1 has three scenes and are identified as 1, 2 and 3.
+		- Scenes have backroungs - white-BG.jpg,medgrey-BG.jps and black-BG.jpg
+		- Has Elements with colors Blue,Turquoise and Purple 
+		- SpeedType is fast -->
+  <Act>
+    <Transition>straightCut</Transition>
+    <Sequence>
+      <SequenceNumber>1</SequenceNumber>
+    </Sequence>
+    <LearningObjective>
+      <LearningObjective>Learning Objective for Act</LearningObjective>
+    </LearningObjective>
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>1</SequenceNumber>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+          <Color>
+            <BGColor>
+              <ColorName>Light_Blue</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>fast</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Blue</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>fast</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>3</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Dark_Blue</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>fast</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Background>
+        <Background>white-BG.jpg</Background>
+      </Background>
+
+
+
+    </Scene>
+
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>2</SequenceNumber>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+          <Color>
+            <BGColor>
+              <ColorName>Light_Turquoise</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>fast</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Turquoise</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>fast</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>3</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Dark_Turquoise</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>fast</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Background>
+        <Background>lightGrey.jpg</Background>
+      </Background>
+
+
+
+    </Scene>
+
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>3</SequenceNumber>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Light_Purple</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>fast</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Purple</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>fast</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>3</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Dark_Purple</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>fast</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Background>
+        <Background>black-BG.jpg</Background>
+      </Background>
+
+    </Scene>
+  </Act>
+
+  <!-- Act2 has three scenes and are identified as 1, 2 and 3.
+		- Has Elements with colors Red,Pink and Orange 
+		- SpeedType is medium
+-->
+
+  <Act>
+    <Transition>straightCut</Transition>
+    <Sequence>
+      <SequenceNumber>2</SequenceNumber>
+    </Sequence>
+    <LearningObjective>
+      <LearningObjective>Learning Objective for Act</LearningObjective>
+    </LearningObjective>
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>1</SequenceNumber>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+          <Color>
+            <BGColor>
+              <ColorName>Light_Red</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>medium</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Red</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>medium</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>3</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Dark_Red</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>medium</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Background>
+        <Background>white-BG.jpg</Background>
+      </Background>
+
+    </Scene>
+
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>2</SequenceNumber>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+          <Color>
+            <BGColor>
+              <ColorName>Light_Pink</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>medium</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Pink</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>medium</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>3</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Dark_Pink</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>medium</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Background>
+        <Background>darkGrey.jpg</Background>
+      </Background>
+
+
+
+    </Scene>
+
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>3</SequenceNumber>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Light_Orange</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>medium</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Orange</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>medium</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>3</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Dark_Orange</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>medium</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Background>
+        <Background>black-BG.jpg</Background>
+      </Background>
+
+
+
+    </Scene>
+  </Act>
+
+
+  <!-- Act3 has three scenes and are identified as 1, 2 and 3.
+		- Scenes have backroungs - white-BG.jpg,medgrey-BG.jps and black-BG.jpg
+		- Has Elements with colors Yellow,Peach and Orange 
+		- SpeedType is LOW
+-->
+
+  <Act>
+    <Transition>straightCut</Transition>
+    <Sequence>
+      <SequenceNumber>3</SequenceNumber>
+    </Sequence>
+    <LearningObjective>
+      <LearningObjective>Learning Objective for Act</LearningObjective>
+    </LearningObjective>
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>1</SequenceNumber>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+          <Color>
+            <BGColor>
+              <ColorName>Light_Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>slow</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>slow</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>3</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Dark_Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>slow</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Background>
+        <Background>medGrey-BG.jpg</Background>
+      </Background>
+
+
+
+    </Scene>
+
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>2</SequenceNumber>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+          <Color>
+            <BGColor>
+              <ColorName>Light_Peach</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>slow</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Medium_Peach</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>slow</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>3</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Dark_Peach</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>slow</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Background>
+        <Background>lightGrey.jpg</Background>
+      </Background>
+
+
+
+    </Scene>
+
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>3</SequenceNumber>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Light_Brown</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>slow</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Medium_Brown</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>slow</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>3</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>232</y>
+          </Location>
+          <Size>
+            <width>157</width>
+            <height>50</height>
+          </Size>
+
+          <Color>
+            <BGColor>
+              <ColorName>Dark_Brown</ColorName>
+            </BGColor>
+          </Color>
+          <AnimationEffect>
+            <Effect>fadeInEffect</Effect>
+            <Speed>slow</Speed>
+          </AnimationEffect>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+      </Screen>
+      <Background>
+        <Background>blue_bg.jpg</Background>
+      </Background>
+
+
+
+    </Scene>
+  </Act>
+
+
+  <LearningObjective>
+    <LearningObjective>Learning Objective for Game</LearningObjective>
+  </LearningObjective>
+
+
+  <Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Player">
+    <Name> Default Player </Name>
+    <AutonomousBehavior>Behavior</AutonomousBehavior>
+    <Profile>
+      <ProfilePhoto>character_9\char9_StandSmileOpen.png</ProfilePhoto>
+      <Title> Intern, Software Engineering </Title>
+      <Skills> Software Engineering, Project Management, Configuration Management </Skills>
+      <YearsOfExperience> 1 </YearsOfExperience>
+      <Degrees> NONE </Degrees>
+      <Level>L0</Level>
+    </Profile>
+    <Rewards>
+      <Points>3000</Points>
+    </Rewards>
+    <PlayerID>Player 1</PlayerID>
+  </Character>
+
+</Game>
+

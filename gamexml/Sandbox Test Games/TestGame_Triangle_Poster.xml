@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Top Level Game -->
+<!-- Test Game 1 contains 1 act, 1 scene and 2 screens -->
+<Game>
+    <Act>
+        <Transition>straightCut</Transition>
+        <Sequence>
+			 <SequenceNumber>1</SequenceNumber>        	
+        </Sequence>
+        <LearningObjective>
+            <LearningObjective>Learning Objective for Act</LearningObjective>
+        </LearningObjective>
+        <Scene>
+ 	<Background>
+                <Background>blue_bg.png</Background>
+            </Background>
+            <Transition>straightCut</Transition>
+             <Sequence>
+					 <SequenceNumber>1</SequenceNumber>
+					 <NextSequence>0</NextSequence>
+			 </Sequence>
+            <LearningObjective>
+                <LearningObjective>Learning Objective for Scene</LearningObjective>
+            </LearningObjective>
+            <Screen>
+
+				
+                <Transition>straightCut</Transition>
+                <Sequence>
+					 <SequenceNumber>1</SequenceNumber>
+				</Sequence>
+                <LearningObjective>
+                    <LearningObjective>Learning Objective for Screen</LearningObjective>
+                </LearningObjective>
+                <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="SandBox">
+					 <Introduction>
+                        <IntroductionName>Sample Content</IntroductionName>
+                    </Introduction>
+					 <Item>
+						<Type>SandBox</Type>
+						<Grade>4</Grade>
+						<Points>100,10,50,100,150,100,170,110,50,200,150,200,100,210,95,300,150,300</Points>
+						<Angles>60,45,20</Angles>
+						<DesiredAngle>90</DesiredAngle>
+						<Reward>500</Reward>
+						<Feedback>Congratulations! You have successfully created a Key of Right Angles with a correct combination of acute angles!</Feedback>
+						<IncorrectFeedback>Sorry! You were unable to successfully create the desired angle!</IncorrectFeedback>
+						<PromotionTitle>Mathematical Wizard</PromotionTitle>
+					</Item>					 
+				</Challenge>
+				<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					    <Name>Button Type</Name>
+						<Location>
+                        <x>345</x>
+                        <y>475</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>50</height>
+						</Size>
+						<Text>
+							<Text>Compute Results</Text>
+							<Font>Aerial</Font>
+							<FontSize>20</FontSize>
+						</Text>
+						<Color>
+							<BGColor>
+								<ColorName>Yellow</ColorName>
+							</BGColor>
+						</Color>
+						
+						<Behavior>
+							<BehaviorType>rewardBehavior</BehaviorType>
+							<Action>AddSBPoints</Action>
+						</Behavior>
+						<Behavior>
+							<BehaviorType>transitionBehavior</BehaviorType>
+							<Action>NextScreen.2</Action>
+						</Behavior>
+						
+                  </GameElement>
+            </Screen>
+			<Screen>
+                <Transition>straightCut</Transition>
+                 <Sequence>
+					 <SequenceNumber>2</SequenceNumber>
+    			 </Sequence>
+                <LearningObjective>
+                    <LearningObjective>Learning Objective for Screen</LearningObjective>
+                </LearningObjective>
+
+
+
+                <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Information Box</Name>
+						<Location>
+                        <x>581</x>
+                        <y>160</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>400</height>
+						</Size>
+						<Text>
+							<Text> You have captured the Silver Crown of Geometry and the Wizard has been vanquished! Your current Math Points are</Text>
+							<Font>Aerial</Font>
+							<FontSize>20</FontSize>
+						</Text>
+						<Color>
+							<BGColor>
+								<ColorName>Yellow</ColorName>
+							</BGColor>
+						</Color>
+						<Behavior>
+							<BehaviorType>rewardBehavior</BehaviorType>
+							<Action>GetPoints</Action>
+						</Behavior>
+						
+                </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+				<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Button Type</Name>
+						<Location>
+							<x>575</x>
+							<y>422</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>50</height>
+						</Size>
+						<Text>
+							<Text>End Game</Text>
+							<Font>Aerial</Font>
+							<FontSize>20</FontSize>
+						</Text>
+						<Color>
+							<BGColor>
+								<ColorName>Yellow</ColorName>
+							</BGColor>
+						</Color>
+						<Behavior>
+							<BehaviorType>endGameBehavior</BehaviorType>
+						</Behavior>
+                </GameElement>
+               
+            </Screen>
+           
+            
+        </Scene>
+    </Act>
+    <LearningObjective>
+        <LearningObjective>Learning Objective for Game</LearningObjective>
+    </LearningObjective>
+
+	
+    <Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Player">
+		<Name> Default Player </Name>
+		<AutonomousBehavior>Behavior</AutonomousBehavior>
+		<Profile>
+			<ProfilePhoto>character_4\char4_RPointUp.png</ProfilePhoto>
+			<Title> Intern, Software Engineering </Title>
+			<Skills> Software Engineering, Project Management, Configuration Management </Skills>
+			<YearsOfExperience> 1 </YearsOfExperience>
+			<Degrees> NONE </Degrees>
+			<Level> Female </Level>
+		</Profile>
+        <Rewards>
+			<Points>1000</Points>
+		</Rewards>
+        <PlayerID>Player 1</PlayerID>
+		<Attributes>
+			<Mood>50</Mood>
+			<Charisma>75</Charisma>
+			<Skill>25</Skill>
+			<Resilience>80</Resilience>
+		</Attributes>
+    </Character>
+	
+	<Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="NonPlayer">
+		<Name>Nimesis</Name>
+		<AutonomousBehavior>Behavior</AutonomousBehavior>
+		<Profile>
+		  <ProfilePhoto>character_9\char9_StandSmileOpen.png</ProfilePhoto>
+		  <Title> Rival </Title>
+		  <Skills> Software Engineering, Project Management, Configuration Management </Skills>
+		  <YearsOfExperience> 1 </YearsOfExperience>
+		  <Degrees> NONE </Degrees>
+		  <Level>L0</Level>
+		</Profile>
+		<Rewards>
+		  <Points>3000</Points>
+		  <Trophies>None</Trophies>
+		  <Certificates>Microsoft Sql Certification,Java Sun Certification</Certificates>
+
+		</Rewards>
+		<NonPlayerID>Player 2</NonPlayerID>
+		<Attributes>
+			<Mood>10</Mood>
+			<Charisma>10</Charisma>
+			<Skill>10</Skill>
+			<Resilience>10</Resilience>
+		</Attributes>
+	</Character>
+   
+</Game>
+

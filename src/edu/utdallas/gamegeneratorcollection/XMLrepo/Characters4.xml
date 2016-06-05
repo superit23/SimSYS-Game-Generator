@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Characters>
+   <Interlocutor>
+      <Directory>character_5</Directory>
+      <Name>Sandra</Name>
+      <Prefix>char5</Prefix>
+   </Interlocutor>
+   <Protagonist>
+      <Directory>character_26</Directory>
+      <Name>Henry</Name>
+      <Prefix>char26</Prefix>
+   </Protagonist>
+   <Antagonist>
+      <Directory>character_28</Directory>
+      <Name>John</Name>
+      <Prefix>char28</Prefix>
+   </Antagonist>
+   <Player>
+      <Directory>character_12</Directory>
+      <Name>Christi</Name>
+      <Prefix>char12</Prefix>
+   </Player>
+</Characters>

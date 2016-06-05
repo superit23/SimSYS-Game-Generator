@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<charList>
+	<characters>
+		<character name = "Jester">    
+			<fileName>character_14/char14_StandSmileClosed.png</fileName>
+			<CharacterName>Jester</CharacterName>
+			<AutonomousBehavior>none</AutonomousBehavior>
+			<Rewards>none</Rewards>
+			<Profile>
+				<ProfilePhoto>none</ProfilePhoto>
+				<Title>Mr</Title>
+				<YearsOfExperience>1</YearsOfExperience>
+				<Skills>
+					<Skill>Quick Thinker</Skill>
+					<Skill>Funny</Skill>
+				</Skills>
+				<Demographics>
+					<Demographic>Irish</Demographic>
+					<Demographic>Dublin</Demographic>
+				</Demographics>
+				<Degrees>
+					<Degree>Advertising</Degree>
+					<Degree>Marketing</Degree>
+				</Degrees>
+			</Profile>
+			<type>Trickster</type>
+		</character>
+		<character name = "Wizard">    
+			<fileName>character_3/char3_StandSmileClosed.png</fileName>
+			<CharacterName>Wizard</CharacterName>
+			<AutonomousBehavior>none</AutonomousBehavior>
+			<Rewards>none</Rewards>
+			<Profile>
+				<ProfilePhoto>none</ProfilePhoto>
+				<Title>Mr</Title>
+				<YearsOfExperience>25</YearsOfExperience>
+				<Skills>
+					<Skill>Great at Math</Skill>
+					<Skill>Well-Experienced</Skill>
+				</Skills>
+				<Demographics>
+					<Demographic>Canadian</Demographic>
+					<Demographic>Toronto</Demographic>
+				</Demographics>
+				<Degrees>
+					<Degree>Mathematics</Degree>
+					<Degree>Computer Science</Degree>
+				</Degrees>
+			</Profile>
+			<type>Prop</type>
+		</character>
+		<character name = "Sir Ask-Alot">    
+			<fileName>character_19/char19_StandSmileClosed.png</fileName>
+			<CharacterName>Sir Ask-Alot</CharacterName>
+			<AutonomousBehavior>none</AutonomousBehavior>
+			<Rewards>none</Rewards>
+			<Profile>
+				<ProfilePhoto>none</ProfilePhoto>
+				<Title>Mr</Title>
+				<YearsOfExperience>10</YearsOfExperience>
+				<Skills>
+					<Skill>Great Questionnaire</Skill>
+					<Skill>Great Thinker</Skill>
+				</Skills>
+				<Demographics>
+					<Demographic>American</Demographic>
+					<Demographic>Alaska</Demographic>
+				</Demographics>
+				<Degrees>
+					<Degree>Corporate Communications</Degree>
+					<Degree>Sociology</Degree>
+				</Degrees>
+			</Profile>
+			<type>Interlocutor</type>
+		</character>
+	</characters>
+</charList>

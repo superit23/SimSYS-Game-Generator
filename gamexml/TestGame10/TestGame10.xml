@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Game>
+<!-- Test game 9 consists of one act; the act has one scene; the scene has two screens-->
+
+<!-- Test game 3 has a default player who is intialized with 1000 points -->
+    <Act>
+        <Transition>
+			<type>straightCut</type>
+			<duration>medium</duration>
+		</Transition>
+        <Sequence>
+			<SequenceNumber>1</SequenceNumber>
+		</Sequence>
+        <LearningObjective>
+            <LearningObjective>Learning Objective for Act 1</LearningObjective>
+        </LearningObjective>
+        <Scene>
+            <Transition>
+				<type>straightCut</type>
+				<duration>medium</duration>
+			</Transition>
+			<Sequence>
+				<SequenceNumber>1</SequenceNumber>
+			</Sequence>
+            <LearningObjective>
+                <LearningObjective>Learning Objective for Act 1 Scene 1</LearningObjective>
+            </LearningObjective>
+            <Screen>
+                <Transition>
+						<type>straightCut</type>
+						<duration>medium</duration>
+				</Transition>
+				<Sequence>
+					<SequenceNumber>1</SequenceNumber>
+				</Sequence>
+                <LearningObjective>
+                    <LearningObjective>Learning Objective for Act 1 Scene 1 Screen 1</LearningObjective>
+                </LearningObjective>
+               <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Information Box</Name>
+						<Location>
+                        <x>581</x>
+                        <y>232</y>
+						</Location>
+						<Size>
+                        <width>157</width>
+                        <height>50</height>
+						</Size>
+						<Text>
+							<Text>Welcome</Text>
+							<Font>Aerial</Font>
+							<FontSize>12</FontSize>
+						</Text>
+						<Color>
+							<BGColor>
+								<ColorName>Yellow</ColorName>
+							</BGColor>
+						</Color>
+				</GameElement>
+				<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Button Type</Name>
+						<Location>
+							<x>581</x>
+							<y>332</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>50</height>
+						</Size>
+						<Text>
+							<Text>Continue...</Text>
+							<Font>Aerial</Font>
+							<FontSize>12</FontSize>
+						</Text>
+						<Color>
+							<BGColor>
+								<ColorName>Yellow</ColorName>
+							</BGColor>
+						</Color>
+						<Behavior>
+							<BehaviorType>transitionBehavior</BehaviorType>
+							<Action>NextScreen.2</Action>
+						</Behavior>
+                </GameElement>
+             </Screen>
+			 <Screen>
+                <Transition>
+					<type>straightCut</type>
+					<duration>medium</duration>
+				</Transition>
+				<Sequence>
+					 <SequenceNumber>2</SequenceNumber>
+				</Sequence>
+                <LearningObjective>
+                    <LearningObjective>Learning Objective for Act 1 Scene 1 Screen 2</LearningObjective>
+                </LearningObjective>
+				
+               <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Information Box</Name>
+						<Location>
+                        <x>20</x>
+                        <y>20</y>
+						</Location>
+						<Size>
+                        <width>150</width>
+                        <height>400</height>
+						</Size>
+						<Text>
+							<Text>Choose your Avatar</Text>
+							<Font>Aerial</Font>
+							<FontSize>12</FontSize>
+						</Text>
+						<Color>
+							<BGColor>
+								<ColorName>Yellow</ColorName>
+							</BGColor>
+						</Color>
+				</GameElement>
+				<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Character">
+					<Name>Cat</Name>
+					<Location>
+						<x>180</x>
+						<y>40</y>
+					</Location>
+					<Size>
+						<width>50</width>
+						<height>400</height>
+					</Size>
+					<AnimationEffect/>
+					<SoundEffect/>
+					<Behaviors>
+						<BehaviorType>transitionBehavior</BehaviorType>
+						<TriggerType>timer</TriggerType>
+						<Timer>500</Timer>
+						<TransitionBehaviorType/>
+					</Behaviors>
+					<AutonomousBehaviour>AutonomousBehaviour</AutonomousBehaviour>
+					<Profile>
+						<ProfilePhoto>character_4\char4_StandSmileOpen.png</ProfilePhoto>
+						<Title>Software Engineering Student</Title>
+						<Skills>Software engineering, Unified Process, agile methods, project management, OO programming, IDE, configuration management, UML case tool, UM notation.</Skills>
+						<YearsOfExperience>0</YearsOfExperience>
+						<Level>Character Level</Level>
+						<Degrees>B.Sc. senior, Steven B. Allmer School of Software Engineering</Degrees>
+					</Profile>
+					<Rewards>0</Rewards>
+				</GameElement>
+				<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Character">
+					<Name>Boris</Name>
+					<Location>
+						<x>250</x>
+						<y>40</y>
+					</Location>
+					<Size>
+						<width>50</width>
+						<height>400</height>
+					</Size>
+					<AnimationEffect/>
+					<SoundEffect/>
+					<Behaviors>
+						<BehaviorType>transitionBehavior</BehaviorType>
+						<TriggerType>timer</TriggerType>
+						<Timer>500</Timer>
+						<TransitionBehaviorType/>
+					</Behaviors>
+					<AutonomousBehaviour>AutonomousBehaviour</AutonomousBehaviour>
+					<Profile>
+						<ProfilePhoto>character_27\char27_StandSmileOpen.png</ProfilePhoto>
+						<Title>Software Engineering Student</Title>
+						<Skills>Software engineering, Unified Process, agile methods, project management, OO programming, IDE, configuration management, UML case tool, UM notation.</Skills>
+						<YearsOfExperience>0</YearsOfExperience>
+						<Level>Character Level</Level>
+						<Degrees>B.Sc. senior, Steven B. Allmer School of Software Engineering</Degrees>
+					</Profile>
+					<Rewards>0</Rewards>
+				</GameElement>
+				<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Character">
+					<Name>Daniel</Name>
+					<Location>
+						<x>305</x>
+						<y>40</y>
+					</Location>
+					<Size>
+						<width>50</width>
+						<height>400</height>
+					</Size>
+					<AnimationEffect/>
+					<SoundEffect/>
+					<Behaviors>
+						<BehaviorType>transitionBehavior</BehaviorType>
+						<TriggerType>timer</TriggerType>
+						<Timer>500</Timer>
+						<TransitionBehaviorType/>
+					</Behaviors>
+					<AutonomousBehaviour>AutonomousBehaviour</AutonomousBehaviour>
+					<Profile>
+						<ProfilePhoto>character_6\char6_StandSmileOpen.png</ProfilePhoto>
+						<Title>Software Engineering Student</Title>
+						<Skills>Software engineering, Unified Process, agile methods, project management, OO programming, IDE, configuration management, UML case tool, UM notation.</Skills>
+						<YearsOfExperience>0</YearsOfExperience>
+						<Level>Character Level</Level>
+						<Degrees>B.Sc. senior, Steven B. Allmer School of Software Engineering</Degrees>
+					</Profile>
+					<Rewards>0</Rewards>
+				</GameElement>
+			 </Screen>
+			 <Screen>
+                <Transition>
+					<type>straightCut</type>
+					<duration>medium</duration>
+				</Transition>
+				<Sequence>
+					 <SequenceNumber>3</SequenceNumber>
+				</Sequence>
+                <LearningObjective>
+                    <LearningObjective>Learning Objective for Act 1 Scene 1 Screen 3</LearningObjective>
+                </LearningObjective>
+				
+               <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Information Box</Name>
+						<Location>
+                        <x>581</x>
+                        <y>232</y>
+						</Location>
+						<Size>
+                        <width>157</width>
+                        <height>50</height>
+						</Size>
+						<Text>
+							<Text>Thank you for playing!!!</Text>
+							<Font>Aerial</Font>
+							<FontSize>12</FontSize>
+						</Text>
+						<Color>
+							<BGColor>
+								<ColorName>Yellow</ColorName>
+							</BGColor>
+						</Color>
+						
+                </GameElement>
+				<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Button Type</Name>
+						<Location>
+							<x>581</x>
+							<y>332</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>50</height>
+						</Size>
+						<Text>
+							<Text>End...</Text>
+							<Font>Aerial</Font>
+							<FontSize>12</FontSize>
+						</Text>
+						<Color>
+							<BGColor>
+								<ColorName>Yellow</ColorName>
+							</BGColor>
+						</Color>
+						<Behavior>
+							<BehaviorType>transitionBehavior</BehaviorType>
+							<Action>NextScene.2</Action>
+						</Behavior>
+                </GameElement>
+             </Screen>
+			<Background>
+                <Background>blue_bg.png</Background>
+            </Background>
+            <Music>
+                <Music></Music>
+            </Music>
+        </Scene>
+	</Act>
+	<LearningObjective>
+        <LearningObjective>Learning Objective for Game</LearningObjective>
+    </LearningObjective>
+	
+    <Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="NonPlayer">
+		<Name>Cat</Name>
+        <AutonomousBehaviour>AutonomousBehaviour</AutonomousBehaviour>
+					<Profile>
+						<ProfilePhoto>character_4\char4_StandSmileOpen.png</ProfilePhoto>
+						<Title>Software Engineering Student</Title>
+						<Skills>Software engineering, Unified Process, agile methods, project management, OO programming, IDE, configuration management, UML case tool, UM notation.</Skills>
+						<YearsOfExperience>0</YearsOfExperience>
+						<Level>Character Level</Level>
+						<Degrees>B.Sc. senior, Steven B. Allmer School of Software Engineering</Degrees>
+					</Profile>
+					<Rewards>0</Rewards>
+        <NonPlayerID>Player 1</NonPlayerID>
+    </Character>
+	<Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="NonPlayer">
+		<Name>Boris</Name>
+        <AutonomousBehaviour>AutonomousBehaviour</AutonomousBehaviour>
+					<Profile>
+						<ProfilePhoto>character_27\char27_StandSmileOpen.png</ProfilePhoto>
+						<Title>Software Engineering Student</Title>
+						<Skills>Software engineering, Unified Process, agile methods, project management, OO programming, IDE, configuration management, UML case tool, UM notation.</Skills>
+						<YearsOfExperience>0</YearsOfExperience>
+						<Level>Character Level</Level>
+						<Degrees>B.Sc. senior, Steven B. Allmer School of Software Engineering</Degrees>
+					</Profile>
+					<Rewards>0</Rewards>
+        <NonPlayerID>Player 2</NonPlayerID>
+    </Character>
+	<Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="NonPlayer">
+		<Name>Daniel</Name>
+        <AutonomousBehaviour>AutonomousBehaviour</AutonomousBehaviour>
+					<Profile>
+						<ProfilePhoto>character_6\char6_StandSmileOpen.png</ProfilePhoto>
+						<Title>Software Engineering Student</Title>
+						<Skills>Software engineering, Unified Process, agile methods, project management, OO programming, IDE, configuration management, UML case tool, UM notation.</Skills>
+						<YearsOfExperience>0</YearsOfExperience>
+						<Level>Character Level</Level>
+						<Degrees>B.Sc. senior, Steven B. Allmer School of Software Engineering</Degrees>
+					</Profile>
+					<Rewards>0</Rewards>
+        <NonPlayerID>Player 3</NonPlayerID>
+    </Character>
+</Game>

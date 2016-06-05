@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gameTemplate name ="Template">
+	<acts>
+		<act name = "Introduction">    
+			<scenes>
+				<scene>
+					<screens>
+						<screen>
+							<type>Introduction</type>
+			 			</screen>
+						<screen>
+							<type>Summary Screen</type>
+						</screen>
+					</screens>
+					<transitionType>Text that states: "Let's Begin!"</transitionType>
+				</scene>
+			</scenes>
+		</act>
+		<act name = "Progress"> 
+			<scenes>
+				<scene>
+					<screens>
+						<screen>
+							<type>Introduction</type>
+						</screen>
+					</screens>
+					<transitionType>Text that states: "First Challenge!"</transitionType>
+				</scene>
+				<scene>
+					<screens>
+						<screen>
+							<type>Question</type>
+						</screen>
+					</screens>
+					<transitionType>Text that states: "Next Round!"</transitionType>
+				</scene>
+				<scene>
+					<screens>
+						<screen>
+							<type>Question</type>
+						</screen>
+					</screens>
+					<transitionType>Text that states: "Next Round!"</transitionType>
+				</scene>
+				<scene>
+					<screens>
+						<screen>
+							<type>Question</type>
+						</screen>
+					</screens>
+					<transitionType>Text that states: "Challenge Complete!"</transitionType>
+				</scene>
+			</scenes>
+		</act>
+		<act name = "Conclusion">  
+			<scenes>  
+				<scene>
+					<screens>
+						<screen>
+							<type>Introduction</type>
+						</screen>
+					</screens>
+					<transitionType>Text that states: "See Your Score!"</transitionType>
+				</scene>
+				<scene>
+					<screens>
+						<screen>
+							<type>Summary</type>
+						</screen>
+					</screens>
+					<transitionType>Progress Options</transitionType>
+				</scene>
+				
+			</scenes>
+		</act>
+	</acts>
+</gameTemplate>

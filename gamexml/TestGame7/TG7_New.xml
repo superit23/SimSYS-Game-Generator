@@ -1,0 +1,3159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Top Level Game -->
+<!-- Test Game 1 contains 1 act, 1 scene and 2 screens -->
+<Game>
+  <Act>
+    <Transition>straightCut</Transition>
+    <Sequence>
+      <SequenceNumber>1</SequenceNumber>
+    </Sequence>
+    <LearningObjective>
+      <LearningObjective>Learning Objective for Act</LearningObjective>
+    </LearningObjective>
+    <Scene>
+      <Transition>straightCut</Transition>
+      <Sequence>
+        <SequenceNumber>1</SequenceNumber>
+        <NextSequence>6</NextSequence>
+      </Sequence>
+      <LearningObjective>
+        <LearningObjective>Learning Objective for Scene</LearningObjective>
+      </LearningObjective>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>1</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>20</NpcCorrect>
+		<NpcIncorrect>21</NpcIncorrect>
+        <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+          <Introduction>
+            <IntroductionName>Sample Content</IntroductionName>
+          </Introduction>
+          
+		  <Characters>Nimesis,Default Player</Characters>
+		  
+          <Item>
+            <Stem>
+              <StemText>
+                <Text>
+                  <Text>1. The designers need to use a complex AI algorithm that is available as a 3rd party component with an API. The designers know there are a number of possible components available on marketplace, which are undergoing extensive performance evaluations.</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemText>
+              <StemQuestion>
+                <Text>
+                  <Text>Which Design Pattern would be suitable to reduce the impact of this eventual recommendation?</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemQuestion>
+            </Stem>
+
+            <Option>
+              <Text>
+                <Text>Strategy Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>2</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Bridge Pattern</Feedback>
+              <Hint>
+                <Hint>The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable; algorithms are selected at runtime. It is a behavioral pattern.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Bridge Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>500</Points>
+                <NextQuestion>3</NextQuestion>
+                <PromotionDemotion>Junior Programmer</PromotionDemotion>
+              </Reward>
+              <Assessment>correct</Assessment>
+              <Feedback>The Bridge Pattern is Correct!</Feedback>
+              <Hint>
+                <Hint>The Bridge Pattern decouples an interface and its implementation. The implementation can be modified without changing the interface. It is a structural pattern.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Factory Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>2</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Bridge Pattern1</Feedback>
+              <Hint>
+                <Hint>The Factory Pattern defines an interface for creating an object, but lets the classes that implement the interface decide which class to instantiate.  It is a creational pattern.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Singleton Pattern</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>2</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Bridge Pattern</Feedback>
+              <Hint>
+                <Hint>The Singleton Pattern that restricts the instantiation of a class to only one object. It is a creational pattern.</Hint>
+              </Hint>
+            </Option>
+          </Item>
+          <Layout> </Layout>
+		  <Timer>5000</Timer>
+          <Summary>
+            <SummaryName>Sample End</SummaryName>
+          </Summary>
+
+        </Challenge>
+        
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>345</x>
+            <y>475</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Submit</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>AddQuizPoints</Action>
+		
+          </Behavior>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.2</Action>
+
+          </Behavior>
+
+        </GameElement>
+      </Screen>
+
+<Screen>
+
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>2</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>6</NpcCorrect>
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+  	<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Nimesis,Default Player</Name>
+						<Location>
+							<x>-45</x>
+							<y>180</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>160</height>
+						</Size>
+						<Behavior>
+							<BehaviorType>visibilityBehavior</BehaviorType>
+						</Behavior>
+				</GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+ </GameElement>
+
+               
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.6</Action>
+          </Behavior>
+        </GameElement>
+        
+       
+      
+	
+
+      </Screen>
+	  
+<Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>3</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>6</NpcCorrect>
+		
+				
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>150</x>
+            <y>252</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+
+
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>581</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.7</Action>
+          </Behavior>
+        </GameElement>
+		
+		
+				
+		
+		
+
+      </Screen>
+<Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>6</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>22</NpcCorrect>
+		<NpcIncorrect>23</NpcIncorrect>
+	<Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+          <Introduction>
+            <IntroductionName>Sample Content</IntroductionName>
+          </Introduction>
+          <Characters>Nimesis,Default Player</Characters>
+          <Item>
+            <Stem>
+              <StemText>
+                <Text>
+                  <Text>6. Software Development is broken into different levels of programming languages varying from first-generation (1GL) to fourth-generation (4GL)</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemText>
+              <StemQuestion>
+                <Text>
+                  <Text>Which of the following programming languages has the highest generation level?</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemQuestion>
+            </Stem>
+
+            <Option>
+              <Text>
+                <Text>Java</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>13</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is MATLAB</Feedback>
+              <Hint>
+                <Hint>JAVA is a common language used in front-end development.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>MATLAB</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>500</Points>
+                <NextQuestion>12</NextQuestion>
+              </Reward>
+              <Assessment>correct</Assessment>
+			  <PromotionDemotion>Junior Programmer</PromotionDemotion>
+              <Feedback>MATLAB is Correct!</Feedback>
+              <Hint>
+                <Hint>MATLAB is used for multi-disciplinary engineering, math, and physics fields and supports many computational options.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Assembly Language</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>13</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is MATLAB</Feedback>
+              <Hint>
+                <Hint>ASM is one of the outputs of a compiler</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Binary</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>13</NextQuestion>
+				<PromotionDemotion></PromotionDemotion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is MATLAB</Feedback>
+              <Hint>
+                <Hint>Binary code consists of 0's and 1's</Hint>
+              </Hint>
+            </Option>
+          </Item>
+          <Layout> </Layout>
+          <Summary>
+            <SummaryName>Sample End</SummaryName>
+          </Summary>
+		  <Timer>500</Timer>
+
+
+        </Challenge>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>345</x>
+            <y>475</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Submit</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>AddQuizPoints</Action>
+          </Behavior>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.2</Action>
+          </Behavior>
+
+        </GameElement>
+      </Screen>
+<Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>7</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>24</NpcCorrect>
+		<NpcIncorrect>25</NpcIncorrect>
+	<Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+          <Introduction>
+            <IntroductionName>Sample Content</IntroductionName>
+          </Introduction>
+          <Characters>Nimesis,Default Player</Characters>
+          <Item>
+            <Stem>
+              <StemText>
+                <Text>
+                  <Text>7. The Java programming language is statically-typed, which means that all variables must first be declared before they can be used.</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemText>
+              <StemQuestion>
+                <Text>
+                  <Text>Which of the following data types is NOT a primitive type?</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemQuestion>
+            </Stem>
+
+            <Option>
+              <Text>
+                <Text>account</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>500</Points>
+		<PromotionDemotion>Junior Programmer</PromotionDemotion>
+                <NextQuestion>9</NextQuestion>
+              </Reward>
+              <Assessment>correct</Assessment>
+              <Feedback>Correct! Account is not a primitive data type!</Feedback>
+              <Hint>
+                <Hint>Type 'account' stores account numbers</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>int</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>8</NextQuestion>
+                
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Incorrect! The correct answer is account!</Feedback>
+              <Hint>
+                <Hint>A 32-bit signed two's complement integer</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>char</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>8</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is account</Feedback>
+              <Hint>
+                <Hint>A single 16-bit Unicode character.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>byte</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>8</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is account</Feedback>
+              <Hint>
+                <Hint>An 8-bit signed two's complement integer</Hint>
+              </Hint>
+            </Option>
+          </Item>
+          <Layout> </Layout>
+          <Summary>
+            <SummaryName>Sample End</SummaryName>
+          </Summary>
+		  <Timer>500</Timer>
+
+        </Challenge>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>345</x>
+            <y>475</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Submit</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>AddQuizPoints</Action>
+          </Behavior>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.2</Action>
+          </Behavior>
+
+        </GameElement>
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>8</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>6</NpcCorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>150</x>
+            <y>252</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+
+
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>581</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.10</Action>
+          </Behavior>
+        </GameElement>
+
+      </Screen>
+<Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>9</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>6</NpcCorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>150</x>
+            <y>252</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+
+
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>581</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.11</Action>
+          </Behavior>
+        </GameElement>
+
+      </Screen>
+<Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>10</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>26</NpcCorrect>
+		<NpcIncorrect>27</NpcIncorrect>
+        <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+          <Introduction>
+            <IntroductionName>Sample Content</IntroductionName>
+          </Introduction>
+          <Characters>Nimesis,Default Player</Characters>
+          <Item>
+            <Stem>
+              <StemText>
+                <Text>
+                  <Text>10. When developing a piece of software, a software engineer must determine what language to use. Applications can benefit more from certain languages and can make the process much easier. </Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemText>
+              <StemQuestion>
+                <Text>
+                  <Text>Which programming language would be best for a piece of embedded software?</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemQuestion>
+            </Stem>
+
+            <Option>
+              <Text>
+                <Text>Java</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>14</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is C</Feedback>
+              <Hint>
+                <Hint>Java is an Object Oriented language with a high amount of overhead and is great for web based applications</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>C</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>500</Points>
+                <NextQuestion>4</NextQuestion>
+                <PromotionDemotion>Junior Programmer</PromotionDemotion>
+              </Reward>
+              <Assessment>correct</Assessment>
+              <Feedback>The C Programming Language is Correct!</Feedback>
+              <Hint>
+                <Hint>The C Programming Language is general purpose and allows low-level access to memory, minimal run-time support, and cross-platform programming. It follows the "trust the programmer" mentality.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Cobol</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>14</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is C</Feedback>
+              <Hint>
+                <Hint>Cobol is a compiled English-like language that is imperative, procedural, and object oriented. It is mainly used in a business setting.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>PHP</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>14</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is C</Feedback>
+              <Hint>
+                <Hint>PHP is a server-side scripting language designed for web development but also used as a general purpose programming language.</Hint>
+              </Hint>
+            </Option>
+          </Item>
+          <Layout> </Layout>
+          <Summary>
+            <SummaryName>Sample End</SummaryName>
+          </Summary>
+		  <Timer>500</Timer>
+
+        </Challenge>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>345</x>
+            <y>475</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Submit</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>AddQuizPoints</Action>
+          </Behavior>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.2</Action>
+          </Behavior>
+
+        </GameElement>
+      </Screen>
+
+<Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>11</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>28</NpcCorrect>
+		<NpcIncorrect>29</NpcIncorrect>
+        <Challenge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quiz">
+          <Introduction>
+            <IntroductionName>Sample Content</IntroductionName>
+          </Introduction>
+          <Characters>Nimesis,Default Player</Characters>
+          <Item>
+            <Stem>
+              <StemText>
+                <Text>
+                  <Text>11. Software Engineers can use many different development models, or life cycles, when creating a piece of software.</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemText>
+              <StemQuestion>
+                <Text>
+                  <Text>Which of these models is considered to be the fastest growing and more companies are using it?</Text>
+                  <Font>Aerial</Font>
+                  <FontSize>16</FontSize>
+                </Text>
+                <Hint>
+                  <Hint> </Hint>
+                </Hint>
+              </StemQuestion>
+            </Stem>
+
+            <Option>
+              <Text>
+                <Text>Waterfall Model</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>4</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Agile - Scrum</Feedback>
+              <Hint>
+                <Hint>The Waterfall Model is a sequential design process in which progress flows steadily downward through 8 different phases.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Rapid Prototyping</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>4</NextQuestion>
+                
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Agile - Scrum</Feedback>
+              <Hint>
+                <Hint>Rapid Prototyping is a group of techniques used to quickly fabricate a scale model or incomplete piece of software.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Agile - Scrum</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>500</Points>
+                <NextQuestion>4</NextQuestion>
+				<PromotionDemotion>Junior Programmer</PromotionDemotion>
+              </Reward>
+              <Assessment>correct</Assessment>
+              <Feedback>Agile - Scrum is correct!</Feedback>
+              <Hint>
+                <Hint>Agile - Scrum is an iterative framework that is flexible and allows the team to adapt to quickly changing requirements.  Many times this all has face-to-face meetings with all team members.</Hint>
+              </Hint>
+            </Option>
+
+            <Option>
+              <Text>
+                <Text>Code and Fix</Text>
+                <Font>Aerial</Font>
+                <FontSize>12</FontSize>
+              </Text>
+              <Reward>
+                <Points>0</Points>
+                <NextQuestion>4</NextQuestion>
+              </Reward>
+              <Assessment>incorrect</Assessment>
+              <Feedback>Sorry - The correct answer is Agile - Scrum</Feedback>
+              <Hint>
+                <Hint>The Code and Fix mentality dictates that a programmer will just begin to code and will fix problems as they arise.</Hint>
+              </Hint>
+            </Option>
+          </Item>
+          <Layout> </Layout>
+          <Summary>
+            <SummaryName>Sample End</SummaryName>
+          </Summary>
+		  <Timer>500</Timer>
+
+        </Challenge>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>345</x>
+            <y>475</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Submit</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>AddQuizPoints</Action>
+          </Behavior>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.2</Action>
+          </Behavior>
+
+        </GameElement>
+      </Screen>
+<Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>12</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>6</NpcCorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>150</x>
+            <y>252</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+
+
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>581</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.10</Action>
+          </Behavior>
+        </GameElement>
+
+      </Screen>
+<Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>13</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>6</NpcCorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>150</x>
+            <y>252</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+
+
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>581</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.7</Action>
+          </Behavior>
+        </GameElement>
+
+      </Screen>
+
+<Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>14</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>6</NpcCorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Nimesis,Default Player</Name>
+						<Location>
+							<x>-45</x>
+							<y>180</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>160</height>
+						</Size>
+						<Behavior>
+							<BehaviorType>visibilityBehavior</BehaviorType>
+						</Behavior>
+				</GameElement>
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>581</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.11</Action>
+          </Behavior>
+        </GameElement>
+
+      </Screen>
+      <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>4</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>6</NpcCorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Nimesis,Default Player</Name>
+						<Location>
+							<x>-45</x>
+							<y>180</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>160</height>
+						</Size>
+						<Behavior>
+							<BehaviorType>visibilityBehavior</BehaviorType>
+						</Behavior>
+				</GameElement>
+
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your final points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>240</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's final points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>425</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>End Game</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>endGameBehavior</BehaviorType>
+          </Behavior>
+        </GameElement>
+
+      </Screen>
+      <Background>
+        <Background>Classroom_2.png</Background>
+      </Background>
+	<Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>20</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>6</NpcCorrect>
+		<NpcIncorrect>6</NpcIncorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>175</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text>Nimesis has answered the question correctly!</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>175</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.6</Action>
+          </Behavior>
+        </GameElement>
+		
+
+      </Screen>
+	  <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>21</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>6</NpcCorrect>
+		<NpcIncorrect>6</NpcIncorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text>Nimesis has answered the question incorrectly!</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.6</Action>
+          </Behavior>
+        </GameElement>
+		
+
+      </Screen>
+	  
+	  <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>22</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>7</NpcCorrect>
+		<NpcIncorrect>7</NpcIncorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Nimesis,Default Player</Name>
+						<Location>
+							<x>-45</x>
+							<y>180</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>160</height>
+						</Size>
+						<Behavior>
+							<BehaviorType>visibilityBehavior</BehaviorType>
+						</Behavior>
+				</GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text>Nimesis has answered the question correctly!</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.7</Action>
+          </Behavior>
+        </GameElement>
+		
+
+      </Screen>
+	  
+	  <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>23</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>7</NpcCorrect>
+		<NpcIncorrect>7</NpcIncorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Nimesis,Default Player</Name>
+						<Location>
+							<x>-45</x>
+							<y>180</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>160</height>
+						</Size>
+						<Behavior>
+							<BehaviorType>visibilityBehavior</BehaviorType>
+						</Behavior>
+				</GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text>Nimesis has answered the question incorrectly!</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.7</Action>
+          </Behavior>
+        </GameElement>
+		
+
+      </Screen>
+	
+	<Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>24</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>10</NpcCorrect>
+		<NpcIncorrect>10</NpcIncorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Nimesis,Default Player</Name>
+						<Location>
+							<x>-45</x>
+							<y>180</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>160</height>
+						</Size>
+						<Behavior>
+							<BehaviorType>visibilityBehavior</BehaviorType>
+						</Behavior>
+				</GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text>Nimesis has answered the question correctly!</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.10</Action>
+          </Behavior>
+        </GameElement>
+		
+
+      </Screen>
+	  
+	  <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>25</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>10</NpcCorrect>
+		<NpcIncorrect>10</NpcIncorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Nimesis,Default Player</Name>
+						<Location>
+							<x>-45</x>
+							<y>180</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>160</height>
+						</Size>
+						<Behavior>
+							<BehaviorType>visibilityBehavior</BehaviorType>
+						</Behavior>
+				</GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text>Nimesis has answered the question incorrectly!</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.10</Action>
+          </Behavior>
+        </GameElement>
+		
+
+      </Screen>
+	  
+	  <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>26</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>11</NpcCorrect>
+		<NpcIncorrect>11</NpcIncorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Nimesis,Default Player</Name>
+						<Location>
+							<x>-45</x>
+							<y>180</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>160</height>
+						</Size>
+						<Behavior>
+							<BehaviorType>visibilityBehavior</BehaviorType>
+						</Behavior>
+				</GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text>Nimesis has answered the question correctly!</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.11</Action>
+          </Behavior>
+        </GameElement>
+		
+
+      </Screen>
+	  
+	  <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>27</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>11</NpcCorrect>
+		<NpcIncorrect>11</NpcIncorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+					<Name>Nimesis,Default Player</Name>
+						<Location>
+							<x>-45</x>
+							<y>180</y>
+						</Location>
+						<Size>
+                        <width>200</width>
+                        <height>160</height>
+						</Size>
+						<Behavior>
+							<BehaviorType>visibilityBehavior</BehaviorType>
+						</Behavior>
+				</GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text>Nimesis has answered the question incorrectly!</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.11</Action>
+          </Behavior>
+        </GameElement>
+		
+
+      </Screen>
+	  
+	  	  <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>28</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>4</NpcCorrect>
+		<NpcIncorrect>4</NpcIncorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text>Nimesis has answered the question correctly!</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.4</Action>
+          </Behavior>
+        </GameElement>
+		
+
+      </Screen>
+	  
+	  	  <Screen>
+        <Transition>straightCut</Transition>
+        <Sequence>
+          <SequenceNumber>29</SequenceNumber>
+        </Sequence>
+        <LearningObjective>
+          <LearningObjective>Learning Objective for Screen</LearningObjective>
+        </LearningObjective>
+        <NpcCorrect>4</NpcCorrect>
+		<NpcIncorrect>4</NpcIncorrect>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>200</height>
+          </Size>
+          <Text>
+            <Text>Feedback</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>currentChallengeTransition</BehaviorType>
+            <Action>GetFeedBack</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>350</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text>Nimesis has answered the question incorrectly!</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+          </Behavior>
+
+        </GameElement>
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>50</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Your current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		<GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Information Box</Name>
+          <Location>
+            <x>581</x>
+            <y>160</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>400</height>
+          </Size>
+          <Text>
+            <Text> Nimesis's current points are</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>rewardBehavior</BehaviorType>
+            <Action>GetNPCPoints</Action>
+          </Behavior>
+
+        </GameElement>
+		
+        <GameElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GenericInteraction">
+          <Name>Button Type</Name>
+          <Location>
+            <x>560</x>
+            <y>332</y>
+          </Location>
+          <Size>
+            <width>200</width>
+            <height>50</height>
+          </Size>
+          <Text>
+            <Text>Next Question</Text>
+            <Font>Aerial</Font>
+            <FontSize>20</FontSize>
+          </Text>
+          <Color>
+            <BGColor>
+              <ColorName>Yellow</ColorName>
+            </BGColor>
+          </Color>
+          <Behavior>
+            <BehaviorType>transitionBehavior</BehaviorType>
+            <Action>NextScreen.4</Action>
+          </Behavior>
+        </GameElement>
+		
+
+      </Screen>
+	  
+    </Scene>
+  </Act>
+  <LearningObjective>
+    <LearningObjective>Learning Objective for Game</LearningObjective>
+  </LearningObjective>
+
+  <Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="NonPlayer">
+    <Name>Nimesis</Name>
+    <AutonomousBehavior>Behavior</AutonomousBehavior>
+    <Profile>
+      <ProfilePhoto>character_9\char9_StandSmileOpen.png</ProfilePhoto>
+      <Title> Rival </Title>
+      <Skills> Software Engineering, Project Management, Configuration Management </Skills>
+      <YearsOfExperience> 1 </YearsOfExperience>
+      <Degrees> NONE </Degrees>
+      <Level>L0</Level>
+    </Profile>
+    <Rewards>
+      <Points>3000</Points>
+      <Trophies>None</Trophies>
+      <Certificates>Microsoft Sql Certification,Java Sun Certification</Certificates>
+    </Rewards>
+    <NonPlayerID>Player 2</NonPlayerID>
+	<Attributes>
+		<Mood>
+	      	<Value>50</Value>
+	      	<VerySad>char17_SitCurseChairD.png</VerySad>
+	      	<Sad>char17_SitGaspChairD.png</Sad>
+	      	<Neutral>char17_SitNeutralChairD.png</Neutral>
+	      	<Happy>char17_SitSmileChairD.png</Happy>
+	      	<VeryHappy>char17_SitHappyChairD.png</VeryHappy>
+      	</Mood>
+		<Charisma>10</Charisma>
+		<Skill>25</Skill>
+		<Resilience>10</Resilience>
+	</Attributes>
+  </Character>
+  
+  <Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Player">
+    <Name>Default Player</Name>
+    <AutonomousBehavior>Behavior</AutonomousBehavior>
+    <Profile>
+      <ProfilePhoto>character_4\char4_RPointUp.png</ProfilePhoto>
+      <Title> Intern, Software Engineering </Title>
+      <Skills> Software Engineering, Project Management, Configuration Management </Skills>
+      <YearsOfExperience> 1 </YearsOfExperience>
+      <Degrees> NONE </Degrees>
+      <Level>L0</Level>
+    </Profile>
+    <Rewards>
+      <Points>1000</Points>
+    </Rewards>
+    <PlayerID>Player 1</PlayerID>
+	<Attributes>
+		<Mood>
+			<Value>50</Value>
+	      	<VerySad>char6_SitCurseChairD.png</VerySad>
+	      	<Sad>char6_SitGaspChairD.png</Sad>
+	      	<Neutral>char6_SitNeutralChairD.png</Neutral>
+	      	<Happy>char6_SitSmileChairD.png</Happy>
+	      	<VeryHappy>char6_SitHappyChairD.png</VeryHappy>
+	  	</Mood>
+		<Charisma>75</Charisma>
+		<Skill>25</Skill>
+		<Resilience>50</Resilience>
+	</Attributes>
+  </Character>
+</Game>
