@@ -21,15 +21,12 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.text.*;
 import javax.swing.tree.*;
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 
 import org.xml.sax.SAXException;
 
 import simsys.schema.components.*;
 import edu.utdallas.gamegeneratorcollection.GameOutput.GameExport;
-import edu.utdallas.old.SimSYSGamePlatform;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -95,6 +92,15 @@ public class Wizard implements ActionListener {
 
     // Controls Text That Prompts User What To Do
     private final JTextArea speechBubble;
+
+    // Used for speech bubble placement
+    private final Rectangle normalRect = new Rectangle(415, 45, 400, 90);
+    private final Rectangle leftRect = new Rectangle(347, 65, 400, 78);
+    private final Rectangle narrowRect = new Rectangle(425, 30, 345, 100);
+
+    // Used for 'Back' button placement
+    private final Rectangle leftButtonRect = new Rectangle(520, 225, 150, 50);
+    private final Rectangle rightButtonRect = new Rectangle(700, 550, 150, 50);
 
     // After User Selects Domain
     private final JButton submitButton;
@@ -199,10 +205,10 @@ public class Wizard implements ActionListener {
     private final Font font4 = new Font("Comic Sans MS", Font.PLAIN, 18);
 
     // This is used for importing the first set of acts user sees
-    private GameTemplate gametemplate;
+    private GameTemplate gameTemplate;
 
     // This is used for importing the knowledge areas
-    private AreaSelection areaselection;
+    private AreaSelection areaSelection;
 
     // Knowledge Areas Table
     JTable table;
@@ -271,15 +277,9 @@ public class Wizard implements ActionListener {
 
         // Importing for user acts and knowledge areas
         try {
-            File file = new File("WizardRepo\\Templates/template.xml");
-            JAXBContext jaxbContext = JAXBContext.newInstance(GameTemplate.class);
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            gametemplate = (GameTemplate) jaxbUnmarshaller.unmarshal(file);
+            gameTemplate = JAXBAutoUnmarshall.unmarshall(GameTemplate.class, "WizardRepo\\Templates/template.xml");
 
-            File file2 = new File("WizardRepo\\LearningAreas/areaSelection.xml");
-            JAXBContext jaxbContext2 = JAXBContext.newInstance(AreaSelection.class);
-            Unmarshaller jaxbUnmarshaller2 = jaxbContext2.createUnmarshaller();
-            areaselection = (AreaSelection) jaxbUnmarshaller2.unmarshal(file2);
+            areaSelection = JAXBAutoUnmarshall.unmarshall(AreaSelection.class, "WizardRepo\\LearningAreas/areaSelection.xml");
 
         } catch (Exception e2) {
             e2.printStackTrace();
@@ -295,48 +295,9 @@ public class Wizard implements ActionListener {
 
                 // Root Node is initial selection of subjects node
                 if (selectedNode != null && selectedNode == rootNode) {
-
-//                    mainPanel.removeAll();
-//
-//                    mainPanel.changeCoord(0, 0);
-//
-//                    speechBubble.setFont(font);
-//                    speechBubble.setBounds(400, 100, 420, 120);
-//                    speechBubble.setText("   Who is This Game For?");
-
                     rebuildGameCreationBoxes();
+                    mainPanel.updateUI();
 
-//                    institutionBox.setBounds(625, 300, 425, 50);
-//                    institutionBox.setFont(font2);
-//                    institutionBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-//                    mainPanel.add(institutionBox);
-//
-//                    domainBox.setBounds(625, 375, 425, 50);
-//                    domainBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-//                    domainBox.setFont(font2);
-//                    domainBox.setEnabled(false);
-//                    mainPanel.add(domainBox);
-//
-//                    gradeBox.setBounds(625, 450, 425, 50);
-//                    gradeBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-//                    gradeBox.setFont(font2);
-//                    gradeBox.setEnabled(false);
-//                    mainPanel.add(gradeBox);
-//
-//                    subjectBox.setBounds(625, 525, 425, 50);
-//                    subjectBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-//                    subjectBox.setFont(font2);
-//                    subjectBox.setEnabled(false);
-//                    mainPanel.add(subjectBox);
-
-//                    submitButton.setFont(font2);
-//                    submitButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-//
-//                    mainPanel.add(speechBubble);
-//                    mainPanel.add(submitButton);
-//
-//                    mainPanel.changeFileName("introBackground2.png");
-//                    mainPanel.updateUI();
 
                 } else if (selectedNode != null && selectedNode == learningObjectiveNode) {
 
@@ -345,9 +306,8 @@ public class Wizard implements ActionListener {
                     mainPanel.changeFileName("wizardBackground.png");
                     mainPanel.changeCoord(0, -70);
 
-                    speechBubble.setFont(font);
-                    speechBubble.setBounds(415, 45, 400, 90);
-                    speechBubble.setText("Please Select Your Knowledge\n Areas and Continue");
+
+                    rebuildSpeechBubble(font, normalRect, "Please Select Your Knowledge\n Areas and Continue");
 
                     JScrollPane scroll = JTable.createScrollPaneForTable(table);
                     scroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
@@ -356,7 +316,6 @@ public class Wizard implements ActionListener {
                     subLOButton.setFont(font2);
 
                     mainPanel.add(scroll);
-                    mainPanel.add(speechBubble);
                     mainPanel.add(submitLOButton);
 
                     mainPanel.updateUI();
@@ -373,9 +332,7 @@ public class Wizard implements ActionListener {
 
                         mainPanel.removeAll();
 
-                        speechBubble.setFont(font);
-                        speechBubble.setBounds(347, 65, 400, 78);
-                        speechBubble.setText("     Please Select Your\n     Learning Taxonomy");
+                        rebuildSpeechBubble(font, leftRect, "     Please Select Your\n     Learning Taxonomy");
 
                         bloomsScroll = new JScrollPane(taxPane);
                         taxPane.setCaretPosition(0);
@@ -385,7 +342,6 @@ public class Wizard implements ActionListener {
 
                         mainPanel.add(bloomsScroll);
                         mainPanel.add(taxBox);
-                        mainPanel.add(speechBubble);
 
                         mainPanel.changeFileName("learningTaxonomy.png");
                         mainPanel.changeCoord(-100, 0);
@@ -419,12 +375,9 @@ public class Wizard implements ActionListener {
                         scroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
                         scroll.setBounds(85, 300, 950, 260);
 
-                        speechBubble.setFont(font);
-                        speechBubble.setBounds(415, 45, 400, 90);
-                        speechBubble.setText("      Please Select Type\n         Taxonomies");
+                        rebuildSpeechBubble(font, normalRect, "      Please Select Type\n         Taxonomies");
 
                         mainPanel.add(subTaxContButton);
-                        mainPanel.add(speechBubble);
                         mainPanel.add(scroll);
 
                         mainPanel.updateUI();
@@ -434,11 +387,14 @@ public class Wizard implements ActionListener {
 
                     if (isErrorLearningObjective()) {
                         printErrorLearningObjective();
+
                     } else if (isErrorLO()) {
                         printErrorLO();
+
                     } else if (taxBox.getSelectedIndex() == 0) {
                         printErrorLearningTaxonomy();
                         return;
+
                     } else {
 
                         mainPanel.changeFileName("wizardBackground.png");
@@ -468,13 +424,10 @@ public class Wizard implements ActionListener {
                         challengeButton.setEnabled(true);
 
                         // place button here
-                        speechBubble.setFont(font);
-                        speechBubble.setBounds(415, 45, 400, 90);
-                        speechBubble.setText("      Please Select Type\n         of Challenge");
+                        rebuildSpeechBubble(font, normalRect, "      Please Select Type\n         of Challenge");
 
                         mainPanel.add(challengeButton);
                         mainPanel.add(scroll);
-                        mainPanel.add(speechBubble);
 
                         treePanel.updateUI();
                         mainPanel.updateUI();
@@ -498,9 +451,7 @@ public class Wizard implements ActionListener {
 
                         mainPanel.removeAll();
 
-                        speechBubble.setFont(font);
-                        speechBubble.setBounds(415, 45, 400, 90);
-                        speechBubble.setText("      Please Select Your\n        Game Conditions");
+                        rebuildSpeechBubble(font, normalRect, "      Please Select Your\n        Game Conditions");
 
                         mainPanel.changeFileName("wizardBackground.png");
                         mainPanel.changeCoord(0, -70);
@@ -513,7 +464,6 @@ public class Wizard implements ActionListener {
 
                         mainPanel.add(conditionContinue);
                         mainPanel.add(scroll);
-                        mainPanel.add(speechBubble);
 
                         mainPanel.updateUI();
                     }
@@ -549,16 +499,13 @@ public class Wizard implements ActionListener {
 
                     mainPanel.removeAll();
 
-                    speechBubble.setFont(font);
-                    speechBubble.setBounds(347, 65, 400, 78);
-                    speechBubble.setText("     Please Select Your\n        Location");
+                    rebuildSpeechBubble(font, 347, 65, 400, 78, "     Please Select Your\n        Location");
 
                     mainPanel.changeFileName("learningTaxonomy.png");
                     mainPanel.changeCoord(-100, 0);
 
                     treePanel.add(wizardTree);
 
-                    mainPanel.add(speechBubble);
                     mainPanel.add(backgroundBox);
                     mainPanel.add(backgroundPane);
                     mainPanel.add(locationButton);
@@ -568,6 +515,7 @@ public class Wizard implements ActionListener {
                 } else if (selectedNode != null && selectedNode == characterNode) {
                     if (isLocationError()) {
                         printLocationError();
+
                     } else {
 
                         mainPanel.removeAll();
@@ -576,9 +524,7 @@ public class Wizard implements ActionListener {
                         scroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
                         scroll.setBounds(85, 300, 950, 260);
 
-                        speechBubble.setFont(font);
-                        speechBubble.setBounds(415, 45, 400, 90);
-                        speechBubble.setText("      Here are Your\n       Typical Characters!");
+                        rebuildSpeechBubble(font, normalRect, "      Here are Your\n       Typical Characters!");
 
                         charButton.setBounds(715, 225, 150, 50);
                         charButton.setFont(font2);
@@ -587,7 +533,6 @@ public class Wizard implements ActionListener {
                         mainPanel.changeFileName("wizardBackground.png");
                         mainPanel.changeCoord(0, -70);
 
-                        mainPanel.add(speechBubble);
                         mainPanel.add(charButton);
 
                         treePanel.updateUI();
@@ -597,6 +542,7 @@ public class Wizard implements ActionListener {
                 } else if (selectedNode != null && selectedNode == actNode) {
                     if (isLocationError()) {
                         printLocationError();
+
                     } else {
 
                         mainPanel.removeAll();
@@ -615,18 +561,17 @@ public class Wizard implements ActionListener {
                         template.updateUI();
                         templateScroll.updateUI();
 
-                        speechBubble.setFont(font2);
-                        speechBubble.setBounds(425, 30, 345, 100);
-                        speechBubble.setText("     Let's Begin With Creating\n         The First Acts of\n             Your Game!");
+                        rebuildSpeechBubble(font2, narrowRect, "     Let's Begin With Creating\n         The First Acts of\n             Your Game!");
 
-                        actButton.setText("Continue");
-                        actButton.setFont(font2);
-                        actButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                        actButton.setBounds(715, 225, 150, 50);
-                        actButton.setVisible(true);
+//                        actButton.setText("Continue");
+//                        actButton.setFont(font2);
+//                        actButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+//                        actButton.setBounds(715, 225, 150, 50);
+//                        actButton.setVisible(true);
+
+                        buildContinueButton(actButton);
 
                         mainPanel.add(actButton);
-                        mainPanel.add(speechBubble);
                         mainPanel.add(templateScroll);
 
                         mainPanel.updateUI();
@@ -640,15 +585,12 @@ public class Wizard implements ActionListener {
                         mainPanel.changeFileName("wizardBackground.png");
                         mainPanel.changeCoord(0, 0);
 
-                        speechBubble.setFont(font3);
-                        speechBubble.setBounds(455, 100, 345, 105);
-                        speechBubble.setText("There Are Two Choices To Change\n         Your Game:\n 1. Multiply The Previous Set-Up\n2. Add An Act To the Summary");
+                        rebuildSpeechBubble(font3, 455, 100, 345, 105, "There Are Two Choices To Change\n         Your Game:\n 1. Multiply The Previous Set-Up\n2. Add An Act To the Summary");
 
                         actBox.setFont(font2);
 
                         mainPanel.add(addActButton);
                         mainPanel.add(actBox);
-                        mainPanel.add(speechBubble);
 
                         mainPanel.updateUI();
                     }
@@ -674,9 +616,7 @@ public class Wizard implements ActionListener {
                         template.updateUI();
                         templateScroll.updateUI();
 
-                        speechBubble.setFont(font2);
-                        speechBubble.setBounds(425, 30, 345, 100);
-                        speechBubble.setText("     Let's Begin With Creating\n         The First Acts of\n             Your Game!");
+                        rebuildSpeechBubble(font2, narrowRect, "     Let's Begin With Creating\n         The First Acts of\n             Your Game!");
 
                         actButton.setText("Add More");
                         actButton.setFont(font2);
@@ -685,13 +625,14 @@ public class Wizard implements ActionListener {
                         actButton.setVisible(true);
                         mainPanel.add(actButton);
 
-                        contActButton.setText("Continue");
-                        contActButton.setFont(font2);
-                        contActButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                        contActButton.setBounds(715, 225, 150, 50);
+//                        contActButton.setText("Continue");
+//                        contActButton.setFont(font2);
+//                        contActButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+//                        contActButton.setBounds(715, 225, 150, 50);
+
+                        buildContinueButton(contActButton);
 
                         mainPanel.add(contActButton);
-                        mainPanel.add(speechBubble);
                         mainPanel.add(templateScroll);
 
                         mainPanel.updateUI();
@@ -699,6 +640,7 @@ public class Wizard implements ActionListener {
                 } else if (selectedNode != null && selectedNode == loActNode) {
                     if (isLocationError()) {
                         printLocationError();
+
                     } else {
 
                         mainPanel.removeAll();
@@ -706,9 +648,7 @@ public class Wizard implements ActionListener {
                         mainPanel.changeFileName("wizardBackground.png");
                         mainPanel.changeCoord(0, -70);
 
-                        speechBubble.setFont(font2);
-                        speechBubble.setBounds(415, 45, 400, 90);
-                        speechBubble.setText("    Please Select Which Learning\n      Objectives You Would Like\n            For Each Act!");
+                        rebuildSpeechBubble(font2, normalRect, "    Please Select Which Learning\n      Objectives You Would Like\n            For Each Act!");
 
                         makeLOActTable();
 
@@ -716,13 +656,14 @@ public class Wizard implements ActionListener {
                         scroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
                         scroll.setBounds(40, 300, 1000, 350);
 
-                        loActButton.setText("Continue");
-                        loActButton.setFont(font2);
-                        loActButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                        loActButton.setBounds(715, 225, 150, 50);
+//                        loActButton.setText("Continue");
+//                        loActButton.setFont(font2);
+//                        loActButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+//                        loActButton.setBounds(715, 225, 150, 50);
+
+                        buildContinueButton(loActButton);
 
                         mainPanel.add(scroll);
-                        mainPanel.add(speechBubble);
                         mainPanel.add(loActButton);
 
                         mainPanel.updateUI();
@@ -739,16 +680,13 @@ public class Wizard implements ActionListener {
                         mainPanel.changeFileName("wizardBackground.png");
                         mainPanel.changeCoord(0, -70);
 
-                        speechBubble.setFont(font);
-                        speechBubble.setBounds(415, 45, 400, 90);
-                        speechBubble.setText("Please Select Your Types\n Of Questions!");
+                        rebuildSpeechBubble(font, normalRect, "Please Select Your Types\n Of Questions!");
 
                         JScrollPane scroll = JTable.createScrollPaneForTable(questionTable);
                         scroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
                         scroll.setBounds(100, 300, 950, 350);
 
                         mainPanel.add(scroll);
-                        mainPanel.add(speechBubble);
                         mainPanel.add(quesButton);
 
                         mainPanel.updateUI();
@@ -773,12 +711,9 @@ public class Wizard implements ActionListener {
 
                         wizardTree.expandRow(1);
 
-                        speechBubble.setFont(font);
-                        speechBubble.setBounds(415, 45, 400, 90);
-                        speechBubble.setText("Here Is A Final Summary!");
+                        rebuildSpeechBubble(font, normalRect, "Here Is A Final Summary!");
 
                         mainPanel.add(scroll);
-                        mainPanel.add(speechBubble);
                         mainPanel.add(finalSumButton);
 
                         mainPanel.updateUI();
@@ -798,11 +733,8 @@ public class Wizard implements ActionListener {
                         mainPanel.changeFileName("introBackground2.png");
                         mainPanel.changeCoord(0, 0);
 
-                        speechBubble.setFont(font);
-                        speechBubble.setBounds(400, 100, 420, 120);
-                        speechBubble.setText("Congratulations You Are Done!\nPress Save To Save The Game");
+                        rebuildSpeechBubble(font, 400, 100, 420, 120, "Congratulations You Are Done!\nPress Save To Save The Game");
 
-                        mainPanel.add(speechBubble);
                         mainPanel.add(saveButton);
                         mainPanel.updateUI();
                     }
@@ -824,11 +756,11 @@ public class Wizard implements ActionListener {
         subjects[0] = "Please Choose Your Subject";
 
         // initializing and importing institutions
-        institutions = new String[1 + areaselection.getInstitutions().size()];
+        institutions = new String[1 + areaSelection.getInstitutions().size()];
         institutions[0] = "Please Choose Your Institution";
 
-        for (int i = 1; i < 1 + areaselection.getInstitutions().size(); i++) {
-            institutions[i] = areaselection.getInstitutions().get(i - 1).getName();
+        for (int i = 1; i < 1 + areaSelection.getInstitutions().size(); i++) {
+            institutions[i] = areaSelection.getInstitutions().get(i - 1).getName();
         }
         institutionBox = new JComboBox<String>(institutions);
         domainBox = new JComboBox<String>(domains);
@@ -844,11 +776,10 @@ public class Wizard implements ActionListener {
 
         // Initial opening screen
         speechBubble = new JTextArea("  Welcome to the SimSYS Game \n            Design Tool! \n  Please Click Continue To Begin!");
-        speechBubble.setFont(font);
         speechBubble.setEditable(false);
-        speechBubble.setBounds(375, 80, 479, 140);
 
-        mainPanel.add(speechBubble);
+
+        rebuildSpeechBubble(font, 375, 80, 479, 140, "  Welcome to the SimSYS Game \n            Design Tool! \n  Please Click Continue To Begin!");
 
         // Initialization of bloom's screen
         String[] taxonomy = {"Please Choose Your Taxonomy", "Bloom's", "Wisconsin Standard"};
@@ -988,9 +919,6 @@ public class Wizard implements ActionListener {
         welcomeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                mainPanel.removeAll();
-
-                mainPanel.changeCoord(0, 0);
                 mainRoot.add(rootNode);
 
                 DefaultTreeModel model = (DefaultTreeModel) wizardTree.getModel();
@@ -998,44 +926,7 @@ public class Wizard implements ActionListener {
 
                 wizardTree.expandRow(0);
 
-                speechBubble.setFont(font);
-                speechBubble.setBounds(400, 100, 420, 120);
-                speechBubble.setText("   Who is This Game For?");
-
-                institutionBox.setBounds(625, 300, 425, 50);
-                institutionBox.setMaximumRowCount(5);
-                institutionBox.setFont(font2);
-                institutionBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                mainPanel.add(institutionBox);
-
-                domainBox.setBounds(625, 375, 425, 50);
-                domainBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                domainBox.setMaximumRowCount(5);
-                domainBox.setFont(font2);
-                domainBox.setEnabled(false);
-                mainPanel.add(domainBox);
-
-                gradeBox.setBounds(625, 450, 425, 50);
-                gradeBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                gradeBox.setFont(font2);
-                gradeBox.setMaximumRowCount(5);
-                gradeBox.setEnabled(false);
-                mainPanel.add(gradeBox);
-
-                subjectBox.setBounds(625, 525, 425, 50);
-                subjectBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                subjectBox.setFont(font2);
-                subjectBox.setMaximumRowCount(5);
-                subjectBox.setEnabled(false);
-
-                submitButton.setFont(font2);
-                submitButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-
-                mainPanel.add(speechBubble);
-                mainPanel.add(subjectBox);
-                mainPanel.add(submitButton);
-
-                mainPanel.changeFileName("introBackground2.png");
+                rebuildGameCreationBoxes();
                 mainPanel.updateUI();
             }
         });
@@ -1071,11 +962,11 @@ public class Wizard implements ActionListener {
                     return;
                 }
                 // Record Choice
-                domains = new String[1 + areaselection.getInstitutions().get(i - 1).getDomains().size()];
+                domains = new String[1 + areaSelection.getInstitutions().get(i - 1).getDomains().size()];
                 domains[0] = "Please Choose Your Domain";
 
-                for (int j = 1; j < 1 + areaselection.getInstitutions().get(i - 1).getDomains().size(); j++) {
-                    domains[j] = areaselection.getInstitutions().get(i - 1).getDomains().get(j - 1).getName();
+                for (int j = 1; j < 1 + areaSelection.getInstitutions().get(i - 1).getDomains().size(); j++) {
+                    domains[j] = areaSelection.getInstitutions().get(i - 1).getDomains().get(j - 1).getName();
                 }
                 domainBox.setModel(new JComboBox<>(domains).getModel());
                 domainBox.setEnabled(true);
@@ -1118,11 +1009,11 @@ public class Wizard implements ActionListener {
                 }
 
                 // Record Choice
-                grades = new String[1 + areaselection.getInstitutions().get(j - 1).getDomains().get(i - 1).getGrades().size()];
+                grades = new String[1 + areaSelection.getInstitutions().get(j - 1).getDomains().get(i - 1).getGrades().size()];
                 grades[0] = "Please Choose Your Level";
 
-                for (int k = 1; k < 1 + areaselection.getInstitutions().get(j - 1).getDomains().get(i - 1).getGrades().size(); k++) {
-                    grades[k] = areaselection.getInstitutions()
+                for (int k = 1; k < 1 + areaSelection.getInstitutions().get(j - 1).getDomains().get(i - 1).getGrades().size(); k++) {
+                    grades[k] = areaSelection.getInstitutions()
                             .get(j - 1).getDomains()
                             .get(i - 1).getGrades()
                             .get(k - 1).getName();
@@ -1166,19 +1057,19 @@ public class Wizard implements ActionListener {
                 }
 
                 // Record Choice
-                subjects = new String[1 + areaselection.getInstitutions()
+                subjects = new String[1 + areaSelection.getInstitutions()
                         .get(j - 1).getDomains()
                         .get(i - 1).getGrades()
                         .get(k - 1).getSubjects().size()];
 
                 subjects[0] = "Please Choose Your Level";
 
-                for (int l = 1; l < 1 + areaselection.getInstitutions()
+                for (int l = 1; l < 1 + areaSelection.getInstitutions()
                         .get(j - 1).getDomains()
                         .get(i - 1).getGrades()
                         .get(k - 1).getSubjects().size(); l++) {
 
-                    subjects[l] = areaselection.getInstitutions()
+                    subjects[l] = areaSelection.getInstitutions()
                             .get(j - 1).getDomains()
                             .get(i - 1).getGrades()
                             .get(k - 1).getSubjects()
@@ -1246,15 +1137,7 @@ public class Wizard implements ActionListener {
                 String subjectSelcted = (String) subjectBox.getSelectedItem();
 
                 try {
-
-                    File file = new File("WizardRepo\\KnowledgeAreas/"
-                            + institutionSelcted + "_" + gradeSelcted + "_"
-                            + subjectSelcted + ".xml");
-
-                    JAXBContext jaxbContext = JAXBContext.newInstance(KnowledgeRepo.class);
-
-                    Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                    knowRepo = (KnowledgeRepo) jaxbUnmarshaller.unmarshal(file);
+                    knowRepo = JAXBAutoUnmarshall.unmarshall(KnowledgeRepo.class, "WizardRepo\\KnowledgeAreas/" + institutionSelcted + "_" + gradeSelcted + "_" + subjectSelcted + ".xml");
 
                 } catch (Exception e2) {
                     mainPanel.removeAll();
@@ -1319,9 +1202,11 @@ public class Wizard implements ActionListener {
                 };
                 table.getColumnModel().getColumn(0).setCellRenderer(r);
 
-                speechBubble.setFont(font);
-                speechBubble.setBounds(415, 45, 400, 90);
-                speechBubble.setText("    Please Select Your \n      Knowledge Area");
+//                speechBubble.setFont(font);
+//                speechBubble.setBounds(normalRect);
+//                speechBubble.setText("    Please Select Your \n      Knowledge Area");
+
+                rebuildSpeechBubble(font, normalRect, "    Please Select Your \n      Knowledge Area");
 
                 @SuppressWarnings("deprecation")
                 JScrollPane scroll = JTable.createScrollPaneForTable(table);
@@ -1331,7 +1216,6 @@ public class Wizard implements ActionListener {
                 subLOButton.setFont(font2);
 
                 mainPanel.add(scroll);
-                mainPanel.add(speechBubble);
                 mainPanel.add(submitLOButton);
 
                 mainPanel.updateUI();
@@ -1347,9 +1231,12 @@ public class Wizard implements ActionListener {
                 wizardTree.expandRow(0);
                 mainPanel.changeFileName("wizardBackground.png");
                 mainPanel.changeCoord(0, -70);
-                speechBubble.setFont(font);
-                speechBubble.setBounds(413, 45, 403, 90);
-                speechBubble.setText("Please Select Your Knowledge\n Areas and Continue");
+
+//                speechBubble.setFont(font);
+//                speechBubble.setBounds(413, 45, 403, 90);
+//                speechBubble.setText("Please Select Your Knowledge\n Areas and Continue");
+
+                rebuildSpeechBubble(font, 413, 45, 403, 90, "Please Select Your Knowledge\n Areas and Continue");
 
                 // following is a little bit of old code mixed with new. It
                 // works, but it isn't necessary to create subAreas
@@ -1457,7 +1344,6 @@ public class Wizard implements ActionListener {
 
                 mainPanel.add(scroll);
                 mainPanel.add(subLOButton);
-                mainPanel.add(speechBubble);
 
                 treePanel.updateUI();
                 mainPanel.updateUI();
@@ -1567,71 +1453,29 @@ public class Wizard implements ActionListener {
                         }
                     }
                 }
-                summaryContinue.setText("Continue");
+
+//                summaryContinue.setText("Continue");
+//                summaryContinue.setFont(font2);
+//                summaryContinue.setBounds(700, 225, 150, 50);
+//                summaryContinue.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+
+                buildContinueButton(summaryContinue);
+
                 summaryBack.setText("Back");
-
-                summaryContinue.setFont(font2);
                 summaryBack.setFont(font2);
-
-                summaryContinue.setBounds(700, 225, 150, 50);
-                summaryBack.setBounds(520, 225, 150, 50);
-
-                summaryContinue.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+                summaryBack.setBounds(leftButtonRect);
                 summaryBack.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
 
                 // Error Checking
                 if (mainCount == 0) {
-
-                    mainPanel.removeAll();
-
-                    speechBubble.setBounds(415, 45, 400, 170);
-                    speechBubble.setText("\n      You Must Select A \n         Knowledge Area!\n       Please Click Back!");
-                    speechBubble.setFont(font);
-
-                    summaryBack.setBounds(700, 550, 150, 50);
-
-                    mainPanel.changeCoord(0, 0);
-                    mainPanel.add(speechBubble);
-                    mainPanel.add(summaryBack);
-
-                    mainPanel.changeFileName("errorBackground.png");
-                    mainPanel.updateUI();
+                    rebuildErrorScreen("\n      You Must Select A \n         Knowledge Area!\n       Please Click Back!");
 
                 } else if (subCount == 0 && mainCount != 0 || finalError) {
-
-                    mainPanel.removeAll();
-
-                    speechBubble.setBounds(415, 45, 400, 170);
-                    speechBubble.setText("\n        You Must Select \n        Sub-Knowledge Area!\n        Please Click Back!");
-                    speechBubble.setFont(font);
-
-                    summaryBack.setBounds(700, 550, 150, 50);
-
-                    mainPanel.changeCoord(0, 0);
-
-                    mainPanel.add(speechBubble);
-                    mainPanel.changeFileName("errorBackground.png");
-                    mainPanel.add(summaryBack);
-
-                    mainPanel.updateUI();
+                    rebuildErrorScreen("\n        You Must Select \n        Sub-Knowledge Area!\n        Please Click Back!");
 
                 } else if (learningError) {
+                    rebuildErrorScreen("\n        You Must Select \n       Learning Objectives!\n        Please Click Back!");
 
-                    mainPanel.removeAll();
-
-                    speechBubble.setBounds(415, 45, 400, 170);
-                    speechBubble.setText("\n        You Must Select \n       Learning Objectives!\n        Please Click Back!");
-                    speechBubble.setFont(font);
-
-                    summaryBack.setBounds(700, 550, 150, 50);
-
-                    mainPanel.changeCoord(0, 0);
-
-                    mainPanel.add(speechBubble);
-                    mainPanel.changeFileName("errorBackground.png");
-                    mainPanel.add(summaryBack);
-
-                    mainPanel.updateUI();
                 }
                 // For good input
                 else {
@@ -1642,11 +1486,9 @@ public class Wizard implements ActionListener {
                     scroll.setBounds(100, 300, 950, 260);
                     scroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
 
-                    speechBubble.setBounds(415, 45, 400, 90);
-                    speechBubble.setText("Here is a Summary of Your \nLearning Objectives Selected");
-                    speechBubble.setFont(font);
 
-                    mainPanel.add(speechBubble);
+                    rebuildSpeechBubble(font, normalRect, "Here is a Summary of Your \nLearning Objectives Selected");
+
                     mainPanel.add(summaryContinue);
                     mainPanel.add(summaryBack);
                     mainPanel.add(scroll);
@@ -1664,9 +1506,8 @@ public class Wizard implements ActionListener {
 
                 mainPanel.removeAll();
 
-                speechBubble.setFont(font);
-                speechBubble.setBounds(415, 45, 400, 90);
-                speechBubble.setText("Please Select Your Learning\n Objectives and Continue");
+
+                rebuildSpeechBubble(font, normalRect, "Please Select Your Learning\n Objectives and Continue");
 
                 @SuppressWarnings("deprecation")
                 JScrollPane scroll = JTable.createScrollPaneForTable(table);
@@ -1682,7 +1523,6 @@ public class Wizard implements ActionListener {
                 mainPanel.changeCoord(0, -70);
 
                 mainPanel.add(scroll);
-                mainPanel.add(speechBubble);
                 mainPanel.add(submitLOButton);
 
                 mainPanel.updateUI();
@@ -1704,10 +1544,7 @@ public class Wizard implements ActionListener {
                 taxPane.setEditable(false);
 
                 // import learning taxonomy in future
-
-                speechBubble.setFont(font);
-                speechBubble.setBounds(347, 65, 400, 78);
-                speechBubble.setText("     Please Select Your\n     Learning Taxonomy");
+                rebuildSpeechBubble(font, leftRect, "     Please Select Your\n     Learning Taxonomy");
 
                 mainPanel.changeFileName("learningTaxonomy.png");
                 mainPanel.changeCoord(-100, 0);
@@ -1726,7 +1563,6 @@ public class Wizard implements ActionListener {
                 mainPanel.add(taxPane);
                 mainPanel.add(taxBox);
                 mainPanel.add(taxContButton);
-                mainPanel.add(speechBubble);
 
                 treePanel.add(wizardTree);
                 mainPanel.updateUI();
@@ -1752,9 +1588,7 @@ public class Wizard implements ActionListener {
                 if (i == 0) {
                     taxContButton.setEnabled(false);
 
-                    speechBubble.setBounds(347, 65, 400, 78);
-                    speechBubble.setText("     Please Select Your\n       Standard");
-                    speechBubble.setFont(font);
+                    rebuildSpeechBubble(font, leftRect, "     Please Select Your\n       Standard");
 
                     taxPane = new JTextPane();
                     taxPane.setBounds(70, 300, 400, 260);
@@ -1762,7 +1596,6 @@ public class Wizard implements ActionListener {
 
                     mainPanel.add(taxContButton);
                     mainPanel.add(taxPane);
-                    mainPanel.add(speechBubble);
 
                     mainPanel.updateUI();
 
@@ -1789,9 +1622,7 @@ public class Wizard implements ActionListener {
 
                         bloomSelected = true;
 
-                        speechBubble.setFont(font);
-                        speechBubble.setBounds(347, 65, 400, 78);
-                        speechBubble.setText(" Great! You Have Selected \n           Blooms!");
+                        rebuildSpeechBubble(font, leftRect, " Great! You Have Selected \n           Blooms!");
 
                         taxContButton.setEnabled(true);
 
@@ -1814,9 +1645,7 @@ public class Wizard implements ActionListener {
 
                         bloomSelected = false;
 
-                        speechBubble.setFont(font);
-                        speechBubble.setBounds(347, 65, 400, 78);
-                        speechBubble.setText(" Great! You Have Selected\n    The Wisconsion Standard!");
+                        rebuildSpeechBubble(font, leftRect, " Great! You Have Selected\n    The Wisconsion Standard!");
 
                         taxContButton.setEnabled(true);
                         mainPanel.updateUI();
@@ -1847,7 +1676,6 @@ public class Wizard implements ActionListener {
                     bloomsScroll.updateUI();
 
                     mainPanel.add(bloomsScroll);
-                    mainPanel.add(speechBubble);
                     mainPanel.add(taxContButton);
 
                     mainPanel.updateUI();
@@ -1969,12 +1797,11 @@ public class Wizard implements ActionListener {
                 subTaxContButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
 
                 subTaxContButton.setBounds(650, 225, 150, 50);
-                speechBubble.setFont(font);
-                speechBubble.setBounds(415, 45, 400, 90);
-                speechBubble.setText("      Please Select Type\n         Taxonomies");
+
+
+                rebuildSpeechBubble(font, normalRect, "      Please Select Type\n         Taxonomies");
 
                 mainPanel.add(subTaxContButton);
-                mainPanel.add(speechBubble);
                 mainPanel.add(scroll);
                 mainPanel.updateUI();
             }
@@ -2020,13 +1847,11 @@ public class Wizard implements ActionListener {
                 challengeButton.setEnabled(true);
 
                 // place button here
-                speechBubble.setFont(font);
-                speechBubble.setBounds(415, 45, 400, 90);
-                speechBubble.setText("      Please Select Type\n         of Challenge");
+
+                rebuildSpeechBubble(font, normalRect, "      Please Select Type\n         of Challenge");
 
                 mainPanel.add(challengeButton);
                 mainPanel.add(scroll);
-                mainPanel.add(speechBubble);
 
                 treePanel.updateUI();
                 mainPanel.updateUI();
@@ -2045,9 +1870,7 @@ public class Wizard implements ActionListener {
                 wizardTree.expandRow(0);
                 mainPanel.removeAll();
 
-                speechBubble.setFont(font);
-                speechBubble.setBounds(415, 45, 400, 90);
-                speechBubble.setText("      Please Select Your\n        Game Conditions");
+                rebuildSpeechBubble(font, normalRect, "      Please Select Your\n        Game Conditions");
 
                 mainPanel.changeFileName("wizardBackground.png");
                 mainPanel.changeCoord(0, -70);
@@ -2096,7 +1919,7 @@ public class Wizard implements ActionListener {
 
                     mainPanel.add(conditionContinue);
                     mainPanel.add(scroll);
-                    mainPanel.add(speechBubble);
+
                     mainPanel.updateUI();
                     treePanel.updateUI();
                 }
@@ -2120,13 +1943,11 @@ public class Wizard implements ActionListener {
                 challengeButton.setBounds(650, 225, 150, 50);
                 challengeButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
 
-                speechBubble.setFont(font);
-                speechBubble.setBounds(415, 45, 400, 90);
-                speechBubble.setText("      Please Select Type\n         of Challenge");
+
+                rebuildSpeechBubble(font, normalRect, "      Please Select Type\n         of Challenge");
 
                 mainPanel.add(challengeButton);
                 mainPanel.add(scroll);
-                mainPanel.add(speechBubble);
 
                 treePanel.updateUI();
                 mainPanel.updateUI();
@@ -2151,9 +1972,8 @@ public class Wizard implements ActionListener {
                 mainPanel.changeCoord(0, -70);
                 mainPanel.add(conditionContinue);
 
-                speechBubble.setFont(font);
-                speechBubble.setBounds(415, 45, 400, 90);
-                speechBubble.setText("      Please Select Your\n        Game Conditions");
+
+                rebuildSpeechBubble(font, normalRect, "      Please Select Your\n        Game Conditions");
 
                 @SuppressWarnings("deprecation")
                 JScrollPane scroll = JTable.createScrollPaneForTable(conditionsTable);
@@ -2161,7 +1981,6 @@ public class Wizard implements ActionListener {
 
                 scroll.setBounds(85, 300, 950, 260);
                 mainPanel.add(scroll);
-                mainPanel.add(speechBubble);
 
                 mainPanel.updateUI();
                 treePanel.updateUI();
@@ -2173,9 +1992,8 @@ public class Wizard implements ActionListener {
         taxBackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                speechBubble.setFont(font);
-                speechBubble.setBounds(347, 65, 400, 78);
-                speechBubble.setText("     Please Select Your\n     Learning Taxonomy");
+
+                rebuildSpeechBubble(font, leftRect, "     Please Select Your\n     Learning Taxonomy");
 
                 mainPanel.changeFileName("learningTaxonomy.png");
                 mainPanel.changeCoord(-100, 0);
@@ -2184,7 +2002,6 @@ public class Wizard implements ActionListener {
                 bloomsScroll.updateUI();
 
                 mainPanel.add(bloomsScroll);
-                mainPanel.add(speechBubble);
 
                 taxContButton.setEnabled(false);
 
@@ -2221,9 +2038,7 @@ public class Wizard implements ActionListener {
                 backgroundPane.removeAll();
                 backgroundPane.updateUI();
 
-                speechBubble.setFont(font);
-                speechBubble.setBounds(347, 65, 400, 78);
-                speechBubble.setText("     Please Select Your\n        Location");
+                rebuildSpeechBubble(font, leftRect, "     Please Select Your\n        Location");
 
                 backgroundBox.setBounds(625, 375, 425, 50);
                 locationButton.setBounds(750, 475, 175, 50);
@@ -2235,7 +2050,6 @@ public class Wizard implements ActionListener {
 
                 mainPanel.changeFileName("learningTaxonomy.png");
                 mainPanel.changeCoord(-100, 0);
-                mainPanel.add(speechBubble);
                 mainPanel.add(backgroundBox);
                 mainPanel.add(backgroundPane);
                 mainPanel.add(locationButton);
@@ -2264,14 +2078,8 @@ public class Wizard implements ActionListener {
                     wizardTree.expandRow(1);
                     Vector<Vector<Object>> vector = new Vector<Vector<Object>>();
                     try {
-                        File file = new File("WizardRepo\\EnvTemplates/"
-                                + backgroundBox.getSelectedItem()
-                                + "_Chars.xml");
 
-                        JAXBContext jaxbContext = JAXBContext.newInstance(CharList.class);
-                        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-
-                        charList = (CharList) jaxbUnmarshaller.unmarshal(file);
+                        charList = JAXBAutoUnmarshall.unmarshall(CharList.class, "WizardRepo\\EnvTemplates/" + backgroundBox.getSelectedItem() + "_Chars.xml");
 
                         int numCharacters = charList.getCharacters().size();
 
@@ -2309,9 +2117,8 @@ public class Wizard implements ActionListener {
                     scroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
                     scroll.setBounds(85, 300, 950, 260);
 
-                    speechBubble.setFont(font);
-                    speechBubble.setBounds(415, 45, 400, 90);
-                    speechBubble.setText("      Here are Your\n       Typical Characters!");
+
+                    rebuildSpeechBubble(font, normalRect, "      Here are Your\n       Typical Characters!");
 
                     charButton.setBounds(715, 225, 150, 50);
                     charButton.setFont(font2);
@@ -2319,7 +2126,6 @@ public class Wizard implements ActionListener {
                     mainPanel.add(scroll);
                     mainPanel.changeFileName("wizardBackground.png");
                     mainPanel.changeCoord(0, -70);
-                    mainPanel.add(speechBubble);
                     mainPanel.add(charButton);
 
                     treePanel.updateUI();
@@ -2344,13 +2150,11 @@ public class Wizard implements ActionListener {
                     backgroundPane.setBounds(50, 300, 400, 260);
                     backgroundPane.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
 
-                    speechBubble.setFont(font);
-                    speechBubble.setBounds(347, 65, 400, 78);
-                    speechBubble.setText("     Please Select Your\n        Location");
+                    rebuildSpeechBubble(font, leftRect, "     Please Select Your\n        Location");
+
                     locationButton.setEnabled(false);
 
                     mainPanel.add(locationButton);
-                    mainPanel.add(speechBubble);
                     mainPanel.add(backgroundBox);
                     mainPanel.add(backgroundPane);
                     mainPanel.updateUI();
@@ -2375,14 +2179,11 @@ public class Wizard implements ActionListener {
                     }
                     backGroundChoice = "Office, Classroom\\Backdrops/Classroom_1.png";
 
-                    speechBubble.setFont(font);
-                    speechBubble.setBounds(347, 65, 400, 78);
-                    speechBubble.setText("   You Chose a Classroom!");
+                    rebuildSpeechBubble(font, leftRect, "   You Chose a Classroom!");
 
                     locationButton.setEnabled(true);
 
                     mainPanel.add(locationButton);
-                    mainPanel.add(speechBubble);
                     mainPanel.add(backgroundBox);
                     mainPanel.add(backgroundPane);
 
@@ -2391,8 +2192,7 @@ public class Wizard implements ActionListener {
                 } else if (background.equals("Enchanted Forest")) {
                     mainPanel.removeAll();
 
-                    speechBubble.setFont(font);
-                    speechBubble.setBounds(347, 65, 400, 78);
+
 
                     backgroundPane = new JTextPane();
                     backgroundPane.removeAll();
@@ -2408,12 +2208,12 @@ public class Wizard implements ActionListener {
                         // TODO Auto-generated catch block
                         e1.printStackTrace();
                     }
-                    speechBubble.setText("  You Chose the Enchanted \n          Forest!");
+
+                    rebuildSpeechBubble(font, leftRect, "  You Chose the Enchanted \n          Forest!");
 
                     locationButton.setEnabled(true);
 
                     mainPanel.add(locationButton);
-                    mainPanel.add(speechBubble);
                     mainPanel.add(backgroundBox);
                     mainPanel.add(backgroundPane);
 
@@ -2451,18 +2251,17 @@ public class Wizard implements ActionListener {
                 template.updateUI();
                 templateScroll.updateUI();
 
-                speechBubble.setFont(font2);
-                speechBubble.setBounds(425, 30, 345, 100);
-                speechBubble.setText("     Let's Begin With Creating\n         The First Acts of\n             Your Game!");
+                rebuildSpeechBubble(font2, narrowRect, "     Let's Begin With Creating\n         The First Acts of\n             Your Game!");
 
-                actButton.setText("Continue");
-                actButton.setFont(font2);
-                actButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                actButton.setBounds(715, 225, 150, 50);
-                actButton.setVisible(true);
+//                actButton.setText("Continue");
+//                actButton.setFont(font2);
+//                actButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+//                actButton.setBounds(715, 225, 150, 50);
+//                actButton.setVisible(true);
+
+                buildContinueButton(actButton);
 
                 mainPanel.add(actButton);
-                mainPanel.add(speechBubble);
                 mainPanel.add(templateScroll);
 
                 mainPanel.updateUI();
@@ -2485,15 +2284,16 @@ public class Wizard implements ActionListener {
                 wizardTree.expandRow(1);
                 mainPanel.removeAll();
 
-                speechBubble.setFont(font3);
-                speechBubble.setBounds(455, 100, 345, 105);
-                speechBubble.setText("There Are Two Choices To Change\n         Your Game:\n 1. Add Another Set of Acts\n2. Add Additional Questions");
+//                speechBubble.setFont(font3);
+//                speechBubble.setBounds(455, 100, 345, 105);
+//                speechBubble.setText("There Are Two Choices To Change\n         Your Game:\n 1. Add Another Set of Acts\n2. Add Additional Questions");
+
+                rebuildSpeechBubble(font3, 455, 100, 345, 105, "There Are Two Choices To Change\n         Your Game:\n 1. Add Another Set of Acts\n2. Add Additional Questions");
 
                 actBox.setFont(font2);
 
                 mainPanel.add(addActButton);
                 mainPanel.add(actBox);
-                mainPanel.add(speechBubble);
 
                 mainPanel.updateUI();
             }
@@ -2514,11 +2314,13 @@ public class Wizard implements ActionListener {
                 actButton.setBounds(515, 225, 150, 50);
                 actButton.setVisible(true);
 
-                contActButton.setText("Continue");
-                contActButton.setFont(font2);
-                contActButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                contActButton.setBounds(715, 225, 150, 50);
-                contActButton.setVisible(true);
+//                contActButton.setText("Continue");
+//                contActButton.setFont(font2);
+//                contActButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+//                contActButton.setBounds(715, 225, 150, 50);
+//                contActButton.setVisible(true);
+
+                buildContinueButton(contActButton);
 
                 if (addActNode.getNextSibling() != actSumNode) {
                     topNode.add(actSumNode);
@@ -2539,12 +2341,9 @@ public class Wizard implements ActionListener {
                     template.updateUI();
                     templateScroll.updateUI();
 
-                    speechBubble.setFont(font2);
-                    speechBubble.setBounds(425, 30, 345, 100);
-                    speechBubble.setText("\n       Here is How It Looks!");
+                    rebuildSpeechBubble(font2, narrowRect, "\n       Here is How It Looks!");
 
                     mainPanel.add(actButton);
-                    mainPanel.add(speechBubble);
                     mainPanel.add(templateScroll);
                     mainPanel.add(contActButton);
                     mainPanel.updateUI();
@@ -2559,27 +2358,23 @@ public class Wizard implements ActionListener {
                     template.setCaretPosition(0);
                     templateScroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
                     templateScroll.setBounds(180, 300, 720, 330);
+
                     template.updateUI();
                     templateScroll.updateUI();
 
                     showActs();
 
-                    speechBubble.setFont(font2);
-                    speechBubble.setBounds(425, 30, 345, 100);
-                    speechBubble.setText("\n       Here is How It Looks!");
+                    rebuildSpeechBubble(font2, narrowRect, "\n       Here is How It Looks!");
 
                     mainPanel.add(actButton);
-                    mainPanel.add(speechBubble);
                     mainPanel.add(templateScroll);
                     mainPanel.add(contActButton);
                     mainPanel.updateUI();
+
                 } else if (actBox.getSelectedItem().equals("Back to Original")) {
-                    File file = new File("WizardRepo\\Templates/template.xml");
-                    JAXBContext jaxbContext;
+
                     try {
-                        jaxbContext = JAXBContext.newInstance(GameTemplate.class);
-                        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                        gametemplate = (GameTemplate) jaxbUnmarshaller.unmarshal(file);
+                        gameTemplate = JAXBAutoUnmarshall.unmarshall(GameTemplate.class, "WizardRepo\\Templates/template.xml");
 
                     } catch (JAXBException e1) {
                         // TODO Auto-generated catch block
@@ -2597,12 +2392,9 @@ public class Wizard implements ActionListener {
                     template.updateUI();
                     templateScroll.updateUI();
 
-                    speechBubble.setFont(font2);
-                    speechBubble.setBounds(425, 30, 345, 100);
-                    speechBubble.setText("\n       Here is How It Looks!");
+                    rebuildSpeechBubble(font2, narrowRect, "\n       Here is How It Looks!");
 
                     mainPanel.add(actButton);
-                    mainPanel.add(speechBubble);
                     mainPanel.add(templateScroll);
                     mainPanel.add(contActButton);
                     mainPanel.updateUI();
@@ -2618,9 +2410,8 @@ public class Wizard implements ActionListener {
                     mainPanel.changeFileName("wizardBackground.png");
                     mainPanel.changeCoord(0, -70);
 
-                    speechBubble.setFont(font2);
-                    speechBubble.setBounds(415, 45, 400, 90);
-                    speechBubble.setText("    Please Select Which Learning\n      Objectives You Would Like\n            For Each Act!");
+
+                    rebuildSpeechBubble(font2, normalRect, "    Please Select Which Learning\n      Objectives You Would Like\n            For Each Act!");
 
                     makeLOActTable();
 
@@ -2629,14 +2420,15 @@ public class Wizard implements ActionListener {
                     scroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
                     scroll.setBounds(40, 300, 1000, 350);
 
-                    loActButton.setText("Continue");
-                    loActButton.setFont(font2);
-                    loActButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                    loActButton.setBounds(715, 225, 150, 50);
+//                    loActButton.setText("Continue");
+//                    loActButton.setFont(font2);
+//                    loActButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+//                    loActButton.setBounds(715, 225, 150, 50);
+
+                    buildContinueButton(locationButton);
 
                     mainPanel.add(scroll);
                     mainPanel.add(loActButton);
-                    mainPanel.add(speechBubble);
                     mainPanel.updateUI();
                 }
                 mainPanel.updateUI();
@@ -2660,9 +2452,7 @@ public class Wizard implements ActionListener {
                 mainPanel.changeFileName("wizardBackground.png");
                 mainPanel.changeCoord(0, -70);
 
-                speechBubble.setFont(font2);
-                speechBubble.setBounds(415, 45, 400, 90);
-                speechBubble.setText("    Please Select Which Learning\n      Objectives You Would Like\n            For Each Act!");
+                rebuildSpeechBubble(font2, normalRect, "    Please Select Which Learning\n      Objectives You Would Like\n            For Each Act!");
 
                 makeLOActTable();
 
@@ -2671,14 +2461,15 @@ public class Wizard implements ActionListener {
                 scroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
                 scroll.setBounds(40, 300, 1000, 350);
 
-                loActButton.setText("Continue");
-                loActButton.setFont(font2);
-                loActButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                loActButton.setBounds(715, 225, 150, 50);
+//                loActButton.setText("Continue");
+//                loActButton.setFont(font2);
+//                loActButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+//                loActButton.setBounds(715, 225, 150, 50);
+
+                buildContinueButton(loActButton);
 
                 mainPanel.add(scroll);
                 mainPanel.add(loActButton);
-                mainPanel.add(speechBubble);
                 mainPanel.updateUI();
 
             }
@@ -2705,9 +2496,8 @@ public class Wizard implements ActionListener {
                 mainPanel.changeFileName("wizardBackground.png");
                 mainPanel.changeCoord(0, -70);
 
-                speechBubble.setFont(font);
-                speechBubble.setBounds(415, 45, 400, 90);
-                speechBubble.setText("Please Select Your Types\n Of Questions!");
+
+                rebuildSpeechBubble(font, normalRect, "Please Select Your Types\n Of Questions!");
 
                 int numOfQuestions = numOfQuestions();
                 makeQuesTable(numOfQuestions);
@@ -2718,7 +2508,6 @@ public class Wizard implements ActionListener {
                 scroll.setBounds(100, 300, 950, 350);
 
                 mainPanel.add(scroll);
-                mainPanel.add(speechBubble);
                 mainPanel.add(quesButton);
                 mainPanel.updateUI();
 
@@ -2749,12 +2538,9 @@ public class Wizard implements ActionListener {
 
                 wizardTree.expandRow(1);
 
-                speechBubble.setFont(font);
-                speechBubble.setBounds(415, 45, 400, 90);
-                speechBubble.setText("Here Is A Final Summary!");
+                rebuildSpeechBubble(font, normalRect, "Here Is A Final Summary!");
 
                 mainPanel.add(scroll);
-                mainPanel.add(speechBubble);
                 mainPanel.add(finalSumButton);
 
                 mainPanel.updateUI();
@@ -2778,11 +2564,12 @@ public class Wizard implements ActionListener {
                 }
                 wizardTree.expandRow(1);
 
-                speechBubble.setFont(font);
-                speechBubble.setBounds(400, 100, 420, 120);
-                speechBubble.setText("Congratulations You Are Done!\nPress Save To Save The Game");
+//                speechBubble.setFont(font);
+//                speechBubble.setBounds(400, 100, 420, 120);
+//                speechBubble.setText("Congratulations You Are Done!\nPress Save To Save The Game");
 
-                mainPanel.add(speechBubble);
+                rebuildSpeechBubble(font, 400, 100, 420, 120, "Congratulations You Are Done!\nPress Save To Save The Game");
+
                 mainPanel.add(saveButton);
 
                 mainPanel.updateUI();
@@ -2805,6 +2592,7 @@ public class Wizard implements ActionListener {
                 if (retval == JFileChooser.APPROVE_OPTION) {
 
                     File file = chooser.getSelectedFile();
+
                     // check for .xml (of any case variation) at the end ($) of
                     // the filename
                     if (!file.getName().matches(".*[.][Xx][Mm][Ll]$")) {
@@ -2828,43 +2616,7 @@ public class Wizard implements ActionListener {
         repoErrorButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                mainPanel.removeAll();
-                mainPanel.changeCoord(0, 0);
-
-                speechBubble.setFont(font);
-                speechBubble.setBounds(400, 100, 420, 120);
-                speechBubble.setText("   Who is This Game For?");
-
-                institutionBox.setBounds(625, 300, 425, 50);
-                institutionBox.setFont(font2);
-                institutionBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                mainPanel.add(institutionBox);
-
-                domainBox.setBounds(625, 375, 425, 50);
-                domainBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                domainBox.setFont(font2);
-                domainBox.setEnabled(false);
-                mainPanel.add(domainBox);
-
-                gradeBox.setBounds(625, 450, 425, 50);
-                gradeBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                gradeBox.setFont(font2);
-                gradeBox.setEnabled(false);
-                mainPanel.add(gradeBox);
-
-                subjectBox.setBounds(625, 525, 425, 50);
-                subjectBox.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-                subjectBox.setFont(font2);
-                subjectBox.setEnabled(false);
-
-                submitButton.setFont(font2);
-                submitButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-
-                mainPanel.add(speechBubble);
-                mainPanel.add(subjectBox);
-                mainPanel.add(submitButton);
-
-                mainPanel.changeFileName("introBackground2.png");
+                rebuildGameCreationBoxes();
                 mainPanel.updateUI();
             }
         });
@@ -2880,9 +2632,7 @@ public class Wizard implements ActionListener {
 
         mainPanel.changeCoord(0, 0);
 
-        speechBubble.setFont(font);
-        speechBubble.setBounds(400, 100, 420, 120);
-        speechBubble.setText("   Who is This Game For?");
+        rebuildSpeechBubble();
 
         int y = 300;
         for (JComboBox<String> currBox: gameCreationBoxes) {
@@ -2901,29 +2651,80 @@ public class Wizard implements ActionListener {
         submitButton.setFont(font2);
         submitButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
 
-        mainPanel.add(speechBubble);
         mainPanel.add(submitButton);
 
         mainPanel.changeFileName("introBackground2.png");
+    }
+
+    private void rebuildSpeechBubble()
+    {
+        rebuildSpeechBubble(font, 400, 100, 420, 120, "   Who is This Game For?");
+    }
+
+    private void rebuildSpeechBubble(Font font, Rectangle rect, String text)
+    {
+        rebuildSpeechBubble(font, rect.x, rect.y, rect.width, rect.height, text);
+    }
+
+    private void rebuildSpeechBubble(Font font, int x, int y, int width, int height, String text)
+    {
+        speechBubble.setFont(font);
+        speechBubble.setBounds(x, y, width, height);
+        speechBubble.setText(text);
+
+        mainPanel.add(speechBubble);
+    }
+
+    private void rebuildErrorScreen(String textToDisplay)
+    {
+        mainPanel.removeAll();
+
+        rebuildSpeechBubble(font, 415, 45, 400, 170, textToDisplay);
+
+        summaryBack.setBounds(rightButtonRect);
+
+        mainPanel.changeCoord(0, 0);
+
+        mainPanel.changeFileName("errorBackground.png");
+        mainPanel.add(summaryBack);
+
         mainPanel.updateUI();
     }
+
+    private void buildContinueButton(JButton button)
+    {
+        button.setText("Continue");
+        button.setFont(font2);
+        button.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+        button.setBounds(715, 225, 150, 50);
+        button.setVisible(true);
+    }
+
+    private void builtBackButton(JButton button, Rectangle rect)
+    {
+        button.setText("Back");
+        button.setFont(font2);
+        button.setBounds(rect);
+        button.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+    }
+
 
     // If user adds another set of acts
     public void addMultiply() {
 
         for (int i = 0; i < 3; i++) {
-            Act2 a = new Act2(gametemplate.getActs().get(i));
-            gametemplate.getActs().add(a);
+            Act2 a = new Act2(gameTemplate.getActs().get(i));
+            gameTemplate.getActs().add(a);
         }
     }
 
     // If user adds another question
     public void addQuestion() {
         // reference thing
-        for (int i = 0; i < gametemplate.getActs().size(); i++) {
-            if (gametemplate.getActs().get(i).getName().equals("Progress")) {
-                Scene2 scene = new Scene2(gametemplate.getActs().get(i).getScenes().get(0));
-                gametemplate.getActs().get(i).getScenes().add(scene);
+        for (int i = 0; i < gameTemplate.getActs().size(); i++) {
+            if (gameTemplate.getActs().get(i).getName().equals("Progress")) {
+                Scene2 scene = new Scene2(gameTemplate.getActs().get(i).getScenes().get(0));
+                gameTemplate.getActs().get(i).getScenes().add(scene);
             }
         }
 
@@ -2931,8 +2732,8 @@ public class Wizard implements ActionListener {
 
     // Returns number of questions created
     public int numOfQuestions() {
-        int multiply = gametemplate.getActs().size() / 3;
-        int ques = gametemplate.getActs().get(1).getScenes().size();
+        int multiply = gameTemplate.getActs().size() / 3;
+        int ques = gameTemplate.getActs().get(1).getScenes().size();
         return multiply * ques;
     }
 
@@ -2940,27 +2741,19 @@ public class Wizard implements ActionListener {
     public void createGame(int numOfMuls) {
         Game game = new Game();
         try {
-            File file = new File("WizardRepo\\EnvTemplates/" + backgroundBox.getSelectedItem() + "_Template.xml");
-            JAXBContext jaxbContext = JAXBContext.newInstance(Game.class);
-
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            game = (Game) jaxbUnmarshaller.unmarshal(file);
+            game = JAXBAutoUnmarshall.unmarshall(Game.class, "WizardRepo\\EnvTemplates/" + backgroundBox.getSelectedItem() + "_Template.xml");
 
         } catch (JAXBException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        for (int i = 1; i < gametemplate.getActs().size() / 3; i++) {
-            Game dummy = new Game();
+        for (int i = 1; i < gameTemplate.getActs().size() / 3; i++) {
+            Game dummyGame = new Game();
 
             // imports new template based on environment selected
             try {
-                File file = new File("WizardRepo\\EnvTemplates/" + backgroundBox.getSelectedItem() + "_Template.xml");
-                JAXBContext jaxbContext = JAXBContext.newInstance(Game.class);
-
-                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                dummy = (Game) jaxbUnmarshaller.unmarshal(file);
+                dummyGame = JAXBAutoUnmarshall.unmarshall(Game.class, "WizardRepo\\EnvTemplates/" + backgroundBox.getSelectedItem() + "_Template.xml");
 
             } catch (JAXBException e) {
                 // TODO Auto-generated catch block
@@ -2968,50 +2761,46 @@ public class Wizard implements ActionListener {
             }
 
             // Adds new acts depending what user selects
-            Act a1 = dummy.getActs().get(0);
-            Act a2 = dummy.getActs().get(1);
-            Act a3 = dummy.getActs().get(2);
+            Act a1 = dummyGame.getActs().get(0);
+            Act a2 = dummyGame.getActs().get(1);
+            Act a3 = dummyGame.getActs().get(2);
 
             game.getActs().add(a1);
             game.getActs().add(a2);
             game.getActs().add(a3);
         }
 
-        for (int i = 1; i < gametemplate.getActs().size(); i += 3) {
-            if (gametemplate.getActs().get(i).getName().equals("Progress")) {
-                for (int j = 1; j < gametemplate.getActs().get(i).getScenes()
-                        .size(); j++) {
-                    Game dummy2 = new Game();
-                    try {
-                        File file = new File("WizardRepo\\EnvTemplates/" + backgroundBox.getSelectedItem() + "_Template.xml");
-                        JAXBContext jaxbContext = JAXBContext.newInstance(Game.class);
+        for (int i = 1; i < gameTemplate.getActs().size(); i += 3) {
+            if (gameTemplate.getActs().get(i).getName().equals("Progress")) {
+                for (int j = 1; j < gameTemplate.getActs().get(i).getScenes().size(); j++) {
 
-                        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                        dummy2 = (Game) jaxbUnmarshaller.unmarshal(file);
+                    Game dummyGame2 = new Game();
+                    try {
+                        dummyGame2 = JAXBAutoUnmarshall.unmarshall(Game.class, "WizardRepo\\EnvTemplates/" + backgroundBox.getSelectedItem() + "_Template.xml");
 
                     } catch (JAXBException e) {
                         e.printStackTrace();
                     }
                     // Adds new scenes to Progress
-                    Scene s = dummy2.getActs().get(1).getScene().get(0);
+                    Scene s = dummyGame2.getActs().get(1).getScene().get(0);
                     game.getActs().get(i).getScene().add(s);
                 }
             }
         }
 
         int quesIndex = 0;
-        for (int i = 0; i < gametemplate.getActs().size(); i++) {
+        for (int i = 0; i < gameTemplate.getActs().size(); i++) {
             // Adds learning objectives to acts
             ArrayList<LearningObjectiveType> los = new ArrayList<LearningObjectiveType>();
-            for (int currLO = 0; currLO < gametemplate.getActs().get(i).getLearningObjective().size(); currLO++) {
+            for (int currLO = 0; currLO < gameTemplate.getActs().get(i).getLearningObjective().size(); currLO++) {
 
                 // EDITED BY DAN
                 //LearningObjectiveType toAdd = new LearningObjectiveType();
-                //toAdd.setLearningObjective(gametemplate.getActs().get(i)
+                //toAdd.setLearningObjective(gameTemplate.getActs().get(i)
                 //		.getLearningObjective().get(currLO)
                 //		.getTaxonomyCategories());
 
-                LearningObjectiveType toAdd = gametemplate.getActs().get(i).getLearningObjective().get(currLO);
+                LearningObjectiveType toAdd = gameTemplate.getActs().get(i).getLearningObjective().get(currLO);
 
                 los.add(toAdd);
 
@@ -3022,10 +2811,10 @@ public class Wizard implements ActionListener {
             // Adds learning objectives to scenes
             game.getActs().get(i).setLearningObjective(los);
 
-            for (int j = 0; j < gametemplate.getActs().get(i).getScenes().size(); j++) {
+            for (int j = 0; j < gameTemplate.getActs().get(i).getScenes().size(); j++) {
                 game.getActs().get(i).getScene().get(j).setLearningObjective(los);
 
-                for (int k = 0; k < gametemplate.getActs().get(i).getScenes().get(j).getScreens().size(); k++) {
+                for (int k = 0; k < gameTemplate.getActs().get(i).getScenes().get(j).getScreens().size(); k++) {
 
                     // EDITED BY DAN
                     // Adds learning objective to screen
@@ -3035,7 +2824,7 @@ public class Wizard implements ActionListener {
                     game.getActs().get(i).getScene().get(j).getScreen().get(k).getLearningObjective().addAll(los);
 
 
-                    if (gametemplate.getActs().get(i).getScenes().get(j).getScreens().get(k).getType().equals("Question")) {
+                    if (gameTemplate.getActs().get(i).getScenes().get(j).getScreens().get(k).getType().equals("Question")) {
 
                         // Question addition
                         QuizChallenge quizChallenge = new QuizChallenge();
@@ -3057,16 +2846,11 @@ public class Wizard implements ActionListener {
                         str = str.substring(3, 33);
 
                         try {
-                            File file = new File("WizardRepo\\QuestionRepo/"
-                                    + str + "_" + challengeType + ".xml");
-                            JAXBContext jaxbContext;
-                            jaxbContext = JAXBContext.newInstance(SuggQuestion.class);
-                            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
                             SuggQuestion sugg = new SuggQuestion();
 
                             // random number between 0 and
-                            sugg = (SuggQuestion) jaxbUnmarshaller.unmarshal(file);
+                            sugg = JAXBAutoUnmarshall.unmarshall(SuggQuestion.class, "WizardRepo\\QuestionRepo/" + str + "_" + challengeType + ".xml");
 
                             // Just get first question
                             //int randQues = rand.nextInt(((sugg.getQuesList().size() - 1) - 0) + 1) + 0;
@@ -3101,7 +2885,7 @@ public class Wizard implements ActionListener {
 
     // creates the learning objective selection for each progress act table
     public void makeLOActTable() {
-        int progressActs = gametemplate.getActs().size() / 3;
+        int progressActs = gameTemplate.getActs().size() / 3;
 
         Vector<Vector<Object>> vector = new Vector<Vector<Object>>();
 
@@ -3166,17 +2950,18 @@ public class Wizard implements ActionListener {
     public void printLOActTableError() {
         mainPanel.removeAll();
 
-        speechBubble.setBounds(415, 45, 400, 170);
-        speechBubble.setText("\n   You Must Select Atleast One\n      Learning Objective for\n Each Progress! Please Click Back!");
+//        speechBubble.setBounds(415, 45, 400, 170);
+//        speechBubble.setText("\n   You Must Select Atleast One\n      Learning Objective for\n Each Progress! Please Click Back!");
+//        speechBubble.setFont(font2);
 
-        speechBubble.setFont(font2);
+        rebuildSpeechBubble(font2, 415, 45, 400, 170, "\n   You Must Select Atleast One\n      Learning Objective for\n Each Progress! Please Click Back!");
+
         contActButton.setText("Back");
         contActButton.setFont(font2);
         contActButton.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-        contActButton.setBounds(700, 550, 150, 50);
+        contActButton.setBounds(rightButtonRect);
 
         mainPanel.changeCoord(0, 0);
-        mainPanel.add(speechBubble);
         mainPanel.add(contActButton);
         mainPanel.changeFileName("errorBackground.png");
 
@@ -3316,28 +3101,28 @@ public class Wizard implements ActionListener {
         int challengeIndex = 0;
         try {
             int count = 1;
-            int numActs = gametemplate.getActs().size();
+            int numActs = gameTemplate.getActs().size();
 
             for (int i = 0; i < numActs; i++) {
-                doc.insertString(doc.getLength(), gametemplate.getActs().get(i).getName() + "\n", doc.getStyle("font 2"));
+                doc.insertString(doc.getLength(), gameTemplate.getActs().get(i).getName() + "\n", doc.getStyle("font 2"));
 
-                int numScene2s = gametemplate.getActs().get(i).getScenes().size();
+                int numScene2s = gameTemplate.getActs().get(i).getScenes().size();
 
                 for (int j = 0; j < numScene2s; j++) {
                     doc.insertString(doc.getLength(), "\tScene " + (j + 1) + "\n", doc.getStyle("font 3"));
 
-                    int numScreens = gametemplate.getActs().get(i).getScenes().get(j).getScreens().size();
+                    int numScreens = gameTemplate.getActs().get(i).getScenes().get(j).getScreens().size();
 
                     for (int k = 0; k < numScreens; k++) {
                         doc.insertString(doc.getLength(), "\t"
                                         + "\tScreen "
                                         + (k + 1)
                                         + "="
-                                        + gametemplate.getActs().get(i).getScenes()
+                                        + gameTemplate.getActs().get(i).getScenes()
                                         .get(j).getScreens().get(k).getType(),
                                 doc.getStyle("font 3"));
 
-                        String type = gametemplate.getActs().get(i).getScenes().get(j).getScreens().get(k).getType();
+                        String type = gameTemplate.getActs().get(i).getScenes().get(j).getScreens().get(k).getType();
 
                         if (type.equals("Question")) {
                             doc.insertString(doc.getLength(), "  " + count + "\n", doc.getStyle("font 3"));
@@ -3405,7 +3190,7 @@ public class Wizard implements ActionListener {
         MyTableModel tm2 = (MyTableModel) questionTable.getModel();
         Vector<Vector<Object>> vector1 = tm2.getData();
 
-        int numActs = gametemplate.getActs().size();
+        int numActs = gameTemplate.getActs().size();
 
         ArrayList<String> challengesSelected = new ArrayList<String>();
         Vector<Vector<Object>> data2 = ((MyTableModel) challengeTable.getModel()).getData();
@@ -3441,13 +3226,13 @@ public class Wizard implements ActionListener {
         for (int i = 0; i < numActs; i++) {
             try {
                 // Also adds learning objectives to acts for importing into game
-                doc.insertString(doc.getLength(), gametemplate.getActs().get(i).getName() + "\n", doc.getStyle("font 2"));
+                doc.insertString(doc.getLength(), gameTemplate.getActs().get(i).getName() + "\n", doc.getStyle("font 2"));
 
-                if (gametemplate.getActs().get(i).getName().equals("Conclusion")) {
+                if (gameTemplate.getActs().get(i).getName().equals("Conclusion")) {
                     doc.insertString(doc.getLength(), "\n", doc.getStyle("font 2"));
                 }
 
-                if (gametemplate.getActs().get(i).getName().equals("Progress")) {
+                if (gameTemplate.getActs().get(i).getName().equals("Progress")) {
                     doc.insertString(doc.getLength(), "\tLearning Objectives:\n", doc.getStyle("font 4"));
 
                     for (int j = count * (loList.size() + 1); j <= (loList.size() * (count + 1)); j++) {
@@ -3465,7 +3250,7 @@ public class Wizard implements ActionListener {
                                         //lo.setLearningObjective((String) v.get(j + n).get(0));
                                         lo.getTaxonomyCategories().add((String) vector.get(j + n).get(0));
 
-                                        gametemplate.getActs().get(i).getLearningObjective().add(lo);
+                                        gameTemplate.getActs().get(i).getLearningObjective().add(lo);
 
                                         doc.insertString(doc.getLength(), "\t"
                                                 + vector.get(j + n).get(0)
@@ -3484,7 +3269,7 @@ public class Wizard implements ActionListener {
                         //lo.setLearningObjective(loList.get(k));
                         lo.getTaxonomyCategories().add(loList.get(k));
 
-                        gametemplate.getActs().get(i).getLearningObjective().add(lo);
+                        gameTemplate.getActs().get(i).getLearningObjective().add(lo);
                     }
                 }
             } catch (BadLocationException e) {
@@ -3612,14 +3397,15 @@ public class Wizard implements ActionListener {
     private void printErrorLearningTaxonomy() {
         mainPanel.removeAll();
 
-        speechBubble.setBounds(415, 45, 400, 170);
-        speechBubble.setText("\n      You Must Select A \n          Taxonomy!\n       Please Click Back!");
-        speechBubble.setFont(font);
+//        speechBubble.setBounds(415, 45, 400, 170);
+//        speechBubble.setText("\n      You Must Select A \n          Taxonomy!\n       Please Click Back!");
+//        speechBubble.setFont(font);
 
-        taxBackButton.setBounds(700, 550, 150, 50);
+        rebuildSpeechBubble(font, 415, 45, 400, 170, "\n      You Must Select A \n          Taxonomy!\n       Please Click Back!");
+
+        taxBackButton.setBounds(rightButtonRect);
 
         mainPanel.changeCoord(0, 0);
-        mainPanel.add(speechBubble);
         mainPanel.add(taxBackButton);
         mainPanel.changeFileName("errorBackground.png");
 
@@ -3631,11 +3417,13 @@ public class Wizard implements ActionListener {
     private void printErrorLO() {
         mainPanel.removeAll();
 
-        speechBubble.setBounds(415, 45, 400, 170);
-        speechBubble.setText("\n      You Must Select A \n      Learning Objective!\n       Please Click Back!");
-        speechBubble.setFont(font);
+//        speechBubble.setBounds(415, 45, 400, 170);
+//        speechBubble.setText("\n      You Must Select A \n      Learning Objective!\n       Please Click Back!");
+//        speechBubble.setFont(font);
 
-        summaryBack.setBounds(700, 550, 150, 50);
+        rebuildSpeechBubble(font, 415, 45, 400, 170, "\n      You Must Select A \n      Learning Objective!\n       Please Click Back!");
+
+        summaryBack.setBounds(rightButtonRect);
 
         mainPanel.changeCoord(0, 0);
         mainPanel.add(speechBubble);
@@ -3650,14 +3438,15 @@ public class Wizard implements ActionListener {
     private void printErrorLearningObjective() {
         mainPanel.removeAll();
 
-        speechBubble.setBounds(415, 45, 400, 170);
-        speechBubble.setText("\n      You Must Select A \n        Main/Sub Objective!\n       Please Click Back!");
-        speechBubble.setFont(font);
+//        speechBubble.setBounds(415, 45, 400, 170);
+//        speechBubble.setText("\n      You Must Select A \n        Main/Sub Objective!\n       Please Click Back!");
+//        speechBubble.setFont(font);
 
-        summaryBack.setBounds(700, 550, 150, 50);
+        rebuildSpeechBubble(font, 415, 45, 400, 170, "\n      You Must Select A \n        Main/Sub Objective!\n       Please Click Back!");
+
+        summaryBack.setBounds(rightButtonRect);
 
         mainPanel.changeCoord(0, 0);
-        mainPanel.add(speechBubble);
         mainPanel.add(summaryBack);
         mainPanel.changeFileName("errorBackground.png");
 
@@ -3677,15 +3466,16 @@ public class Wizard implements ActionListener {
     public void printLocationError() {
         mainPanel.removeAll();
 
-        speechBubble.setBounds(415, 45, 400, 170);
-        speechBubble.setText("\n      You Must Select A \n          Location!\n       Please Click Back!");
-        speechBubble.setFont(font);
+//        speechBubble.setBounds(415, 45, 400, 170);
+//        speechBubble.setText("\n      You Must Select A \n          Location!\n       Please Click Back!");
+//        speechBubble.setFont(font);
 
-        fullSumContinue.setBounds(700, 550, 150, 50);
+        rebuildSpeechBubble(font, 415, 45, 400, 170, "\n      You Must Select A \n          Location!\n       Please Click Back!");
+
+        fullSumContinue.setBounds(rightButtonRect);
         fullSumContinue.setText("Back");
 
         mainPanel.changeCoord(0, 0);
-        mainPanel.add(speechBubble);
         mainPanel.add(fullSumContinue);
         mainPanel.changeFileName("errorBackground.png");
 
@@ -3719,14 +3509,15 @@ public class Wizard implements ActionListener {
     private void printErrorChallenge() {
         mainPanel.removeAll();
 
-        speechBubble.setBounds(415, 45, 400, 170);
-        speechBubble.setText("\n      You Must Select A \n             Challenge!\n       Please Click Back!");
-        speechBubble.setFont(font);
+//        speechBubble.setBounds(415, 45, 400, 170);
+//        speechBubble.setText("\n      You Must Select A \n             Challenge!\n       Please Click Back!");
+//        speechBubble.setFont(font);
 
-        challengeErrorBack.setBounds(700, 550, 150, 50);
+        rebuildSpeechBubble(font, 415, 45, 400, 170, "\n      You Must Select A \n             Challenge!\n       Please Click Back!");
+
+        challengeErrorBack.setBounds(rightButtonRect);
 
         mainPanel.changeCoord(0, 0);
-        mainPanel.add(speechBubble);
         mainPanel.add(challengeErrorBack);
         mainPanel.changeFileName("errorBackground.png");
 
@@ -3907,29 +3698,33 @@ public class Wizard implements ActionListener {
                 mainCount++;
             }
         }
+
         conditionErrorBack.setText("Back");
-        fullSumContinue.setFont(font2);
         conditionErrorBack.setFont(font2);
-
-        fullSumContinue.setBounds(700, 225, 150, 50);
-        conditionErrorBack.setBounds(520, 225, 150, 50);
-
-        fullSumContinue.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
-        fullSumContinue.setText("Continue");
+        conditionErrorBack.setBounds(leftButtonRect);
         conditionErrorBack.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+
+//        fullSumContinue.setText("Continue");
+//        fullSumContinue.setFont(font2);
+//        fullSumContinue.setBounds(700, 225, 150, 50);
+//        fullSumContinue.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
+
+        buildContinueButton(fullSumContinue);
+
 
         // Error Checking
         if (mainCount == 0) {
             mainPanel.removeAll();
 
-            speechBubble.setBounds(415, 45, 400, 170);
-            speechBubble.setText("\n      You Must Select A \n             Condition!\n       Please Click Back!");
-            speechBubble.setFont(font);
+//            speechBubble.setBounds(415, 45, 400, 170);
+//            speechBubble.setText("\n      You Must Select A \n             Condition!\n       Please Click Back!");
+//            speechBubble.setFont(font);
 
-            conditionErrorBack.setBounds(700, 550, 150, 50);
+            rebuildSpeechBubble(font, 415, 45, 400, 170, "\n      You Must Select A \n             Condition!\n       Please Click Back!");
+
+            conditionErrorBack.setBounds(rightButtonRect);
 
             mainPanel.changeCoord(0, 0);
-            mainPanel.add(speechBubble);
             mainPanel.add(conditionErrorBack);
             mainPanel.changeFileName("errorBackground.png");
 
@@ -3949,11 +3744,12 @@ public class Wizard implements ActionListener {
             scroll.setBounds(180, 300, 720, 330);
             scroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, java.awt.Color.GRAY));
 
-            speechBubble.setBounds(415, 45, 400, 90);
-            speechBubble.setText("Here is a Summary of Your \n      Game Thus Far!!!");
-            speechBubble.setFont(font);
+//            speechBubble.setBounds(normalRect);
+//            speechBubble.setText("Here is a Summary of Your \n      Game Thus Far!!!");
+//            speechBubble.setFont(font);
 
-            mainPanel.add(speechBubble);
+            rebuildSpeechBubble(font, normalRect, "Here is a Summary of Your \n      Game Thus Far!!!");
+
             mainPanel.add(fullSumContinue);
             mainPanel.add(conditionErrorBack);
             mainPanel.add(scroll);
