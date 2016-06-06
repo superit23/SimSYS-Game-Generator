@@ -143,6 +143,7 @@ public class GameAdapter extends Observable {
 		super.addObserver(o);
 		List<Act> acts = getGame().getActs();
 		actAdapters = new ArrayList<ActAdapter>();
+
 		for (Act act : acts) {
 			ActAdapter actAdapter = new ActAdapter();
 			actAdapter.setAct(act);
@@ -167,10 +168,14 @@ public class GameAdapter extends Observable {
 	 */
 	public void startGame(String xmlFilePath) throws Exception {
 		System.out.println("calling load in GameModel: " + xmlFilePath);
+
 		initializeSpeedTypes();
+
 		ChallengeAdapter.quizReward = 0;
+
 		GameAdapter gameAdapter = load(xmlFilePath);
 		gameAdapterObj = gameAdapter;
+
 		// setValues(gameModel);
 		addObserver(gameView);
 
@@ -188,11 +193,14 @@ public class GameAdapter extends Observable {
 			// Load Game from XML
 			JAXBContext context = JAXBContext.newInstance(Game.class);
 			System.out.println("instance passed ");
+
 			Unmarshaller unmarshaller = context.createUnmarshaller();
 			System.out.println("marshaller created");
+
 			GameAdapter gameAdapter = new GameAdapter();
 			Game game = (Game) unmarshaller.unmarshal(new File(xmlFilePath));
 			game = game.animationHandler();
+
 			this.setGame(game);
 			gameAdapter.setGame(game);
 			return gameAdapter;

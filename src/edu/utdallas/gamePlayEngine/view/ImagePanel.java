@@ -36,7 +36,7 @@ public class ImagePanel extends JPanel {
 		setSize(size);
 		// setLayout(null);
 
-	};
+	}
 
 	public void setImage(Image image) {
 		this.image = image;

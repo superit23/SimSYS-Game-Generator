@@ -115,7 +115,6 @@ public class RoundedPanel extends JPanel implements TimingTarget {
 			image = this.prop.getText().getImage();
 		} catch (Exception e) {
 		}
-		;
 		// Check if the image does not exist
 		if (image == null || image.isEmpty()) {
 			// Do Nothing

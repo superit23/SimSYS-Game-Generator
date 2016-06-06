@@ -31,5 +31,5 @@ public enum TextType {
 	/**
 	 * Challenge question text type.
 	 */
-	CHALLENGE_QUESTION;
+	CHALLENGE_QUESTION
 }

@@ -48,7 +48,7 @@ public class ChallengeAdapter extends Observable {
 	/**
 	 * @return
 	 */
-	public int getNextDispaly() {
+	public int getNextDisplay() {
 		return nextDisplay;
 	}
 
@@ -66,7 +66,6 @@ public class ChallengeAdapter extends Observable {
 
 		setChanged();
 		gameState.setChallenegeAdapter(this);
-		;
 		gameState.setMessage(Message.Start);
 		notifyObservers(gameState);
 	}

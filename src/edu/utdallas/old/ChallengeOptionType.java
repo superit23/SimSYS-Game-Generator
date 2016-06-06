@@ -16,5 +16,5 @@ public enum ChallengeOptionType {
 	/**
 	 * Timer option.
 	 */
-	TIMER;
+	TIMER
 }

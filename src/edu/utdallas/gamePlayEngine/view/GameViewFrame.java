@@ -605,8 +605,8 @@ public class GameViewFrame extends javax.swing.JFrame {
 				.getLocation().getY(), prop.getSize().getWidth(), prop
 				.getSize().getHeight(), false, prop);
 
-		String imageName = ((Prop) gameState.getGameElementAdapter()
-				.getGameElement()).getName();
+		String imageName = gameState.getGameElementAdapter()
+				.getGameElement().getName();
 		System.out.println(imageName);
 		Image image = null;
 		try {

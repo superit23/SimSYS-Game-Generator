@@ -15,7 +15,7 @@ public abstract class PreviewError {
 		MEDIUM,
 		/** The high. */
 		HIGH
-	};
+	}
 
 	/**
 	 * The Enum Level.

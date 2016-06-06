@@ -188,7 +188,7 @@ public class InputWizard implements ActionListener {
 		SCREEN,
 		/** The challenge. */
 		CHALLENGE
-	};
+	}
 
 	/** The selected level. */
 	private static gameLevel selectedLevel = null;

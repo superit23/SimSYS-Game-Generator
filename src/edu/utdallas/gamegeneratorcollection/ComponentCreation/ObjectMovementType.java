@@ -16,5 +16,5 @@ public enum ObjectMovementType {
 	/**
 	 * Walk off of the screen.
 	 */
-	WALK_OFF_SCREEN;
+	WALK_OFF_SCREEN
 }

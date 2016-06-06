@@ -63,6 +63,7 @@ public class ActAdapter extends Observable {
 
 		List<Scene> scenes = getAct().getScene();
 		sceneAdapters = new ArrayList<SceneAdapter>();
+
 		for (Scene scene : scenes) {
 			SceneAdapter sceneAdapter = new SceneAdapter();
 			sceneAdapter.setScene(scene);

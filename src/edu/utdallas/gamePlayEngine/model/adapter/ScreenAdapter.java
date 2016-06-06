@@ -72,7 +72,6 @@ public class ScreenAdapter extends Observable {
 		for (GameElementType gameElem : gameElements) {
 			GameElementAdapter gameElementAdapter = new GameElementAdapter();
 			gameElementAdapter.setGameElement(gameElem);
-			;
 			gameElementAdapter.addObserver(o);
 			gameElementAdapters.add(gameElementAdapter);
 		}
@@ -82,7 +81,6 @@ public class ScreenAdapter extends Observable {
 		for (Challenge challenge : challenges) {
 			ChallengeAdapter challengeAdapter = new ChallengeAdapter();
 			challengeAdapter.setChallenge(challenge);
-			;
 			challengeAdapter.addObserver(o);
 			challengeAdapaters.add(challengeAdapter);
 		}

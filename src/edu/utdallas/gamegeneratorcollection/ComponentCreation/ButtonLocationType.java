@@ -9,5 +9,5 @@ public enum ButtonLocationType {
 	CHALLENGE_1,
 	CHALLENGE_2,
 	CHALLENGE_3,
-	CHALLENGE_4;
+	CHALLENGE_4
 }

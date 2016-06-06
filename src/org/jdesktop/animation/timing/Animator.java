@@ -133,7 +133,7 @@ public final class Animator {
 		HOLD,
 		/** Timing sequence should reset to the initial value at the end */
 		RESET,
-	};
+	}
 
 	/**
 	 * Direction is used to set the initial direction in which the animation
@@ -148,7 +148,7 @@ public final class Animator {
 		FORWARD,
 		/** cycle proceeds backward */
 		BACKWARD,
-	};
+	}
 
 	/**
 	 * RepeatBehavior determines how each successive cycle will flow.
@@ -165,7 +165,7 @@ public final class Animator {
 		 * Each cycle proceeds in the opposite direction as the previous one
 		 */
 		REVERSE
-	};
+	}
 
 	/**
 	 * Used to specify unending duration or repeatCount

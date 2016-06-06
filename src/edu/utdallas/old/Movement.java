@@ -12,6 +12,6 @@ public enum Movement {
 	/**
 	 * Character exits the screen.
 	 */
-	WALK_OFF_SCREEN;
+	WALK_OFF_SCREEN
 
 }

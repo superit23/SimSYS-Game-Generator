@@ -62,7 +62,7 @@ public class ConversationBubble extends JLabel {
 	 */
 	public static enum PointDirection {
 		LEFT_DOWN, CENTER_DOWN, RIGHT_DOWN
-	};
+	}
 
 	/**
 	 * Default point direction.
