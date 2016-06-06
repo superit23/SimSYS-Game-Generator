@@ -1271,10 +1271,10 @@ public class Wizard implements ActionListener {
 								if (knowRepo.getKnowledgeAreas().get(j)
 										.getSubKnowledgeArea().get(k)
 										.getLearningObjectives() != null) {
-									Vector<Object> v1 = new Vector<Object>();
-									v1.add(subAreas.get(i));
-									v1.add(new Boolean(true));
-									newData.add(v1);
+									Vector<Object> vector = new Vector<Object>();
+									vector.add(subAreas.get(i));
+									vector.add(new Boolean(true));
+									newData.add(vector);
 									for (int l = 0; l < knowRepo
 											.getKnowledgeAreas().get(j)
 											.getSubKnowledgeArea().get(k)
@@ -1284,16 +1284,16 @@ public class Wizard implements ActionListener {
 												.get(k).getLearningObjectives()
 												.get(l).getTaxonomyCategories()
 												.equals("")) {
-											Vector<Object> v2 = new Vector<Object>();
-											v2.add(knowRepo.getKnowledgeAreas()
+											Vector<Object> vector2 = new Vector<Object>();
+											vector2.add(knowRepo.getKnowledgeAreas()
 													.get(j)
 													.getSubKnowledgeArea()
 													.get(k)
 													.getLearningObjectives()
 													.get(l)
 													.getTaxonomyCategories());
-											v2.add(new Boolean(false));
-											newData.add(v2);
+											vector2.add(new Boolean(false));
+											newData.add(vector2);
 										}
 									}
 								}
@@ -1380,38 +1380,38 @@ public class Wizard implements ActionListener {
 				StyleConstants.setFontSize(s2, 15);
 				MyTableModel tm = (MyTableModel) table.getModel();
 				MyTableModel tm2 = (MyTableModel) loTable.getModel();
-				Vector<Vector<Object>> v = tm.getData();
-				Vector<Vector<Object>> v2 = tm2.getData();
+				Vector<Vector<Object>> vector = tm.getData();
+				Vector<Vector<Object>> vector1 = tm2.getData();
 				int mainCount = 0;
 				int subCount = 0;
 				boolean finalError = false;
 				learningError = false;
 				for (int i = 0; i < table.getRowCount(); i++) {
-					if ((boolean) v.get(i).get(1) == true) {
-						if (((String) (v.get(i).get(0))).charAt(0) == '-') {
+					if ((boolean) vector.get(i).get(1) == true) {
+						if (((String) (vector.get(i).get(0))).charAt(0) == '-') {
 							try {
 								doc.insertString(doc.getLength(),
-										v.get(i).get(0) + "\n",
+										vector.get(i).get(0) + "\n",
 										doc.getStyle("font 3"));
 								for (int j = 0; j < loTable.getRowCount(); j++) {
-									int length = ((String) (v.get(i).get(0)))
+									int length = ((String) (vector.get(i).get(0)))
 											.length();
-									String sub = ((String) (v.get(i).get(0)))
+									String sub = ((String) (vector.get(i).get(0)))
 											.substring(2, length);
-									String lo = ((String) (v2.get(j).get(0)));
+									String lo = ((String) (vector1.get(j).get(0)));
 									if (sub.equals(lo)) {
 										int k = j;
 										int l = k;
 										while (j + 1 < loTable.getRowCount()
-												&& ((String) (v2.get(j + 1)
+												&& ((String) (vector1.get(j + 1)
 														.get(0))).charAt(0) == '-') {
-											if ((boolean) v2.get(j + 1).get(1) == true) {
+											if ((boolean) vector1.get(j + 1).get(1) == true) {
 												doc.insertString(doc
 														.getLength(), "----"
-														+ v2.get(j + 1).get(0)
+														+ vector1.get(j + 1).get(0)
 														+ "\n", doc
 														.getStyle("font 4"));
-												loList.add((String) v2.get(
+												loList.add((String) vector1.get(
 														j + 1).get(0));
 												k++;
 											}
@@ -1429,13 +1429,13 @@ public class Wizard implements ActionListener {
 						} else {
 							try {
 								doc.insertString(doc.getLength(),
-										v.get(i).get(0) + "\n",
+										vector.get(i).get(0) + "\n",
 										doc.getStyle("font 2"));
 								int j = 1;
 								boolean error = true;
-								while (((String) (v.get(i + j).get(0)))
+								while (((String) (vector.get(i + j).get(0)))
 										.charAt(0) == '-') {
-									if ((boolean) v.get(i + j).get(1) == true) {
+									if ((boolean) vector.get(i + j).get(1) == true) {
 										error = false;
 									}
 									j++;
@@ -1464,6 +1464,7 @@ public class Wizard implements ActionListener {
 						3, java.awt.Color.GRAY));
 				// Error Checking
 				if (mainCount == 0) {
+
 					mainPanel.removeAll();
 					speechBubble.setBounds(415, 45, 400, 170);
 					speechBubble
@@ -1475,7 +1476,9 @@ public class Wizard implements ActionListener {
 					mainPanel.add(summaryBack);
 					mainPanel.changeFileName("errorBackground.png");
 					mainPanel.updateUI();
+
 				} else if (subCount == 0 && mainCount != 0 || finalError) {
+
 					mainPanel.removeAll();
 					speechBubble.setBounds(415, 45, 400, 170);
 					speechBubble
@@ -1487,12 +1490,15 @@ public class Wizard implements ActionListener {
 					mainPanel.changeFileName("errorBackground.png");
 					mainPanel.add(summaryBack);
 					mainPanel.updateUI();
+
 				} else if (learningError) {
+
 					mainPanel.removeAll();
 					speechBubble.setBounds(415, 45, 400, 170);
 					speechBubble
 							.setText("\n        You Must Select \n       Learning Objectives!\n        Please Click Back!");
 					speechBubble.setFont(font);
+
 					summaryBack.setBounds(700, 550, 150, 50);
 					mainPanel.changeCoord(0, 0);
 					mainPanel.add(speechBubble);
@@ -1508,6 +1514,7 @@ public class Wizard implements ActionListener {
 					scroll.setBounds(100, 300, 950, 260);
 					scroll.setBorder(BorderFactory.createMatteBorder(3, 3, 3,
 							3, java.awt.Color.GRAY));
+
 					speechBubble.setBounds(415, 45, 400, 90);
 					speechBubble
 							.setText("Here is a Summary of Your \nLearning Objectives Selected");
@@ -2779,17 +2786,17 @@ public class Wizard implements ActionListener {
 		for (int i = 0; i < gametemplate.getActs().size(); i++) {
 			// Adds learning objectives to acts
 			ArrayList<LearningObjectiveType> los = new ArrayList<LearningObjectiveType>();
-			for (int numOfLO = 0; numOfLO < gametemplate.getActs().get(i)
-					.getLearningObjective().size(); numOfLO++) {
+			for (int currLO = 0; currLO < gametemplate.getActs().get(i)
+					.getLearningObjective().size(); currLO++) {
 
 				// EDITED BY DAN
 				//LearningObjectiveType toAdd = new LearningObjectiveType();
 				//toAdd.setLearningObjective(gametemplate.getActs().get(i)
-				//		.getLearningObjective().get(numOfLO)
+				//		.getLearningObjective().get(currLO)
 				//		.getTaxonomyCategories());
 
 				LearningObjectiveType toAdd = gametemplate.getActs().get(i)
-						.getLearningObjective().get(numOfLO);
+						.getLearningObjective().get(currLO);
 
 				los.add(toAdd);
 
@@ -2818,11 +2825,11 @@ public class Wizard implements ActionListener {
 					if (gametemplate.getActs().get(i).getScenes().get(j)
 							.getScreens().get(k).getType().equals("Question")) {
 						// Question addition
-						QuizChallenge ch = new QuizChallenge();
-						Vector<Vector<Object>> v = ((MyTableModel) (questionTable
+						QuizChallenge quizChallenge = new QuizChallenge();
+						Vector<Vector<Object>> vector = ((MyTableModel) (questionTable
 								.getModel())).getData();
 
-						String challengeType = ((String) v.get(quesIndex)
+						String challengeType = ((String) vector.get(quesIndex)
 								.get(1)).substring(0, 6);
 
 						quesIndex++;
@@ -2831,7 +2838,8 @@ public class Wizard implements ActionListener {
 						// random number between 0 and size-1 of los
 
 						Random rand = new Random();
-						int randLO = rand.nextInt(((los.size() - 1) - 0) + 1) + 0;
+						//int randLO = rand.nextInt(((los.size() - 1) - 0) + 1) + 0;
+						int randLO = rand.nextInt(los.size() - 1);
 						//String str = los.get(randLO).getLearningObjectives();
 
 						String str = los.get(randLO).getTaxonomyCategories().get(0);
@@ -2852,13 +2860,13 @@ public class Wizard implements ActionListener {
 							// Just get first question
 							int randQues = rand.nextInt(((sugg.getQuesList()
 									.size() - 1) - 0) + 1) + 0;
-							ch = sugg.getQuesList().get(randQues);
+							quizChallenge = sugg.getQuesList().get(randQues);
 						} catch (JAXBException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 						game.getActs().get(i).getScene().get(j).getScreen().get(k)
-								.getChallenge().add(ch);
+								.getChallenge().add(quizChallenge);
 					}
 				}
 			}
@@ -3086,6 +3094,7 @@ public class Wizard implements ActionListener {
 						+ "\n", doc.getStyle("font 2"));
 				int numScene2s = gametemplate.getActs().get(i).getScenes()
 						.size();
+
 				for (int j = 0; j < numScene2s; j++) {
 					doc.insertString(doc.getLength(), "\tScene " + (j + 1)
 							+ "\n", doc.getStyle("font 3"));
@@ -3099,8 +3108,10 @@ public class Wizard implements ActionListener {
 								+ gametemplate.getActs().get(i).getScenes()
 										.get(j).getScreens().get(k).getType(),
 								doc.getStyle("font 3"));
+
 						String type = gametemplate.getActs().get(i).getScenes()
 								.get(j).getScreens().get(k).getType();
+
 						if (type.equals("Question")) {
 							doc.insertString(doc.getLength(), "  " + count
 									+ "\n", doc.getStyle("font 3"));
@@ -3111,6 +3122,7 @@ public class Wizard implements ActionListener {
 											+ challengesSelected
 													.get(challengeIndex) + "\n",
 									doc.getStyle("font 3"));
+
 							if (challengeIndex >= challengesSelected.size() - 1) {
 								challengeIndex = 0;
 							} else {
@@ -3134,37 +3146,46 @@ public class Wizard implements ActionListener {
 		finalSumPane = new JTextPane();
 		finalSumPane.updateUI();
 		finalSumPane.setEditable(false);
+
 		StyledDocument doc = finalSumPane.getStyledDocument();
 		javax.swing.text.Style def = StyleContext.getDefaultStyleContext()
 				.getStyle(StyleContext.DEFAULT_STYLE);
 		javax.swing.text.Style normal = doc.addStyle("font 2", def);
+
 		StyleConstants.setAlignment(normal, StyleConstants.ALIGN_CENTER);
 		StyleConstants.setFontFamily(def, "Comic Sans MS");
 		StyleConstants.setFontSize(def, 22);
 		StyleConstants.setBold(def, true);
 		doc.setParagraphAttributes(0, doc.getLength(), def, false);
 		StyleConstants.setUnderline(def, false);
+
 		javax.swing.text.Style s = doc.addStyle("font 1", normal);
 		StyleConstants.setFontSize(s, 24);
 		StyleConstants.setBold(s, true);
 		StyleConstants.setUnderline(s, true);
+
 		javax.swing.text.Style s2 = doc.addStyle("font 3", normal);
 		StyleConstants.setUnderline(s2, false);
 		StyleConstants.setFontSize(s2, 18);
 		StyleConstants.setBold(s2, false);
+
 		javax.swing.text.Style s3 = doc.addStyle("font 4", normal);
 		StyleConstants.setUnderline(s3, false);
 		StyleConstants.setFontSize(s3, 20);
 		StyleConstants.setBold(s3, false);
+
 		MyTableModel tm = (MyTableModel) loActTable.getModel();
 		Vector<Vector<Object>> vector = tm.getData();
+
 		MyTableModel tm2 = (MyTableModel) questionTable.getModel();
 		Vector<Vector<Object>> vector1 = tm2.getData();
+
 		int numActs = gametemplate.getActs().size();
 
 		ArrayList<String> challengesSelected = new ArrayList<String>();
 		Vector<Vector<Object>> data2 = ((MyTableModel) challengeTable
 				.getModel()).getData();
+
 		for (int i = 0; i < data2.size(); i++) {
 			if ((boolean) data2.get(i).get(1) == true) {
 				challengesSelected.add((String) data2.get(i).get(0));
@@ -3174,6 +3195,7 @@ public class Wizard implements ActionListener {
 		ArrayList<String> conditionsSelected = new ArrayList<String>();
 		Vector<Vector<Object>> data = ((MyTableModel) conditionsTable
 				.getModel()).getData();
+
 		for (int i = 0; i < data.size(); i++) {
 			if ((boolean) data.get(i).get(1) == true) {
 				conditionsSelected.add((String) data.get(i).get(0));
@@ -3185,11 +3207,14 @@ public class Wizard implements ActionListener {
 			// Prints out environment/location
 			doc.insertString(doc.getLength(), "Location\n",
 					doc.getStyle("font 1"));
+
 			doc.insertString(doc.getLength(),
 					(String) backgroundBox.getSelectedItem() + "\n\n",
 					doc.getStyle("font 3"));
+
 			doc.insertString(doc.getLength(), "Game Layout\n",
 					doc.getStyle("font 1"));
+
 		} catch (BadLocationException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -3200,16 +3225,20 @@ public class Wizard implements ActionListener {
 				doc.insertString(doc.getLength(), gametemplate.getActs().get(i)
 						.getName()
 						+ "\n", doc.getStyle("font 2"));
+
 				if (gametemplate.getActs().get(i).getName()
 						.equals("Conclusion")) {
 					doc.insertString(doc.getLength(), "\n",
 							doc.getStyle("font 2"));
 				}
+
 				if (gametemplate.getActs().get(i).getName().equals("Progress")) {
 					doc.insertString(doc.getLength(),
 							"\tLearning Objectives:\n", doc.getStyle("font 4"));
+
 					for (int j = count * (loList.size() + 1); j <= (loList
 							.size() * (count + 1)); j++) {
+
 						if (((String) vector.get(j).get(0)).substring(0, 8).equals(
 								"Progress")) {
 							for (int n = 0; n <= loList.size(); n++) {

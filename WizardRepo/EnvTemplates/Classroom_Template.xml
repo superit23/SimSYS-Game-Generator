@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<game>
+<Game>
     <Act>
     	 <Transition>
             <TransitionType>straightCut</TransitionType>
@@ -220,4 +220,4 @@
         <Rewards>none</Rewards>
     </Character>
 
-</game>
+</Game>
