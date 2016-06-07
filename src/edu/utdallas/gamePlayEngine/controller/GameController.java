@@ -1,6 +1,6 @@
 /**
- *Controller for Game Play Engine. Receives messages from View and sends to appropriate model boundary for update.
- *This file contains the Controller class for the Game Play Engine
+ * Controller for Game Play Engine. Receives messages from View and sends to appropriate model boundary for update.
+ * This file contains the Controller class for the Game Play Engine
  */
 package edu.utdallas.gamePlayEngine.controller;
 
@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import simsys.schema.components.Character;
 import simsys.schema.components.Reward;
@@ -26,110 +28,113 @@ import edu.utdallas.gamePlayEngine.view.GameViewFrame;
 
 /**
  * @author Sreeram Controller class for Game Play Engine
- * 
+ *
  */
 public class GameController implements ActionListener {
 
-	public static boolean nemesisWasRight = false;
-	/**
-	 * gameBoundary
-	 */
-	private GameModelBoundary gameBoundary;
-	/**
-	 * gameViewBoundary
-	 */
-	private GameViewBoundary gameViewBoundary;
-	// current last question
-	public static int npcCorrect;
-	public static int npcIncorrect;
-	/**
-	 * currentActAdapter
-	 */
-	private static int currentActAdapter;
-	/**
-	 * currentSceneAdapter
-	 */
-	private static int currentSceneAdapter;
-	/**
-	 * currentScreenAdapter
-	 */
-	private static int currentScreenAdapter;
-	/**
-	 * currentGameElementAdapter
-	 */
-	private static int currentGameElementAdapter;
-	/**
-	 * currentChallengeAdapter
-	 */
+    public static boolean nemesisWasRight = false;
+    /**
+     * gameBoundary
+     */
+    private GameModelBoundary gameBoundary;
+    /**
+     * gameViewBoundary
+     */
+    private GameViewBoundary gameViewBoundary;
+    // current last question
+    public static int npcCorrect;
+    public static int npcIncorrect;
+    /**
+     * currentActAdapter
+     */
+    private static int currentActAdapter;
+    /**
+     * currentSceneAdapter
+     */
+    private static int currentSceneAdapter;
+    /**
+     * currentScreenAdapter
+     */
+    private static int currentScreenAdapter;
+    /**
+     * currentGameElementAdapter
+     */
+    private static int currentGameElementAdapter;
+    /**
+     * currentChallengeAdapter
+     */
 
-	public static int currentChallengeAdapter;
-	// private static int currentQuiz;
-	// private static int currentChallenge;
-	/**
-	 * actAdapterToStart
-	 */
-	private static ActAdapter actAdapterToStart = new ActAdapter();
-	/**
-	 * sceneAdapterToStart
-	 */
-	private static SceneAdapter sceneAdapterToStart = new SceneAdapter();
-	/**
-	 * screenAdapterToStart
-	 */
-	private static ScreenAdapter screenAdapterToStart = new ScreenAdapter();
-	/**
-	 * gameElementAdapterToStart
-	 */
-	private static GameElementAdapter gameElementAdapterToStart = new GameElementAdapter();
-	/**
-	 * challengeAdapterToStart
-	 */
-	private static ChallengeAdapter challengeAdapterToStart = new ChallengeAdapter();
+    public static int currentChallengeAdapter;
+    // private static int currentQuiz;
+    // private static int currentChallenge;
+    /**
+     * actAdapterToStart
+     */
+    private static ActAdapter actAdapterToStart = new ActAdapter();
+    /**
+     * sceneAdapterToStart
+     */
+    private static SceneAdapter sceneAdapterToStart = new SceneAdapter();
+    /**
+     * screenAdapterToStart
+     */
+    private static ScreenAdapter screenAdapterToStart = new ScreenAdapter();
+    /**
+     * gameElementAdapterToStart
+     */
+    private static GameElementAdapter gameElementAdapterToStart = new GameElementAdapter();
+    /**
+     * challengeAdapterToStart
+     */
+    private static ChallengeAdapter challengeAdapterToStart = new ChallengeAdapter();
 
-	public static int counter = 0;
+    public static int counter = 0;
 
-	/**
-	 * Initializes GameBoundary and RewardBoundary
-	 * 
-	 * @param game
-	 */
-	public GameController(GameAdapter gameAdapter, GameView gameView) {
-		// Zac ZHANG added: initialize all parameters
-		currentActAdapter = 0;
-		currentSceneAdapter = 0;
-		currentScreenAdapter = 0;
-		currentGameElementAdapter = 0;
-		currentChallengeAdapter = 0;
+    // Threadpool executor for Tasks.
+    private static ExecutorService executor = Executors.newSingleThreadExecutor();
 
-		// currentQuiz = 0;
-		// currentChallenge = 0;
-		npcCorrect = 0;
-		npcIncorrect = 0;
-		actAdapterToStart = new ActAdapter();
-		sceneAdapterToStart = new SceneAdapter();
-		screenAdapterToStart = new ScreenAdapter();
-		gameElementAdapterToStart = new GameElementAdapter();
-		challengeAdapterToStart = new ChallengeAdapter();
-		// challengeToStart = new ChallengeStructure();
-		// quizToStart = new Quiz();
-		this.gameBoundary = new GameModelBoundary(gameAdapter);
-		this.gameViewBoundary = new GameViewBoundary(gameView);
+    /**
+     * Initializes GameBoundary and RewardBoundary
+     *
+     * @param game
+     */
+    public GameController(GameAdapter gameAdapter, GameView gameView) {
+        // Zac ZHANG added: initialize all parameters
+        currentActAdapter = 0;
+        currentSceneAdapter = 0;
+        currentScreenAdapter = 0;
+        currentGameElementAdapter = 0;
+        currentChallengeAdapter = 0;
 
-		System.out.println("controller has been initialized");
-		System.out.println("controller knows about model and view");
-	}
+        // currentQuiz = 0;
+        // currentChallenge = 0;
+        npcCorrect = 0;
+        npcIncorrect = 0;
+        actAdapterToStart = new ActAdapter();
+        sceneAdapterToStart = new SceneAdapter();
+        screenAdapterToStart = new ScreenAdapter();
+        gameElementAdapterToStart = new GameElementAdapter();
+        challengeAdapterToStart = new ChallengeAdapter();
+        // challengeToStart = new ChallengeStructure();
+        // quizToStart = new Quiz();
+        this.gameBoundary = new GameModelBoundary(gameAdapter);
+        this.gameViewBoundary = new GameViewBoundary(gameView);
 
-	/**
-	 * Core method that processes both internally generated and externally
-	 * generated messages Parses the message and then calls appropriate control
-	 * and action. This method is to be updated to support more games with new
-	 * messages.
-	 * 
-	 * @param messageType
-	 * @param message
-	 * @throws InterruptedException
-	 */
-	/*
+        System.out.println("controller has been initialized");
+        System.out.println("controller knows about model and view");
+    }
+
+    /**
+     * Core method that processes both internally generated and externally
+     * generated messages Parses the message and then calls appropriate control
+     * and action. This method is to be updated to support more games with new
+     * messages.
+     *
+     * @param messageType
+     * @param message
+     * @throws InterruptedException
+     */
+    /*
 	 * public void gameControllerPlay(MessageType messageType, String message)
 	 * throws InterruptedException { if (messageType == MessageType.Internal) {
 	 * // In future add processing for Timer generated internal messages // Then
@@ -147,149 +152,146 @@ public class GameController implements ActionListener {
 	 * (input[0].equals("Reward") && input[1].equals("AddPoints")) {
 	 * rewardBoundary.adddPoints(Integer.parseInt(input[2])); } } } }
 	 */
+    public void start(GameState gameState) {
+        gameBoundary.gmbStart(gameState);
+    }
 
-	public void start(GameState gameState) {
-		gameBoundary.gmbStart(gameState);
-	}
+    public void end() {
+        gameBoundary.gmbEnd();
+    }
 
-	public void end() {
-		gameBoundary.gmbEnd();
-	}
+    /* this method returns the model boundary */
+    public GameModelBoundary getModelBoundary() {
+        return gameBoundary;
+    }
 
-	/* this method returns the model boundary */
-	public GameModelBoundary getModelBoundary() {
-		return gameBoundary;
-	}
+    public GameViewBoundary getViewBoundary() {
+        return gameViewBoundary;
+    }
 
-	public GameViewBoundary getViewBoundary() {
-		return gameViewBoundary;
-	}
+    // @Override
+    @Override
+    public void actionPerformed(ActionEvent arg0) {
+        // TODO Auto-generated method stub
 
-	// @Override
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+    }
 
-	}
+    /**
+     * @param gameState
+     * @return
+     */
+    public static boolean actToStart(GameState gameState) {
 
-	/**
-	 * @param gameState
-	 * @return
-	 */
-	public static boolean actToStart(GameState gameState) {
+        boolean isActStart = currentActAdapter < GameAdapter.getGameAdapterObj().getActAdapters().size();
 
-		boolean isActStart = false;
-		if (currentActAdapter < GameAdapter.getGameAdapterObj()
-				.getActAdapters().size()) {
-			isActStart = true;
-			currentSceneAdapter = 0;
-			actAdapterToStart = GameAdapter.getGameAdapterObj()
-					.getActAdapters().get(currentActAdapter);
-			try {
-				actAdapterToStart.actStart(gameState);
+        if (isActStart) {
 
-			} catch (Exception e) {
-				System.err.print(e);
-			}
-		}
-		// System.out.println("Iniyan..." + currentAct);
-		return isActStart;
-	}
+            currentSceneAdapter = 0;
+            actAdapterToStart = GameAdapter.getGameAdapterObj().getActAdapters().get(currentActAdapter);
 
-	/**
-	 * @param gameState
-	 */
-	public static void actToPlay(GameState gameState) {
-		if (currentActAdapter < GameAdapter.getGameAdapterObj()
-				.getActAdapters().size()) {
-			actAdapterToStart = GameAdapter.getGameAdapterObj()
-					.getActAdapters().get(currentActAdapter);
-			try {
-				actAdapterToStart.actPlay(gameState);
+//			try {
+            actAdapterToStart.actStart(gameState);
 
-			} catch (Exception e) {
-				System.err.print(e);
-			}
-		}
-	}
+//			} catch (Exception e) {
+//				System.err.print(e);
+//			}
+        }
+        // System.out.println("Iniyan..." + currentAct);
+        return isActStart;
+    }
 
-	/**
-	 * @param gameState
-	 */
-	public static void actToEnd(GameState gameState) {
-		currentActAdapter++;
-		try {
-			actAdapterToStart.actEnd(gameState);
+    /**
+     * @param gameState
+     */
+    public static void actToPlay(GameState gameState) throws InterruptedException {
 
-		} catch (Exception e) {
-			System.err.print(e);
-		}
-	}
+        if (currentActAdapter < GameAdapter.getGameAdapterObj().getActAdapters().size()) {
 
-	// ---------------SCENE----------------------------
-	/**
-	 * @param gameState
-	 * @return
-	 */
-	public static boolean sceneToStart(GameState gameState) {
+            actAdapterToStart = GameAdapter.getGameAdapterObj().getActAdapters().get(currentActAdapter);
 
-		boolean isSceneStart = false;
-		if (currentSceneAdapter < actAdapterToStart.getSceneAdapters().size()) {
-			isSceneStart = true;
-			currentScreenAdapter = 0;
-			sceneAdapterToStart = (actAdapterToStart.getSceneAdapters()
-					.get(currentSceneAdapter));
-			try {
-				sceneAdapterToStart.sceneStart(gameState);
+//			try {
+            actAdapterToStart.actPlay(gameState);
 
-			} catch (Exception e) {
-				System.err.print(e);
-			}
-		}
-		return isSceneStart;
-	}
+//			} catch (Exception e) {
+//				System.err.print(e);
+//			}
+        }
+    }
 
-	/**
-	 * @return
-	 */
-	public static boolean isSceneStart() {
-		boolean isSceneStart = false;
-		if (currentSceneAdapter < actAdapterToStart.getSceneAdapters().size()) {
-			isSceneStart = true;
-		}
-		return isSceneStart;
-	}
+    /**
+     * @param gameState
+     */
+    public static void actToEnd(GameState gameState) {
+        currentActAdapter++;
+//		try {
+        actAdapterToStart.actEnd(gameState);
 
-	/**
-	 * @param gameState
-	 */
-	public static void sceneToPlay(GameState gameState) {
-		if (currentSceneAdapter < actAdapterToStart.getSceneAdapters().size()) {
-			sceneAdapterToStart = (actAdapterToStart.getSceneAdapters()
-					.get(currentSceneAdapter));
-			try {
-				sceneAdapterToStart.scenePlay(gameState);
-			} catch (Exception e) {
-				System.err.print(e);
-			}
-		}
-	}
+//		} catch (Exception e) {
+//			System.err.print(e);
+//		}
+    }
 
-	/**
-	 * @param gameState
-	 */
-	public static void sceneToEnd(GameState gameState) {
-		currentSceneAdapter++;
-		try {
-			sceneAdapterToStart.sceneEnd(gameState);
-		} catch (Exception e) {
-			System.err.print(e);
-		}
-	}
+    // ---------------SCENE----------------------------
 
-	public static void startNextScene(String sceneName, GameState gameState) {
+    /**
+     * @param gameState
+     * @return
+     */
+    public static boolean sceneToStart(GameState gameState) {
 
-		// TODO Write code for starting next scene.//written by rithika
+        boolean isSceneStart = isSceneStart();
+        if (isSceneStart) {
+
+            currentScreenAdapter = 0;
+            sceneAdapterToStart = (actAdapterToStart.getSceneAdapters().get(currentSceneAdapter));
+
+//			try {
+            sceneAdapterToStart.sceneStart(gameState);
+
+//			} catch (Exception e) {
+//				System.err.print(e);
+//			}
+        }
+        return isSceneStart;
+    }
+
+    /**
+     * @return
+     */
+    public static boolean isSceneStart() {
+        return currentSceneAdapter < actAdapterToStart.getSceneAdapters().size();
+    }
+
+    /**
+     * @param gameState
+     */
+    public static void sceneToPlay(GameState gameState) {
+        if (isSceneStart()) {
+            sceneAdapterToStart = (actAdapterToStart.getSceneAdapters().get(currentSceneAdapter));
+
+//			try {
+            sceneAdapterToStart.scenePlay(gameState);
+//			} catch (Exception e) {
+//				System.err.print(e);
+//			}
+        }
+    }
+
+    /**
+     * @param gameState
+     */
+    public static void sceneToEnd(GameState gameState) {
+        currentSceneAdapter++;
+//		try {
+        sceneAdapterToStart.sceneEnd(gameState);
+//		} catch (Exception e) {
+//			System.err.print(e);
+//		}
+    }
+
+    public static void startNextScene(String sceneName, GameState gameState) {
+
+        // TODO Write code for starting next scene.//written by rithika
 		/*
 		 * List<Scene> sceneList = gameState.getAct().getScenes(); Scene
 		 * resultScene = new Scene(); boolean flag = false; for (Scene scene :
@@ -307,363 +309,367 @@ public class GameController implements ActionListener {
 		 * }
 		 */
 
-	}
+    }
 
-	// --------------------SCREEN------------------------
-	/**
-	 * @param gameState
-	 * @return
-	 */
-	public static boolean screenToStart(GameState gameState) {
-		boolean isScreenStart = false;
+    // --------------------SCREEN------------------------
 
-		// System.out.println(npcCorrect);
+    /**
+     * @param gameState
+     * @return
+     */
+    public static boolean screenToStart(GameState gameState) {
+        boolean isScreenStart = isScreenStart();
 
-		// System.out.println("Iniyan.." + sceneToStart.getScreens().size());
+        // System.out.println(npcCorrect);
 
-		if (currentScreenAdapter < sceneAdapterToStart.getScreenAdapters()
-				.size()) {
-			isScreenStart = true;
-			currentGameElementAdapter = 0;
-			screenAdapterToStart = sceneAdapterToStart.getScreenAdapters().get(
-					currentScreenAdapter);
-			npcCorrect = screenAdapterToStart.getScreen().getnpcCorrect();
-			try {
-				screenAdapterToStart.screenStart(gameState);
+        // System.out.println("Iniyan.." + sceneToStart.getScreens().size());
 
-			} catch (Exception e) {
-				System.err.print(e);
-			}
-		}
-		if (screenAdapterToStart.getScreen().getnpcCorrect() == 1) {
-			System.out.println("---------------"
-					+ screenAdapterToStart.getScreen().getnpcCorrect()
-					+ "-----------------");
-			npcCorrect = 1;
-		}
-		return isScreenStart;
-	}
+        if (isScreenStart) {
 
-	public static boolean isScreenStart() {
-		boolean isScreenStart = false;
-		if (currentScreenAdapter < sceneAdapterToStart.getScreenAdapters()
-				.size()) {
-			isScreenStart = true;
-		}
-		return isScreenStart;
+            currentGameElementAdapter = 0;
+            screenAdapterToStart = sceneAdapterToStart.getScreenAdapters().get(currentScreenAdapter);
+            npcCorrect = screenAdapterToStart.getScreen().getnpcCorrect();
 
-	}
+//			try {
+            screenAdapterToStart.screenStart(gameState);
 
-	/**
-	 * @param gameState
-	 */
-	public static void screenToPlay(final GameState gameState) {
+//			} catch (Exception e) {
+//				System.err.print(e);
+//			}
+        }
+        if (screenAdapterToStart.getScreen().getnpcCorrect() == 1) {
+            System.out.println("---------------"
+                    + screenAdapterToStart.getScreen().getnpcCorrect()
+                    + "-----------------");
+            npcCorrect = 1;
+        }
+        return isScreenStart;
+    }
 
-		if (currentScreenAdapter < sceneAdapterToStart.getScreenAdapters()
-				.size()) {
-			// screenToStart = sceneToStart.getScreens().get(currentScreen);
-			try {
+    public static boolean isScreenStart() {
+        return currentScreenAdapter < sceneAdapterToStart.getScreenAdapters().size();
 
-				screenAdapterToStart.screenPlay(gameState);
+    }
 
-				System.out.println("Size of challenges in this screen: "
-						+ screenAdapterToStart.getChallengeAdapaters().size());
-				System.out.println("Size of challenges in this screen: "
-						+ currentChallengeAdapter);
-				System.out.println("Size of challenges in this screen: "
-						+ challengeAdapterToStart);
-				// challengeAdapterToStart =
-				// screenAdapterToStart.getChallengeAdapaters().get(currentChallengeAdapter);
-			}
+    /**
+     * @param gameState
+     */
+    public static void screenToPlay(final GameState gameState) throws InterruptedException {
 
-			catch (Exception e) {
-				System.err.print(e);
-			}
-			// Kyle: Create a TimerTask for competitive multiple choice
-			TimerTask timerTask = new TimerTask() {
-				// Kyle: Counter varible to increment every time the timer ticks
-				@Override
-				public void run() {
-					// System.out.println("TimerTask executing counter is: " +
-					// counter);
-					counter++;
-				}
-			};
-			// Kyle: Create a timer
-			final Timer timer;
-			timer = new Timer("MyTimer");
-			// Kyle: Start the timer if the tag is found in the XML
-			if (GameView.timerValue > 0)
-				timer.scheduleAtFixedRate(timerTask, 1, 15);
-			// Kyle: Find what question to go to if the time runs out
-			npcCorrect = screenAdapterToStart.getScreen().getnpcCorrect();
-			npcIncorrect = screenAdapterToStart.getScreen().getnpcIncorrect();
-			// Kyle: Create a new thread to run the timer in the background
-			Thread t = new Thread(new Runnable() {
+        if (isScreenStart()) {
+            // screenToStart = sceneToStart.getScreens().get(currentScreen);
+//			try {
 
-				@Override
-				public void run() {
-					// Kyle: Infinite Loop
+            screenAdapterToStart.screenPlay(gameState);
 
-					while (true) {
-						try {
-							// System.out.println("Thread timer is: " + counter
-							// + "/" + GameView.timerValue);
-							// System.out.println("GOING TO: " + npcCorrect);
+            System.out.println("Size of challenges in this screen: "
+                    + screenAdapterToStart.getChallengeAdapaters().size());
 
-							// Kyle: Check if there is no timer for the
-							// challenge
-							if (GameView.timerValue == 0 && counter > 0) {
-								// Kyle: Stop the timer
-								timer.cancel();
-								// Kyle: Reset the counter
-								counter = 0;
-							}
-							// Kyle: Check if the timer has reached the
-							// designated time
-							if (counter >= GameView.timerValue
-									&& GameView.timerValue >= 100) {
-								counter = 0;
-								System.out
-										.println("Counter has reached Timer Value now will terminate");
+            System.out.println("Size of challenges in this screen: "
+                    + currentChallengeAdapter);
 
-								// Jeremy
-								// creating a new AIFunction to generate an
-								// answer for Nemesis
-								//
-								// the GenerateAnswer function takes in a
-								// character so we get the character list and
-								// get the first
-								// character from that list (which is nemesis)
-								AIFunction aiFunction = new AIFunction();
-								nemesisWasRight = aiFunction
-										.GenerateAnswer(GameAdapter
-												.getGameAdapterObj().getGame()
-												.getCharacters().get(0));
+            System.out.println("Size of challenges in this screen: "
+                    + challengeAdapterToStart);
 
-								// get the character list
-								List<Character> charList = GameAdapter
-										.getGameAdapterObj().getGame()
-										.getCharacters();
+            // challengeAdapterToStart =
+            // screenAdapterToStart.getChallengeAdapaters().get(currentChallengeAdapter);
+//			}
+//			catch (Exception e) {
+//				System.err.print(e);
+//			}
+            // Kyle: Create a TimerTask for competitive multiple choice
+            TimerTask timerTask = new TimerTask() {
 
-								// run the ai recalculate method to update the
-								// characters attributes with nemesis
-								// having his answer and the user getting it
-								// wrong (because the user didn't answer)
-								charList = aiFunction.recalculate(charList, 3,
-										nemesisWasRight, false);
-								GameAdapter.getGameAdapterObj().getGame()
-										.setCharacters(charList);
+                // Kyle: Counter varible to increment every time the timer ticks
+                @Override
+                public void run() {
 
-								// if nemesis was wrong
-								if (!nemesisWasRight) {
-									Reward npcReward = GameAdapter
-											.getGameAdapterObj().getGame()
-											.getCharacters().get(1).getRewards();
-									npcReward.setPoints(npcReward.getPoints());
+                    // System.out.println("TimerTask executing counter is: " +
+                    // counter);
+                    counter++;
+                }
+            };
+            // Kyle: Create a timer
+            final Timer timer;
+            timer = new Timer("MyTimer");
 
-								}
-								// if nemesis was right
-								else if (nemesisWasRight) {
-									Reward npcReward = GameAdapter
-											.getGameAdapterObj().getGame()
-											.getCharacters().get(1).getRewards();
-									npcReward.setPoints(npcReward.getPoints()
-											+ GameView.correctValue);
-								}
+            // Kyle: Start the timer if the tag is found in the XML
+            if (GameView.timerValue > 0)
+                timer.scheduleAtFixedRate(timerTask, 1, 15);
 
-								System.out
-										.println("The value of NemesisWasRight is "
-												+ nemesisWasRight);
-								// Kyle: End the timer
-								timer.cancel();
-								// Kyle: Reset the timer value
-								GameView.timerValue = 0;
-								// Kyle: Reset the graphics pane
-								GameViewFrame.resetLayeredPane();
-								// Kyle: Start the next screen
-								if (nemesisWasRight) {
-									startNextScreen(npcCorrect, gameState);
-								} else if (!nemesisWasRight) {
-									startNextScreen(npcIncorrect, gameState);
-								}
-								// Kyle: End loop
-								break;
-							}
-							// Kyle: Sleep method for the timer threat
-							Thread.sleep(100);
-						} catch (InterruptedException ex) {
-							ex.printStackTrace();
-						}
-					}
+            // Kyle: Find what question to go to if the time runs out
+            npcCorrect = screenAdapterToStart.getScreen().getnpcCorrect();
+            npcIncorrect = screenAdapterToStart.getScreen().getnpcIncorrect();
 
-				}
-			});
-			// Kyle: Start the thread to dispaly the counter
-			t.start();
+            // Kyle: Create a new thread to run the timer in the background
+            executor.submit(() -> {
+                    while (true) {
+//						try {
+                        // System.out.println("Thread timer is: " + counter
+                        // + "/" + GameView.timerValue);
+                        // System.out.println("GOING TO: " + npcCorrect);
 
-		}
-	}
+                        // Kyle: Check if there is no timer for the
+                        // challenge
+                        if (GameView.timerValue == 0 && counter > 0) {
 
-	/**
-	 * @param gameState
-	 */
-	public static void screenToEnd(GameState gameState) {
+                            // Kyle: Stop the timer
+                            timer.cancel();
 
-		currentScreenAdapter++;
-		try {
-			screenAdapterToStart.screenEnd(gameState);
+                            // Kyle: Reset the counter
+                            counter = 0;
+                        }
 
-		} catch (Exception e) {
-			System.err.print(e);
-		}
+                        // Kyle: Check if the timer has reached the
+                        // designated time
+                        if (counter >= GameView.timerValue && GameView.timerValue >= 100) {
+                            counter = 0;
+                            System.out.println("Counter has reached Timer Value now will terminate");
 
-	}
+                            // Jeremy
+                            // creating a new AIFunction to generate an
+                            // answer for Nemesis
+                            //
+                            // the GenerateAnswer function takes in a
+                            // character so we get the character list and
+                            // get the first
+                            // character from that list (which is nemesis)
+                            AIFunction aiFunction = new AIFunction();
+                            nemesisWasRight = aiFunction.GenerateAnswer(
+                                    GameAdapter
+                                            .getGameAdapterObj()
+                                            .getGame()
+                                            .getCharacters().get(0)
+                            );
 
-	// Get the screen no from the view and start that screen.
-	/**
-	 * @param screenNo
-	 * @param gameState
-	 */
-	public static void startNextScreen(int screenNo, GameState gameState) {
+                            // get the character list
+                            List<Character> charList = GameAdapter
+                                    .getGameAdapterObj()
+                                    .getGame()
+                                    .getCharacters();
 
-		List<ScreenAdapter> screenAdapterList = gameState.getSceneAdapter()
-				.getScreenAdapters();
-		ScreenAdapter resultScreen = new ScreenAdapter();
-		boolean flag = false;
-		for (ScreenAdapter screenAdapter : screenAdapterList) {
-			if (screenAdapter.getScreen().getSequence().getSequenceNumber() == screenNo) {
-				resultScreen = screenAdapter;
-				flag = true;
-				break;
-			}
-			if (flag)
-				break;
-		}
+                            // run the ai recalculate method to update the
+                            // characters attributes with nemesis
+                            // having his answer and the user getting it
+                            // wrong (because the user didn't answer)
+                            charList = aiFunction.recalculate(charList, 3, nemesisWasRight, false);
+                            GameAdapter.getGameAdapterObj()
+                                    .getGame()
+                                    .setCharacters(charList);
 
-		if (resultScreen != null) {
-			screenAdapterToStart = resultScreen;
-			currentGameElementAdapter = 0;
-			resultScreen.screenStart(gameState);
+                            // if nemesis was wrong
+                            if (!nemesisWasRight) {
+                                Reward npcReward = GameAdapter
+                                        .getGameAdapterObj()
+                                        .getGame()
+                                        .getCharacters().get(1)
+                                        .getRewards();
 
-		}
-	}
+                                npcReward.setPoints(npcReward.getPoints());
 
-	// ------------------GAME ELEMENT--------------------------
+                            }
+                            // if nemesis was right
+                            else {
+                                Reward npcReward = GameAdapter
+                                        .getGameAdapterObj()
+                                        .getGame()
+                                        .getCharacters().get(1)
+                                        .getRewards();
 
-	/**
-	 * @param gameState
-	 * @return
-	 */
-	public static boolean gameElementToStart(GameState gameState) {
-		boolean isGameElementStart = false;
-		if (currentGameElementAdapter < screenAdapterToStart
-				.getGameElementAdapters().size()) {
-			isGameElementStart = true;
-			gameElementAdapterToStart = screenAdapterToStart
-					.getGameElementAdapters().get(currentGameElementAdapter);
-			try {
-				gameElementAdapterToStart.gameElementStart(gameState);
-			} catch (Exception e) {
-				System.err.print(e);
-			}
-		}
-		return isGameElementStart;
-	}
+                                npcReward.setPoints(npcReward.getPoints() + GameView.correctValue);
+                            }
 
-	/**
-	 * @param gameState
-	 */
-	public static void gameElementToPlay(GameState gameState) {
-		System.out.println("GameState is:" + gameElementAdapterToStart);
-		gameElementAdapterToStart.gameElementPlay(gameState);
+                            System.out.println("The value of NemesisWasRight is " + nemesisWasRight);
 
-	}
+                            // Kyle: End the timer
+                            timer.cancel();
 
-	/**
-	 * @param gameState
-	 */
-	public static void gameElementToEnd(GameState gameState) {
-		currentGameElementAdapter++;
-		try {
-			if (gameElementAdapterToStart != null) {
-				gameElementAdapterToStart.gameElementEnd(gameState);
-			}
-		} catch (Exception e) {
-			System.out
-					.println("Exception in GameController gameElementToEnd():"
-							+ e);
-		}
-	}
+                            // Kyle: Reset the timer value
+                            GameView.timerValue = 0;
 
-	/**
-	 * @param gameState
-	 * @return
-	 */
-	public static boolean challengeToStart(GameState gameState) {
-		boolean isChallengeStart = false;
-		System.out.println("Current Chal: " + currentChallengeAdapter
-				+ " vs. Adapter size: "
-				+ screenAdapterToStart.getChallengeAdapaters().size());
-		if (currentChallengeAdapter < screenAdapterToStart
-				.getChallengeAdapaters().size()) {
-			isChallengeStart = true;
-			challengeAdapterToStart = screenAdapterToStart
-					.getChallengeAdapaters().get(currentChallengeAdapter);
-			System.out.println("Adapter: "
-					+ screenAdapterToStart.getChallengeAdapaters().get(
-							currentChallengeAdapter));
-			try {
-				challengeAdapterToStart.challengeStart(gameState);
-			} catch (Exception e) {
-				System.err.print(e);
-			}
-		}
+                            // Kyle: Reset the graphics pane
+                            GameViewFrame.resetLayeredPane();
 
-		return isChallengeStart;
-	}
+                            // Kyle: Start the next screen
+                            if (nemesisWasRight) {
+                                startNextScreen(npcCorrect, gameState);
 
-	/**
-	 * @return
-	 */
-	public static boolean isChallengeStart() {
-		boolean isChallengeStart = false;
-		if (currentChallengeAdapter > 0) {
-			isChallengeStart = true;
-		}
-		return isChallengeStart;
+                            } else if (!nemesisWasRight) {
+                                startNextScreen(npcIncorrect, gameState);
 
-	}
+                            }
+                            // Kyle: End loop
+                            break;
+                        }
 
-	/**
-	 * @param gameState
-	 */
-	public static void challengeToPlay(GameState gameState) {
+                        // Kyle: Sleep method for the timer threat
+                        try{
+                            Thread.sleep(100);
+                        }
+                        catch (InterruptedException ex)
+                        {
+                            ex.printStackTrace();
+                        }
 
-		try {
 
-			challengeAdapterToStart.challengePlay(gameState);
+//						} catch (InterruptedException ex) {
+//							ex.printStackTrace();
+//						}
+                    }
+                return;
 
-		}
+            });
+            // Kyle: Start the thread to display the counter
 
-		catch (Exception e) {
-			System.err.print(e);
-		}
+        }
+    }
 
-	}
+    /**
+     * @param gameState
+     */
+    public static void screenToEnd(GameState gameState) {
 
-	/**
-	 * @param gameState
-	 */
-	public static void challengeToEnd(GameState gameState) {
-		currentChallengeAdapter = 0;
-		try {
-			challengeAdapterToStart.challengeEnd(gameState);
+        currentScreenAdapter++;
+//		try {
+        screenAdapterToStart.screenEnd(gameState);
 
-		} catch (Exception e) {
-			System.err.print(e);
-		}
-	}
+//		} catch (Exception e) {
+//			System.err.print(e);
+//		}
+
+    }
+
+    // Get the screen no from the view and start that screen.
+
+    /**
+     * @param screenNo
+     * @param gameState
+     */
+    public static void startNextScreen(int screenNo, GameState gameState) {
+
+        List<ScreenAdapter> screenAdapterList = gameState.getSceneAdapter().getScreenAdapters();
+        ScreenAdapter resultScreen = new ScreenAdapter();
+
+        for (ScreenAdapter screenAdapter : screenAdapterList) {
+            if (screenAdapter.getScreen().getSequence().getSequenceNumber() == screenNo) {
+                resultScreen = screenAdapter;
+                break;
+            }
+        }
+
+        screenAdapterToStart = resultScreen;
+        currentGameElementAdapter = 0;
+        resultScreen.screenStart(gameState);
+
+    }
+
+    // ------------------GAME ELEMENT--------------------------
+
+    /**
+     * @param gameState
+     * @return
+     */
+    public static boolean gameElementToStart(GameState gameState) {
+        boolean isGameElementStart = currentGameElementAdapter < screenAdapterToStart.getGameElementAdapters().size();
+        if (isGameElementStart) {
+
+            gameElementAdapterToStart = screenAdapterToStart.getGameElementAdapters().get(currentGameElementAdapter);
+
+//			try {
+            gameElementAdapterToStart.gameElementStart(gameState);
+
+//			} catch (Exception e) {
+//				System.err.print(e);
+//			}
+        }
+        return isGameElementStart;
+    }
+
+    /**
+     * @param gameState
+     */
+    public static void gameElementToPlay(GameState gameState) {
+        System.out.println("GameState is:" + gameElementAdapterToStart);
+        gameElementAdapterToStart.gameElementPlay(gameState);
+
+    }
+
+    /**
+     * @param gameState
+     */
+    public static void gameElementToEnd(GameState gameState) {
+        currentGameElementAdapter++;
+//		try {
+        if (gameElementAdapterToStart != null) {
+            gameElementAdapterToStart.gameElementEnd(gameState);
+        }
+//		} catch (Exception e) {
+//			System.out.println("Exception in GameController gameElementToEnd():" + e);
+//		}
+    }
+
+    /**
+     * @param gameState
+     * @return
+     */
+    public static boolean challengeToStart(GameState gameState) {
+        boolean isChallengeStart = currentChallengeAdapter < screenAdapterToStart.getChallengeAdapaters().size();
+
+        System.out.println("Current Chal: " + currentChallengeAdapter + " vs. Adapter size: " + screenAdapterToStart.getChallengeAdapaters().size());
+
+        if (isChallengeStart) {
+
+            challengeAdapterToStart = screenAdapterToStart.getChallengeAdapaters().get(currentChallengeAdapter);
+
+            System.out.println("Adapter: " + screenAdapterToStart.getChallengeAdapaters().get(currentChallengeAdapter));
+
+//			try {
+            challengeAdapterToStart.challengeStart(gameState);
+
+//			} catch (Exception e) {
+//				System.err.print(e);
+//			}
+        }
+
+        return isChallengeStart;
+    }
+
+    /**
+     * @return
+     */
+    public static boolean isChallengeStart() {
+        return currentChallengeAdapter > 0;
+
+    }
+
+    /**
+     * @param gameState
+     */
+    public static void challengeToPlay(GameState gameState) throws InterruptedException {
+
+//		try {
+        challengeAdapterToStart.challengePlay(gameState);
+
+//		}
+//
+//		catch (Exception e) {
+//			System.err.print(e);
+//		}
+
+    }
+
+    /**
+     * @param gameState
+     */
+    public static void challengeToEnd(GameState gameState) {
+        currentChallengeAdapter = 0;
+//		try {
+        challengeAdapterToStart.challengeEnd(gameState);
+
+//		} catch (Exception e) {
+//			System.err.print(e);
+//		}
+    }
 
 	/*
 	 * public static boolean quizToStart(GameState gameState) {
@@ -702,7 +708,7 @@ public class GameController implements ActionListener {
 	 * } catch (Exception e) { System.err.print(e); } }
 	 */
 
-	// ----------------PROP----------------------------
+    // ----------------PROP----------------------------
 
 	/*
 	 * public static boolean propToStart(GameState gameState) { boolean
@@ -722,7 +728,7 @@ public class GameController implements ActionListener {
 	 * try { gameElementToStart.gameElementEnd(gameState); } catch (Exception e)
 	 * { System.err.print(e); } }
 	 */
-	// ------------------PROP END---------------------------------
+    // ------------------PROP END---------------------------------
 
 	/*
 	 * public static void displayNext(Prop prop, GameState gameState) { if (prop
@@ -738,98 +744,98 @@ public class GameController implements ActionListener {
 	 * System.out.println("Need to start sequencing"); } } }
 	 */
 
-	/**
-	 * @param observable
-	 * @param gameState
-	 */
-	public static void viewListener(Observable observable, GameState gameState) {
+    /**
+     * @param observable
+     * @param gameState
+     */
+    public static void viewListener(Observable observable, GameState gameState) throws InterruptedException {
 
-		try {
+//		try {
 
-			Message message = gameState.getMessage();
-			if (GameAdapter.class.isInstance(observable)) {
-				if (message == Message.StartComplete) {
-					System.out
-							.println("Controller :GameModelStartComplete message is received");
-					GameAdapter gameAdapter = (GameAdapter) observable;
-					try {
-						gameAdapter.gameModelPlay(gameState);
-					} catch (InterruptedException e) {
-						System.out.println("Exception" + e);
-					}
+        Message message = gameState.getMessage();
 
-				}
+        if (GameAdapter.class.isInstance(observable)) {
+            if (message == Message.StartComplete) {
 
-			}
+                System.out.println("Controller :GameModelStartComplete message is received");
+                GameAdapter gameAdapter = (GameAdapter) observable;
 
-			if (ActAdapter.class.isInstance(observable)) {
+//					try {
+//						gameAdapter.gameModelPlay(gameState);
+//
+//					} catch (InterruptedException e) {
+//						System.out.println("Exception" + e);
+//
+//					}
 
-				if (message == Message.StartComplete) {
-					System.out
-							.println("Controller :ActStartComplete message is received");
-					actToPlay(gameState);
-				}
+            }
 
-				if (message == Message.PlayComplete) {
-					System.out
-							.println("Controller :ActPlayComplete message is received");
+        }
 
-					if (!sceneToStart(gameState))
-						System.out.println("Scenes are over");
+        if (ActAdapter.class.isInstance(observable)) {
 
-				}
-				if (message == Message.EndComplete) {
-					System.out
-							.println("Controller :ActEndComplete message is received");
-					// Check if anymore acts left to start. If yes. Play those
-					// acts.
-					// otherwise print message "Acts are over".
-					if (!actToStart(gameState)) {
-						System.out.println("All acts are over");
-					}
+            if (message == Message.StartComplete) {
+                System.out.println("Controller :ActStartComplete message is received");
+                actToPlay(gameState);
+            }
 
-				}
+            if (message == Message.PlayComplete) {
+                System.out.println("Controller :ActPlayComplete message is received");
 
-			}
+                if (!sceneToStart(gameState))
+                    System.out.println("Scenes are over");
 
-			if (SceneAdapter.class.isInstance(observable)) {
+            }
+            if (message == Message.EndComplete) {
+                System.out.println("Controller :ActEndComplete message is received");
+                // Check if anymore acts left to start. If yes. Play those
+                // acts.
+                // otherwise print message "Acts are over".
 
-				if (message == Message.StartComplete) {
-					System.out
-							.print("Controller :SceneStartComplete message is received");
-					sceneToPlay(gameState);
-				}
-				if (message == Message.PlayComplete) {
-					System.out
-							.println("Controller :ScenePlayComplete message is received");
-					screenToStart(gameState);
-				}
-				if (message == Message.EndComplete) {
-					System.out
-							.println("Controller :SceneEndComplete message is received");
+                if (!actToStart(gameState)) {
+                    System.out.println("All acts are over");
 
-					if (isSceneStart()) {
-						sceneToStart(gameState);
-					} else {
-						actToEnd(gameState);
-					}
+                }
 
-				}
+            }
 
-			}
+        }
 
-			if (ScreenAdapter.class.isInstance(observable)) {
-				if (message == Message.StartComplete) {
-					System.out
-							.println("Controller :ScreenStartComplete message is received");
-					screenToPlay(gameState);
-					// System.out.println("Screens are over");
+        if (SceneAdapter.class.isInstance(observable)) {
 
-				}
-				if (message == Message.PlayComplete) {
-					System.out
-							.println("Controller :ScreenPlayComplete message is received");
-					// check for challenges before starting game elements
+            if (message == Message.StartComplete) {
+                System.out.print("Controller :SceneStartComplete message is received");
+                sceneToPlay(gameState);
+            }
+            if (message == Message.PlayComplete) {
+                System.out.println("Controller :ScenePlayComplete message is received");
+                screenToStart(gameState);
+            }
+            if (message == Message.EndComplete) {
+                System.out.println("Controller :SceneEndComplete message is received");
+
+                if (isSceneStart()) {
+                    sceneToStart(gameState);
+
+                } else {
+                    actToEnd(gameState);
+
+                }
+
+            }
+
+        }
+
+        if (ScreenAdapter.class.isInstance(observable)) {
+            if (message == Message.StartComplete) {
+                System.out.println("Controller :ScreenStartComplete message is received");
+                screenToPlay(gameState);
+                // System.out.println("Screens are over");
+
+            }
+            if (message == Message.PlayComplete) {
+                System.out.println("Controller :ScreenPlayComplete message is received");
+                // check for challenges before starting game elements
 					/*
 					 * if(gameState.getScreenAdapter().getScreen().getChallenge()
 					 * !=null &&
@@ -838,62 +844,59 @@ public class GameController implements ActionListener {
 					 * challengeAdapterToStart }
 					 */
 
-					if (!challengeToStart(gameState)) {
-						System.out.println("Challenges are over");
-					}
+                if (!challengeToStart(gameState)) {
+                    System.out.println("Challenges are over");
+                }
 
-					if (!gameElementToStart(gameState)) {
-						System.out.println("GameElements are over");
-					}
-				}
-				if (message == Message.EndComplete) {
-					System.out
-							.println("Controller: Screen end complete message is received.");
-					// displayNext((Prop) gameState.getGameElement(),gameState);
-					if (isScreenStart())
-						screenToStart(gameState);
-					else
-						sceneToEnd(gameState);
-				}
-			}
+                if (!gameElementToStart(gameState)) {
+                    System.out.println("GameElements are over");
+                }
+            }
+            if (message == Message.EndComplete) {
+                System.out.println("Controller: Screen end complete message is received.");
+                // displayNext((Prop) gameState.getGameElement(),gameState);
 
-			if (GameElementAdapter.class.isInstance(observable)) {
+                if (isScreenStart())
+                    screenToStart(gameState);
+                else
+                    sceneToEnd(gameState);
+            }
+        }
 
-				if (message == Message.StartComplete) {
-					System.out
-							.println("Controller :GameElementStartComplete message is received");
-					gameElementToPlay(gameState);
+        if (GameElementAdapter.class.isInstance(observable)) {
 
-				}
+            if (message == Message.StartComplete) {
+                System.out.println("Controller :GameElementStartComplete message is received");
+                gameElementToPlay(gameState);
 
-				if (message == Message.PlayComplete) {
-					System.out
-							.println("Controller :GameElementPlayComplete message is received");
-					gameElementToEnd(gameState);
+            }
 
-				}
+            if (message == Message.PlayComplete) {
+                System.out.println("Controller :GameElementPlayComplete message is received");
+                gameElementToEnd(gameState);
 
-				if (message == Message.EndComplete) {
-					System.out
-							.println("Controller :GameElementEndComplete message is received");
+            }
 
-					// 1. To check whether there are any new gameElements to
-					// start.
-					// If there is any, start that new game element.
-					// Otherwise End the current screen.
-					// 2. If there is no next tag in xml, follow the sequencing
-					// approach.
+            if (message == Message.EndComplete) {
+                System.out.println("Controller :GameElementEndComplete message is received");
 
-					// System.out.println("Game sequence is" +
-					// GameModel.isSequence);
-					// if (GameModel.isSequence) {
-					if (!gameElementToStart(gameState)) {
-						System.out.println("No more game elements to start");
-						screenToEnd(gameState);
-					}
-					// }
-				}
-			}
+                // 1. To check whether there are any new gameElements to
+                // start.
+                // If there is any, start that new game element.
+                // Otherwise End the current screen.
+                // 2. If there is no next tag in xml, follow the sequencing
+                // approach.
+
+                // System.out.println("Game sequence is" +
+                // GameModel.isSequence);
+                // if (GameModel.isSequence) {
+                if (!gameElementToStart(gameState)) {
+                    System.out.println("No more game elements to start");
+                    screenToEnd(gameState);
+                }
+                // }
+            }
+        }
 
 			/*
 			 * if (Quiz.class.isInstance(observable)) { if (message ==
@@ -912,31 +915,29 @@ public class GameController implements ActionListener {
 			 * quizToEnd(gameState); } }
 			 */
 
-			if (ChallengeAdapter.class.isInstance(observable)) {
-				if (message == Message.StartComplete) {
-					System.out
-							.println("Controller : ChallengeStartComplete message is received");
-					challengeToPlay(gameState);
+        if (ChallengeAdapter.class.isInstance(observable)) {
+            if (message == Message.StartComplete) {
+                System.out.println("Controller : ChallengeStartComplete message is received");
+                challengeToPlay(gameState);
 
-				}
-				if (message == Message.PlayComplete) {
-					System.out
-							.println("Controller : ChallengePlayComplete message is received");
-					challengeToEnd(gameState);
-				}
-				if (message == Message.EndComplete) {
-					System.out
-							.println("Controller: Challengeend complete message is received.");
-					// displayNext((Prop) gameState.getGameElement(),gameState);
-					if (isChallengeStart())
-						challengeToStart(gameState);
-					else
-						gameElementToStart(gameState);// once challenge ends
-														// start game element
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+            }
+            if (message == Message.PlayComplete) {
+                System.out.println("Controller : ChallengePlayComplete message is received");
+                challengeToEnd(gameState);
+            }
+            if (message == Message.EndComplete) {
+                System.out.println("Controller: Challengeend complete message is received.");
+                // displayNext((Prop) gameState.getGameElement(),gameState);
+
+                if (isChallengeStart())
+                    challengeToStart(gameState);
+                else
+                    gameElementToStart(gameState);// once challenge ends
+                // start game element
+            }
+        }
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+    }
 }
