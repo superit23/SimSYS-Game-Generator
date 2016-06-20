@@ -761,7 +761,7 @@ public class GameController implements ActionListener {
                 GameAdapter gameAdapter = (GameAdapter) observable;
 
 //					try {
-//						gameAdapter.gameModelPlay(gameState);
+					gameAdapter.gameModelPlay(gameState);
 //
 //					} catch (InterruptedException e) {
 //						System.out.println("Exception" + e);

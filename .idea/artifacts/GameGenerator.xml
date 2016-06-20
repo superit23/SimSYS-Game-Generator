@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GameGenerator">
+    <output-path>$PROJECT_DIR$/out/artifacts/GameGenerator</output-path>
+    <root id="archive" name="GameGenerator.jar">
+      <element id="module-output" name="GameGenerator" />
+      <element id="file-copy" path="$PROJECT_DIR$/../SchemaLoader/classes/artifacts/SchemaParser_jar/SchemaParser.jar" />
+      <element id="library" level="project" name="gov.nist.math:jama:1.0.3" />
+      <element id="library" level="project" name="Maven: com.google.guava:guava:13.0.1" />
+    </root>
+  </artifact>
+</component>

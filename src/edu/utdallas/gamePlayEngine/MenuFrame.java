@@ -32,7 +32,7 @@ public class MenuFrame extends JFrame {
 	/**
 	 * jFrame
 	 */
-	private JFrame jFrame;
+	private JFrame jFrame = new JFrame();
 	/**
 	 * jPanel
 	 */
@@ -55,40 +55,44 @@ public class MenuFrame extends JFrame {
 	 *            menu frame constructor
 	 */
 	public MenuFrame(final GameView gameView) {
+
 		jPanel = new JPanel(new BorderLayout());
 		// jPanel.setLocationRelativeTo(null);
 		// jPanel.pack();
 		jPanel.setVisible(true);
 		jPanel.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		jPanel.setLayout(new BorderLayout());
+
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-		jPanel.setLocation(dim.width / 2 - jFrame.getSize().width / 2,
-				dim.height / 2 - jFrame.getSize().height / 2);
+		jPanel.setLocation(dim.width / 2 - jFrame.getSize().width / 2, dim.height / 2 - jFrame.getSize().height / 2);
+
 		JMenuBar mainMenu = new JMenuBar();
 		mainMenu.setOpaque(true);
 		JMenu games = new JMenu("Games");
 		JMenuItem openGame = new JMenuItem("Open Game");
 		JMenuItem quit = new JMenuItem("Quit");
+
 		openGame.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				int retval = myFileChooser.showOpenDialog(MenuFrame.this);
+
 				if (retval == JFileChooser.APPROVE_OPTION) {
 					File myFile = myFileChooser.getSelectedFile();
 					System.out.println("Opening File: " + myFile.toString());
+
 					try {
+
 						gameView.resetView();
-						GameController gameController = new GameController(
-								new GameAdapter(), gameView);
-						final GameModelBoundary gameModelBoundary = gameController
-								.getModelBoundary();
+						GameController gameController = new GameController(new GameAdapter(), gameView);
+
+						final GameModelBoundary gameModelBoundary = gameController.getModelBoundary();
 						gameModelBoundary.setView(gameView);
 						gameModelBoundary.gmbEnd();
 						gameModelBoundary.startGame(myFile.toString(), jPanel);
+
 					} catch (Exception e) {
-						System.out
-								.println("Exception in GameViewFrame.java, startGame: "
-										+ e.toString());
+						System.out.println("Exception in GameViewFrame.java, startGame: " + e.toString());
 					}
 				}
 			}
